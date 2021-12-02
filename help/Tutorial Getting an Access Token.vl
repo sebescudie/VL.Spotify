@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="N8J78FSrIWmLymV3F9GJTd" LanguageVersion="2021.4.1.669" Version="0.128">
+  <NugetDependency Id="HN3dIzfrfdKOyNm4G7QKdL" Location="VL.CoreLib" Version="2021.4.1-0669-g6ea9588ecb" />
+  <Patch Id="G5HSX1F1IN5NK4Ed11FtCl">
+    <Canvas Id="NTqgIJ2jAdTPrLnerHpe6X" DefaultCategory="Main" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="D5xZLmQwQ1tO9DjEmVnlz6">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="VZaNy2qYmbNLWq6jibO9uK">
+        <Canvas Id="ONpjKJLRtnYMMMTPfsb7i1" CanvasType="Group">
+          <Pad Id="EOCY6Pk0BIMPdrCjaHOl26" Bounds="60,92,715,68" ShowValueBox="true" isIOBox="true" Value="Ok, let's see how we can control Spotify's audio playback. In order to do that, you will need to create an application on Spotify's dev portal, and retrieve a code using Spotify's authentication system. It might take a few minutes, but don't be scared, let's do this together.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="R99n3ql084eOqcfiUofXba" Bounds="65,214,76,19" ShowValueBox="true" isIOBox="true" Value="First, go to">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="PEDkUirKtvNMUIcG3DBWgh" Bounds="143,214,327,19" ShowValueBox="true" isIOBox="true" Value="https://developer.spotify.com/dashboard/applications">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Link</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="P0F9auKHpMXNqqMdEdxPpE" Bounds="473,214,170,19" ShowValueBox="true" isIOBox="true" Value="and click Create an App. ">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Is0R5hHBqbIOHAFI4rKeM4" Bounds="65,243,680,116" ShowValueBox="true" isIOBox="true" Value="Give it a name and description and click Create. This should bring you to your newly created app's settings page. Click Edit Settings and add at least a Redirect URI : this should be a URL to a web-page your users will see when authenticating with your app. Save those settings once you're done.&#xD;&#xA;&#xD;&#xA;Next, click on Show Client Secret, and copy/paste your Client ID and Secrets somewhere safe. We'll need them to retrieve our connection token!">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="83,561,49,19" Id="GwKg4fGhfJoNVMmVwW5a6q">
+            <p:NodeReference>
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetCodeURL" />
+            </p:NodeReference>
+            <Pin Id="Bgnsz7zt6l6NtVFMQt5Kfc" Name="Client ID" Kind="InputPin" />
+            <Pin Id="BDZnzLQYS9cLrJEFMxix0R" Name="Redirect URI" Kind="InputPin" />
+            <Pin Id="TZM26vFlIWTNSjKqFkkJCy" Name="Scopes" Kind="InputPin" />
+            <Pin Id="KeXL1dkV9jjLO3QFKWz37G" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="151,532,39,19" Id="AZnrHIJjrtAQYIzw8jNw7z">
+            <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Cons" />
+              <CategoryReference Kind="RecordType" Name="Spread" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="JC0ZBA5l2iNOxl9sRH6eeF" Name="Input" Kind="InputPin" />
+            <Pin Id="ML18jw8TCNrMPvkSdS6kSV" Name="Input 2" Kind="InputPin" />
+            <Pin Id="ILzj9YPmphiO9EAk4stxUp" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="151,481,129,19" Id="Kxi54Wc03fFOGytl9kfcEg">
+            <p:NodeReference LastCategoryFullName="IO.Spotify.Authentication.Scopes" LastSymbolSource="VL.Spotify.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="Scopes" />
+              <Choice Kind="OperationCallFlag" Name="UserModifyPlaybackState" />
+            </p:NodeReference>
+            <Pin Id="KrRKYQNjo9rLGo4SxrYgdk" Name="User Modify Playback State" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="185,508,133,19" Id="BOgycuVithRQCx0JnslLbp">
+            <p:NodeReference LastCategoryFullName="IO.Spotify.Authentication.Scopes" LastSymbolSource="VL.Spotify.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="UserReadCurrentlyPlaying" />
+            </p:NodeReference>
+            <Pin Id="V8JRDbseP3QP9y0RVX4pre" Name="User Read Currently Playing" Kind="OutputPin" />
+          </Node>
+          <Pad Id="MYo8l1MeTOvNxkIpDuWpMF" Comment="Redirect URI" Bounds="119,462,35,15" ShowValueBox="true" isIOBox="true" Value="">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="UHwqVpJ0iLGMU3nlYgHSIL" Comment="Client ID" Bounds="85,435,35,15" ShowValueBox="true" isIOBox="true" Value="">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="LisA6C3QKQMLPvgxdUdIXh" Comment="" Bounds="85,606,181,31" ShowValueBox="true" isIOBox="true" />
+          <Overlay Id="PEYPGWdUwIlOD14HFm4tus" Name="Creating your app on Spotify's dev portal" Bounds="52,165,718,188" />
+          <Overlay Id="Ugdn04ddmqVP01Sd7TeFfW" Name="Getting your Code" Bounds="52,374,719,273" />
+          <Pad Id="UzYV1vDy35YMfMcaXPiR5K" Bounds="342,406,391,230" ShowValueBox="true" isIOBox="true" Value="Next, you'll need to get a code. To do that, fill the inputs of the GetCodeURL node on the left with the Client ID you got in the previous step and the Redirect URI you set on your app.&#xD;&#xA;&#xD;&#xA;The last pin defines a spread of Scopes : this basically defines what you want to &quot;authorize&quot; your app to do on your profile. Here we picked ModifyplaybackState and UserReadCurrentPlaying. These will show up as a message on the URL we're generating, you'll see. &#xD;&#xA;&#xD;&#xA;Then, fire up your browser and go to the URL provided by GetCodeQuery">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Incalz4usbZNpBlhmaKqHA" Bounds="340,710,401,243" ShowValueBox="true" isIOBox="true" Value="Cool, you should now have been redirected to the page you set as Redirect URI before. But watch closely : a &quot;code&quot; parameter has been appended to the URL! Copy and paste this code in the Code pin of the GetToken node on the right, and fill all the other input pins with your Redirect URI, ID and Secret. Then, bang the Update pin and you should see your Access Token! Use it with the SpotifyClient node to authenticate and use this plugin!&#xD;&#xA;&#xD;&#xA;If you don't see your token, there's likely an error, check the Error Message pin.&#xD;&#xA;&#xD;&#xA;Also, note that your token lasts only one hour, so you'll have to renew it.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="91,803,88,19" Id="Eb5qNP6ZMLuM1V5RMIedjl">
+            <p:NodeReference LastCategoryFullName="IO.Spotify.Authentication" LastSymbolSource="VL.Spotify.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="GetToken" />
+            </p:NodeReference>
+            <Pin Id="JRffgWb8Fr5QBG8e3qhmZn" Name="Code" Kind="InputPin" />
+            <Pin Id="PKvy5fjNOgvNt2kQemSH60" Name="Redirect URI" Kind="InputPin" />
+            <Pin Id="TXZ1keBPN4kMes174i3Z2W" Name="Client ID" Kind="InputPin" />
+            <Pin Id="BmfxQmA4V9nLaHVoY6pYWP" Name="Client Secret" Kind="InputPin" />
+            <Pin Id="E7HzZegIywaOkBiVNDkMMa" Name="Update" Kind="InputPin" />
+            <Pin Id="J0IAZOtgHP2OCCfLZ4LLPi" Name="Access Token" Kind="OutputPin" />
+            <Pin Id="M3I8GaFVLAxNk2upcV1AVz" Name="On Success" Kind="OutputPin" />
+            <Pin Id="Jczi3zosMS4PJ9g2v1Ldvo" Name="Error Message" Kind="OutputPin" />
+            <Pin Id="RIUmQaSHr5oQTZe1BjmueJ" Name="On Error" Kind="OutputPin" />
+          </Node>
+          <Pad Id="PJoqIzD1Mk3O36hhVFiePM" Comment="Update" Bounds="176,784,35,15" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Boolean" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="L2LEvt8T2p7QTyh0vZpeZd" Comment="Access Token" Bounds="93,883,111,15" ShowValueBox="true" isIOBox="true" />
+          <Overlay Id="KTupBdiRXuQMegS25FSonJ" Name="Getting your access token" Bounds="51,666,720,304" />
+          <Node Bounds="93,1083,74,19" Id="RWLKQTe1NZrMB5vRwrcfzZ">
+            <p:NodeReference LastCategoryFullName="IO.Spotify.Authentication" LastSymbolSource="VL.Spotify.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="SpotifyClient" />
+            </p:NodeReference>
+            <Pin Id="A9YPbOb4GbvNuvpriRXrao" Name="Token" Kind="InputPin" />
+            <Pin Id="FXHm7RNvi0xPKUorB9t9Sb" Name="Output" Kind="OutputPin" />
+            <Pin Id="KjGWlik3VF5LTPXfxq1wgq" Name="Username" Kind="OutputPin" />
+          </Node>
+          <Pad Id="PiSpBqnx3dCPTECvRW77B5" Comment="Username" Bounds="164,1127,86,15" ShowValueBox="true" isIOBox="true" />
+          <Overlay Id="IGwofOVgFksMlAGvoYm0gK" Name="Testing your access token" Bounds="51,994,722,165" />
+          <Pad Id="QuAeljzHUuDO5nCLhKRheu" Comment="Token" Bounds="95,1056,35,15" ShowValueBox="true" isIOBox="true" Value="">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="EqHjmpTaga6PZRldxjysZT" Bounds="337,1045,406,44" ShowValueBox="true" isIOBox="true" Value="Now paste your access token in the Token input of the SpotifyClient node, you should see your username on its output!">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="BmIdwge0iUvQUr69fxq9cs" Comment="Error Message" Bounds="148,843,35,15" ShowValueBox="true" isIOBox="true" />
+        </Canvas>
+        <Patch Id="V7MlCAs28aCK98XsLxhuWs" Name="Create" />
+        <Patch Id="GQ38JOx0l0qMx8jfrcsjzH" Name="Update" />
+        <ProcessDefinition Id="VD3MaX5R6PQNPjFcFWc7Dz">
+          <Fragment Id="RFrCPbOeymALSzPz6B9I4F" Patch="V7MlCAs28aCK98XsLxhuWs" Enabled="true" />
+          <Fragment Id="LHnjGwAT5csNSdyYusjh74" Patch="GQ38JOx0l0qMx8jfrcsjzH" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="UNMjyL15xedMAivMNZXr9w" Ids="ILzj9YPmphiO9EAk4stxUp,TZM26vFlIWTNSjKqFkkJCy" />
+        <Link Id="CW1NDjBjvXdMFVUASJVwQW" Ids="KrRKYQNjo9rLGo4SxrYgdk,JC0ZBA5l2iNOxl9sRH6eeF" />
+        <Link Id="A3rFwT5dmUSPozvEh5mTOt" Ids="V8JRDbseP3QP9y0RVX4pre,ML18jw8TCNrMPvkSdS6kSV" />
+        <Link Id="EwJvZkOrbIcORKc5yFKDiD" Ids="MYo8l1MeTOvNxkIpDuWpMF,BDZnzLQYS9cLrJEFMxix0R" />
+        <Link Id="MAyL0X6zdI1QGiCEC2mw7G" Ids="UHwqVpJ0iLGMU3nlYgHSIL,Bgnsz7zt6l6NtVFMQt5Kfc" />
+        <Link Id="NycRQNuU1aPMBQWqOEjZ2h" Ids="KeXL1dkV9jjLO3QFKWz37G,LisA6C3QKQMLPvgxdUdIXh" />
+        <Link Id="VBDYwJvPM80Od5ktOuBkO1" Ids="PJoqIzD1Mk3O36hhVFiePM,E7HzZegIywaOkBiVNDkMMa" />
+        <Link Id="M0BeGfVfRQuQUPPiZJBZVY" Ids="J0IAZOtgHP2OCCfLZ4LLPi,L2LEvt8T2p7QTyh0vZpeZd" />
+        <Link Id="KjfucjyoUSgMoING2jN9qj" Ids="KjGWlik3VF5LTPXfxq1wgq,PiSpBqnx3dCPTECvRW77B5" />
+        <Link Id="EPsRSU3oahwOIqgQjRRSKa" Ids="QuAeljzHUuDO5nCLhKRheu,A9YPbOb4GbvNuvpriRXrao" />
+        <Link Id="R26Rrnx24TTMsZJdEHNUyx" Ids="Jczi3zosMS4PJ9g2v1Ldvo,BmIdwge0iUvQUr69fxq9cs" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="Vb5gTSnkDBuMaQ643jCJPN" Location="VL.CoreLib" Version="2021.4.1-0669-g6ea9588ecb" />
+  <NugetDependency Id="NRNr3UMFAUSQZXh9vBkk83" Location="VL.Spotify" Version="0.0.0.0" />
+</Document>

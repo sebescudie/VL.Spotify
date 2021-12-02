@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="UMbEBsCdqbcLKAwMagAVPN" LanguageVersion="2021.4.1.669" Version="0.128">
+  <NugetDependency Id="I4klAj3FNPKL5PGlU4kfuz" Location="VL.CoreLib" Version="2021.4.1-0669-g6ea9588ecb" />
+  <Patch Id="P3tcsguHRu2MXPiectjmhD">
+    <Canvas Id="UaEzPKP1K1CLT74Wb6B9q8" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="Eq6pvu8UbykMzg1A8qEHEy">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="FhEbogtr5vMLzAgSCT0bSm">
+        <Canvas Id="ANu31gIYceMPtcTtEW6wQx" CanvasType="Group">
+          <Node Bounds="136,280,74,19" Id="DZJdUx3nkhfMOTbLKQuxSa">
+            <p:NodeReference LastCategoryFullName="IO.Spotify.Authentication" LastSymbolSource="VL.Spotify.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="SpotifyClient" />
+            </p:NodeReference>
+            <Pin Id="TFijTUjdlj2NIIH1edV9pB" Name="Token" Kind="InputPin" />
+            <Pin Id="TlW5rPA6i2hN5ddkWly7mD" Name="Output" Kind="OutputPin" />
+            <Pin Id="D9tLQ23ZniILxkusY7QtE0" Name="Username" Kind="OutputPin" />
+          </Node>
+          <Pad Id="IUUxYb997aBMmXg6Bx0q8z" Comment="Token" Bounds="138,253,41,15" ShowValueBox="true" isIOBox="true" Value="">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="136,623,125,19" Id="QEtqHHJeCDDLnoXhBlqJk5">
+            <p:NodeReference LastCategoryFullName="IO.Spotify.Playback" LastSymbolSource="VL.Spotify.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="PlaybackControl" />
+            </p:NodeReference>
+            <Pin Id="PEFtOsGh9nKOOgdSmxzgFm" Name="Input" Kind="InputPin" />
+            <Pin Id="RsCRyQWpXw7Pzxv0pfRZNP" Name="Pause Playback" Kind="InputPin" />
+            <Pin Id="JFBYdob552uQVkt0dvMR7J" Name="Skip Previous" Kind="InputPin" />
+            <Pin Id="ADoy1bStrxoP6OnvbV5M8T" Name="Resume Playback" Kind="InputPin" />
+            <Pin Id="OTdxV3EF0CKNVG7YbNeo8D" Name="Skip Next" Kind="InputPin" />
+            <Pin Id="DNnu4xzdUcEOGtvZt3DrtJ" Name="Volume" Kind="InputPin" />
+            <Pin Id="Fe1ymnBeKu9O8WPPLZsiiS" Name="Get Currently Playing" Kind="InputPin" />
+          </Node>
+          <Pad Id="MJYQv0Y0Zb5Lc3VocmYn7h" Comment="Pause Playback" Bounds="158,328,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Boolean" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="IXQJSD3wzL8LYTuaE2QXkP" Comment="Skip Previous" Bounds="178,382,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Boolean" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="S5DIOvuzEWAPPiZxSxZ8Bq" Comment="Resume Playback" Bounds="198,435,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Boolean" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="KH9uOOCu2g4L8CzCQpj7uG" Comment="Skip Next" Bounds="218,496,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Boolean" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="B80UKX8qJMlQMYs18rs1tL" Comment="Volume" Bounds="238,562,112,25" ShowValueBox="true" isIOBox="true" Value="0.7100001">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:maximum p:Type="Single">1</p:maximum>
+              <p:minimum p:Type="Single">0</p:minimum>
+              <p:showslider p:Type="Boolean">true</p:showslider>
+              <p:sliderdirection p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.SliderDirectionEnum">Horizontal</p:sliderdirection>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="K8TZVIFJjk2QBsW7rGxoFP" Bounds="352,244,307,43" ShowValueBox="true" isIOBox="true" Value="Not sure how to get your Access Token? Search &quot;Getting an Access Token&quot; in the help browser!">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="OcRSE0H232fPlh305iEAi0" Bounds="501,480,73,19" ShowValueBox="true" isIOBox="true" Value="WIPWIPWIP">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+        </Canvas>
+        <Patch Id="N2W0vGeltggLGcjQ1JgYlT" Name="Create" />
+        <Patch Id="RW92l66zxzoLVrX2usgXID" Name="Update" />
+        <ProcessDefinition Id="O4BjZ6PD0hcPfMWEJDLKAA">
+          <Fragment Id="CI6rnpT2RWQNR0dnkFGn8I" Patch="N2W0vGeltggLGcjQ1JgYlT" Enabled="true" />
+          <Fragment Id="J3qG7D56PxUNIiA9zkMJXW" Patch="RW92l66zxzoLVrX2usgXID" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="BQancVdlTONOX73zzUxEdG" Ids="IUUxYb997aBMmXg6Bx0q8z,TFijTUjdlj2NIIH1edV9pB" />
+        <Link Id="BJWDBp6jf0PPhYJxWF6bsj" Ids="TlW5rPA6i2hN5ddkWly7mD,PEFtOsGh9nKOOgdSmxzgFm" />
+        <Link Id="MaKQAIWGnGBO91eybbqEtS" Ids="MJYQv0Y0Zb5Lc3VocmYn7h,RsCRyQWpXw7Pzxv0pfRZNP" />
+        <Link Id="BzkTRNcTRbzPmOsCmCE48C" Ids="IXQJSD3wzL8LYTuaE2QXkP,JFBYdob552uQVkt0dvMR7J" />
+        <Link Id="TK643YXJKuULx8yFWzsu1K" Ids="S5DIOvuzEWAPPiZxSxZ8Bq,ADoy1bStrxoP6OnvbV5M8T" />
+        <Link Id="HYrRbZuXWK5Lyth88bmG5l" Ids="KH9uOOCu2g4L8CzCQpj7uG,OTdxV3EF0CKNVG7YbNeo8D" />
+        <Link Id="LK7w8oPBswJOmUdgGFcQeX" Ids="B80UKX8qJMlQMYs18rs1tL,DNnu4xzdUcEOGtvZt3DrtJ" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="HvW5lOwQm2fO6VjV5zahz1" Location="VL.CoreLib" Version="2021.4.1-0669-g6ea9588ecb" />
+  <NugetDependency Id="HAqhwtphGwtMdSlgLeIsW0" Location="VL.Spotify" Version="0.0.0.0" />
+</Document>
