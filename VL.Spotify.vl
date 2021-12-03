@@ -9,7 +9,7 @@
     ************************ SpotifyClient ************************
 
 -->
-        <Node Name="SpotifyClient" Bounds="111,200" Id="IPjaTKNssjyLNv9ZYY6bLm">
+        <Node Name="SpotifyClient" Bounds="110,200" Id="IPjaTKNssjyLNv9ZYY6bLm">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
@@ -169,7 +169,7 @@
     ************************ SpotifyClient ************************
 
 -->
-        <Node Name="SpotifyClient" Aspects="Advanced" Bounds="111,257" Id="Nh4SHuqTzGHNp8KpWkXwQd">
+        <Node Name="SpotifyClient" Aspects="Advanced" Bounds="110,257" Id="Nh4SHuqTzGHNp8KpWkXwQd">
           <p:NodeReference>
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
@@ -256,7 +256,7 @@
     ************************ Scopes ************************
 
 -->
-        <Node Name="Scopes" Bounds="111,314" Id="EGyWZISrR5tMAm6HO5d5lw">
+        <Node Name="Scopes" Bounds="110,314" Id="EGyWZISrR5tMAm6HO5d5lw">
           <p:NodeReference>
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
@@ -441,7 +441,7 @@
     ************************ GetToken ************************
 
 -->
-        <Node Name="GetToken" Bounds="314,479" Id="NuXefDBS63sOeLsHyJVGF1">
+        <Node Name="GetToken" Bounds="110,376" Id="NuXefDBS63sOeLsHyJVGF1">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
@@ -752,7 +752,7 @@
     ************************ PlaybackControl ************************
 
 -->
-        <Node Name="PlaybackControl" Bounds="316,328" Id="QmIJerBDRi0OCMU6PjleNX">
+        <Node Name="PlaybackControl" Bounds="316,253" Id="QmIJerBDRi0OCMU6PjleNX">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
@@ -931,7 +931,7 @@
     ************************ IPlayerClient ************************
 
 -->
-        <Node Name="IPlayerClient" Bounds="316,381" Id="NbsX6lazgJwLkLv8Tl8bNY">
+        <Node Name="IPlayerClient" Bounds="317,677" Id="NbsX6lazgJwLkLv8Tl8bNY">
           <p:NodeReference>
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
@@ -1301,6 +1301,541 @@
               <Fragment Id="MrTAxu9oAqENRDscmdt64Y" Patch="Dpt7JOWrWDuNDpoVLrcLzu" />
               <Fragment Id="KYB84XRubIqN2zCG5czDcb" Patch="RILi3TyHozLPWHmzBr1X2d" />
             </ProcessDefinition>
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ CurrentlyPlaying ************************
+
+-->
+        <Node Name="CurrentlyPlaying" Bounds="316,330" Id="QXByhw896NpPyVEAuGS4Rk">
+          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+            <Choice Kind="ContainerDefinition" Name="Process" />
+          </p:NodeReference>
+          <Patch Id="JNjVSErp9rBPwDScRECAlA">
+            <Canvas Id="MbyFu9yx73SQZURJMinXtt" CanvasType="Group">
+              <Node Bounds="332,258,62,26" Id="KdbkkZ2YiudPKSz9XJJE7n">
+                <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.SpotifyClient" LastSymbolSource="SpotifyAPI.Web.dll">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="Player" />
+                  <CategoryReference Kind="AssemblyCategory" Name="SpotifyClient" NeedsToBeDirectParent="true" />
+                </p:NodeReference>
+                <Pin Id="QkSR1MAwCWpPaDxEKt4S1k" Name="Input" Kind="StateInputPin" />
+                <Pin Id="IVeDCPeeFyBN8hAiXbmKh6" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="GhJj0mt0J2iPKm2hIQXu4o" Name="Player" Kind="OutputPin" />
+              </Node>
+              <ControlPoint Id="Pv6TLQ3VwOjPZD0JtCgWCd" Bounds="334,239" />
+              <Node Bounds="428,302,130,86" Id="NxpweqC9pdtQUlQgJYDolE">
+                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+                  <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                  <Choice Kind="ProcessStatefulRegion" Name="Cache" />
+                  <FullNameCategoryReference ID="Primitive" />
+                </p:NodeReference>
+                <Pin Id="FUQDql20qSdMUjhTEpJbqc" Name="Force" Kind="InputPin" />
+                <Pin Id="BgdWmLE36oKQcmgtMCMuZt" Name="Dispose Cached Outputs" Kind="InputPin" />
+                <Pin Id="GgvUyhMzmEpPA9n5Tz4wsl" Name="Has Changed" Kind="OutputPin" />
+                <Patch Id="FWfM1gSAZvkLThWRG3ETIC" ManuallySortedPins="true">
+                  <Patch Id="TVbM264Z8ihQOf2O2NvqRT" Name="Create" ManuallySortedPins="true" />
+                  <Patch Id="Raw64Dhk606QMDnlCH09kx" Name="Then" ManuallySortedPins="true" />
+                  <Node Bounds="440,337,106,19" Id="Q5Ut9U7jg5nLFVZDlyTbei">
+                    <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.IPlayerClient" LastSymbolSource="VL.Spotify.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="OperationCallFlag" Name="GetCurrentlyPlaying" />
+                      <CategoryReference Kind="MutableInterfaceType" Name="IPlayerClient" NeedsToBeDirectParent="true" />
+                    </p:NodeReference>
+                    <Pin Id="SVj5e7qEffkLJyQFlVJiOX" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="SZB8uvJhYbuNVhX12mzElo" Name="Types" Kind="InputPin" />
+                    <Pin Id="Hk7AN3rdVXzLg3FUWr4CBF" Name="Output" Kind="StateOutputPin" />
+                    <Pin Id="TPMWC8oelItOgIa1rsod9B" Name="Result" Kind="OutputPin" />
+                  </Node>
+                </Patch>
+                <ControlPoint Id="PM8kxkZ0qUbMkHbYZyRVF8" Bounds="543,382" Alignment="Bottom" />
+              </Node>
+              <ControlPoint Id="UnVmnr1b3SwMIKMpDOi6QO" Bounds="543,280" />
+              <ControlPoint Id="CtU3afMWqKFNcWYU2hyFaJ" Bounds="430,280" />
+              <ControlPoint Id="A1I9guQKJ0eO5pBFUOXlMO" Bounds="543,411" />
+            </Canvas>
+            <ProcessDefinition Id="PZ8dsF9aeUXLonE4Qs8hvH">
+              <Fragment Id="NUrnts8siM4NZiiy5TmKOQ" Patch="J5vRU6Iuny9NS7lUUYMXAD" Enabled="true" />
+              <Fragment Id="L4C8ljMS9Z0O7fiKxPDkCu" Patch="As5V2pa5TJWLiJjZcUAf68" Enabled="true" />
+            </ProcessDefinition>
+            <Link Id="Omk2kqnl9uiN6udGeZN1ZI" Ids="GhJj0mt0J2iPKm2hIQXu4o,SVj5e7qEffkLJyQFlVJiOX" />
+            <Link Id="B54JJDZ7SL5NcztNbPTusy" Ids="Pv6TLQ3VwOjPZD0JtCgWCd,QkSR1MAwCWpPaDxEKt4S1k" />
+            <Link Id="VgNVTyzniDML5dsrHtrCoo" Ids="MWAEbs5dXQnOVC7V4N4bIi,Pv6TLQ3VwOjPZD0JtCgWCd" IsHidden="true" />
+            <Link Id="IvUaMASf1VxNZtyZtCt1vL" Ids="UnVmnr1b3SwMIKMpDOi6QO,SZB8uvJhYbuNVhX12mzElo" />
+            <Link Id="QXc2kLSIuZCL80bdJA2YSI" Ids="FgJPgVV7M4oOYaela95CWN,UnVmnr1b3SwMIKMpDOi6QO" IsHidden="true" />
+            <Link Id="U1SgYYbhkxyMOJlgFJiKI3" Ids="CtU3afMWqKFNcWYU2hyFaJ,FUQDql20qSdMUjhTEpJbqc" />
+            <Link Id="AKoLiDfx7BTLKcD5P4OLpD" Ids="PTvPcSiSftUNcYyNmuk3aY,CtU3afMWqKFNcWYU2hyFaJ" IsHidden="true" />
+            <Patch Id="J5vRU6Iuny9NS7lUUYMXAD" Name="Create" />
+            <Patch Id="As5V2pa5TJWLiJjZcUAf68" Name="Update" ParticipatingElements="KdbkkZ2YiudPKSz9XJJE7n" ManuallySortedPins="true">
+              <Pin Id="MWAEbs5dXQnOVC7V4N4bIi" Name="Input" Kind="InputPin" Bounds="354,225" />
+              <Pin Id="FgJPgVV7M4oOYaela95CWN" Name="Types" Kind="InputPin" Bounds="544,273" />
+              <Pin Id="PTvPcSiSftUNcYyNmuk3aY" Name="Update" Kind="InputPin" Bounds="457,257" />
+              <Pin Id="PTJTP5RQO3UNibL6l7uFLq" Name="Output" Kind="OutputPin" Bounds="543,411" />
+            </Patch>
+            <Link Id="PWL2dfbDFZuLi2s9lyrN6o" Ids="TPMWC8oelItOgIa1rsod9B,PM8kxkZ0qUbMkHbYZyRVF8" />
+            <Link Id="H5Zvvcty0B0NPFelc1VXdD" Ids="PM8kxkZ0qUbMkHbYZyRVF8,A1I9guQKJ0eO5pBFUOXlMO" />
+            <Link Id="B5cQxHVAOigQC00qfPnrdi" Ids="A1I9guQKJ0eO5pBFUOXlMO,PTJTP5RQO3UNibL6l7uFLq" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ CurrentlyPlaying ************************
+
+-->
+        <Node Name="CurrentlyPlaying" Aspects="Advanced" Bounds="317,524" Id="ALYkF1EB3zyQBdZU4ifwMk">
+          <p:NodeReference>
+            <Choice Kind="ForwardDefinition" Name="Forward" />
+            <FullNameCategoryReference ID="Primitive" />
+          </p:NodeReference>
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+            <Choice Kind="TypeFlag" Name="CurrentlyPlaying" />
+          </p:TypeAnnotation>
+          <Patch Id="DUpGhqK4NVbPGDef0ifniI">
+            <Canvas Id="BiQstSKoTXKQBtoZIkq6he" CanvasType="Group" />
+            <ProcessDefinition Id="RdsFpDTvi4ZN5cDxeS2NHD" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ Context ************************
+
+-->
+        <Node Name="Context" Aspects="Advanced" Bounds="317,575" Id="G41DVksth6mLLihIAMwSPQ">
+          <p:NodeReference>
+            <Choice Kind="ForwardDefinition" Name="Forward" />
+            <FullNameCategoryReference ID="Primitive" />
+          </p:NodeReference>
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+            <Choice Kind="TypeFlag" Name="Context" />
+          </p:TypeAnnotation>
+          <Patch Id="CJLv1bYbTcuOF7NhF7Elzc">
+            <Canvas Id="Bxs2s1pbnz0O0ZJFLZR7Vr" CanvasType="Group" />
+            <ProcessDefinition Id="DIfLL7VA9ZTNXKaaLRD9Y2" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ IPlayableItem ************************
+
+-->
+        <Node Name="IPlayableItem" Aspects="Advanced" Bounds="317,626" Id="Q4aFgFD5GgqNmTaJV4edRb">
+          <p:NodeReference>
+            <Choice Kind="ForwardDefinition" Name="Forward" />
+            <FullNameCategoryReference ID="Primitive" />
+          </p:NodeReference>
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+            <Choice Kind="TypeFlag" Name="IPlayableItem" />
+          </p:TypeAnnotation>
+          <Patch Id="FQJmvaK8AMfLFfCWrRyUdD">
+            <Canvas Id="Duqbp50bVH1OohiigH13Fe" CanvasType="Group" />
+            <ProcessDefinition Id="MEvSinf2CBoPSVdgUl3SyW" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ FullAlbum ************************
+
+-->
+        <Node Name="FullAlbum" Bounds="317,728" Id="Nq6HD2JC3F0OMUIVNZEy8v">
+          <p:NodeReference>
+            <Choice Kind="ForwardDefinition" Name="Forward" />
+            <FullNameCategoryReference ID="Primitive" />
+          </p:NodeReference>
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+            <Choice Kind="TypeFlag" Name="FullAlbum" />
+          </p:TypeAnnotation>
+          <Patch Id="QCJoSjBG37gPFy27FFTRL3">
+            <Canvas Id="If5BXQoUkvxPs0u7Nxp2Ge" CanvasType="Group" />
+            <ProcessDefinition Id="Ec29qVwDX4WLPKjGHM64zH" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ FullArtist ************************
+
+-->
+        <Node Name="FullArtist" Bounds="317,779" Id="UdExwOwqWSoO351Duc9rUH">
+          <p:NodeReference>
+            <Choice Kind="ForwardDefinition" Name="Forward" />
+            <FullNameCategoryReference ID="Primitive" />
+          </p:NodeReference>
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+            <Choice Kind="TypeFlag" Name="FullArtist" />
+          </p:TypeAnnotation>
+          <Patch Id="IkiCcIFvftNMFltEroS6ZN">
+            <Canvas Id="CtUu1nRsHlfL6IPoD2uOLY" CanvasType="Group" />
+            <ProcessDefinition Id="LTcpTzeZaHuLRVkQ0erMmj" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ FullTrack ************************
+
+-->
+        <Node Name="FullTrack" Bounds="317,830" Id="QAv6YIWvOdnNBDSlIY9AWV">
+          <p:NodeReference>
+            <Choice Kind="ForwardDefinition" Name="Forward" />
+            <FullNameCategoryReference ID="Primitive" />
+          </p:NodeReference>
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+            <Choice Kind="TypeFlag" Name="FullTrack" />
+          </p:TypeAnnotation>
+          <Patch Id="QBSACxq8hjuPuSB4KpAuNy">
+            <Canvas Id="UMtrs6kvgb5PcTEbsKLxia" CanvasType="Group" />
+            <ProcessDefinition Id="IhKLpKyNcCqPNDlA0pHB7X" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ SimpleAlbum ************************
+
+-->
+        <Node Name="SimpleAlbum" Bounds="317,881" Id="UQAMN92Ck49MxyWQTPSrkm">
+          <p:NodeReference>
+            <Choice Kind="ForwardDefinition" Name="Forward" />
+            <FullNameCategoryReference ID="Primitive" />
+          </p:NodeReference>
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+            <Choice Kind="TypeFlag" Name="SimpleAlbum" />
+          </p:TypeAnnotation>
+          <Patch Id="EdxwFITG8pqMP2nEA4UswR">
+            <Canvas Id="Suv8uBWOo3MLdzJclYlGZK" CanvasType="Group" />
+            <ProcessDefinition Id="HOpa1ceorqRLav0TV4r1ot" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ SimpleArtist ************************
+
+-->
+        <Node Name="SimpleArtist" Bounds="317,932" Id="VY8zkPdh4lDM372MYybIjh">
+          <p:NodeReference>
+            <Choice Kind="ForwardDefinition" Name="Forward" />
+            <FullNameCategoryReference ID="Primitive" />
+          </p:NodeReference>
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+            <Choice Kind="TypeFlag" Name="SimpleArtist" />
+          </p:TypeAnnotation>
+          <Patch Id="QGjpHbYzp9VOE8xj9sOado">
+            <Canvas Id="UIkIgXgNqL5O5Cg3Kd8UiG" CanvasType="Group" />
+            <ProcessDefinition Id="GOhF2qrGh7yMpuwPojcyzk" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ SimpleTrack ************************
+
+-->
+        <Node Name="SimpleTrack" Bounds="317,983" Id="MTLVxm6sGUSOVJcJAlXhK4">
+          <p:NodeReference>
+            <Choice Kind="ForwardDefinition" Name="Forward" />
+            <FullNameCategoryReference ID="Primitive" />
+          </p:NodeReference>
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+            <Choice Kind="TypeFlag" Name="SimpleTrack" />
+          </p:TypeAnnotation>
+          <Patch Id="BURw1rwbKEjMRcSJ0fsxkc">
+            <Canvas Id="LtRxIozeoYaNLumDUKy4DG" CanvasType="Group" />
+            <ProcessDefinition Id="Mdk8FqhgVw8M2CHoscuV9q" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ CurrentlyPlayingInfo ************************
+
+-->
+        <Node Name="CurrentlyPlayingInfo" Bounds="315,383" Id="G0nPc8t5RYmOAjNiVpDRoe">
+          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+            <Choice Kind="ContainerDefinition" Name="Process" />
+          </p:NodeReference>
+          <Patch Id="NNMo4DQOG1qMWr8exuwEji">
+            <Canvas Id="K8cK0q5eyEhNw9iqzh6Tfp" CanvasType="Group">
+              <ControlPoint Id="BoRvb5N53RfM0nQiYPCNhh" Bounds="299,113" />
+              <ControlPoint Id="InuDfvWORjyNZnyEM0uJfw" Bounds="369,752" />
+              <ControlPoint Id="EozAeZZRj3IMrMRktMkcK0" Bounds="512,752" />
+              <ControlPoint Id="J22CPwKJTs1LXEu1ocBrxQ" Bounds="635,752" />
+              <ControlPoint Id="PXAFIciyaRqP736NVb9AIN" Bounds="789,752" />
+              <ControlPoint Id="Ly4kJhuUbB7NXx2daV8LP8" Bounds="886,752" />
+              <ControlPoint Id="PqevzRNWVLIOuPdcIjd8zF" Bounds="1074,752" />
+              <Node Bounds="253,213,850,420" Id="UuE0c3dsKbFPse94w1m8z7">
+                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+                  <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                  <Choice Kind="ApplicationStatefulRegion" Name="If" />
+                  <FullNameCategoryReference ID="Primitive" />
+                </p:NodeReference>
+                <Pin Id="EnYodNQvSYAMrYYqB7tbf0" Name="Condition" Kind="InputPin" />
+                <Patch Id="RDEtLDQMy5tPyHE50kdKLv" ManuallySortedPins="true">
+                  <Patch Id="FGeEMArshF7OR7qld1ZnJv" Name="Create" ManuallySortedPins="true" />
+                  <Patch Id="UP4QDRpcqaIMU6tJPzTdPQ" Name="Then" ManuallySortedPins="true" />
+                  <Node Bounds="285,214,818,418" Id="M2tPvHWSkCOPtV1zxGI28y">
+                    <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+                      <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                      <Choice Kind="ProcessStatefulRegion" Name="Cache" />
+                      <FullNameCategoryReference ID="Primitive" />
+                    </p:NodeReference>
+                    <Pin Id="JbbCBephqfcOgn76yDxzAw" Name="Force" Kind="InputPin" DefaultValue="False" />
+                    <Pin Id="APnUZnvtZ95MJbyK8T3BOU" Name="Dispose Cached Outputs" Kind="InputPin" />
+                    <Pin Id="Ioz9VRU9ZtGLk9dKUlh1KQ" Name="Has Changed" Kind="OutputPin" />
+                    <Patch Id="S2dOtiyTX7WMlDIDbWNsdh" ManuallySortedPins="true">
+                      <Patch Id="LX8txiQQ57XOoZTNyYxpuJ" Name="Create" ManuallySortedPins="true" />
+                      <Patch Id="UkTY2BNdcXBLutw0AB0jZW" Name="Then" ManuallySortedPins="true" />
+                      <Node Bounds="297,321,75,26" Id="LXPRKJzxWioLDGWp0BGpan">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.CurrentlyPlaying" LastSymbolSource="VL.Spotify.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="ClassType" Name="CurrentlyPlaying" />
+                          <Choice Kind="OperationCallFlag" Name="IsPlaying" />
+                        </p:NodeReference>
+                        <Pin Id="VEeTwkURxTuMnUZyhMMNC9" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="TvSmiEPLEr1NBAQW12PTPA" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="TwPGC9WoK2LPlUiy40h7os" Name="Is Playing" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="397,321,75,26" Id="UQqJHeJzkmJMV34brwelIp">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.CurrentlyPlaying" LastSymbolSource="VL.Spotify.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="ClassType" Name="CurrentlyPlaying" />
+                          <Choice Kind="OperationCallFlag" Name="Item" />
+                        </p:NodeReference>
+                        <Pin Id="PThAv7w9DDPPj3dUJwxQif" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="Ao8R9I9rRkRN60wDFIzdOF" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="E7u82r3QY1FNO4AFBhZQCT" Name="Item" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="467,369,48,19" Id="QtkOZVcbcFWM16p8IF6qM2">
+                        <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <Choice Kind="OperationCallFlag" Name="CastAs" />
+                        </p:NodeReference>
+                        <Pin Id="Cu2zNGZX0GzNao9jFtvYVW" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="ETlZYozTElqLwfLQtkKtJQ" Name="Default" Kind="InputPin" />
+                        <Pin Id="KG4QGU0CinbLVldvwBVVrx" Name="Result" Kind="OutputPin" />
+                        <Pin Id="LFX28YhHR2aOUAaLYfpVuW" Name="Success" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="467,422,42,26" Id="Sshh1JY3nFMLTISalVkIY1">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.FullTrack" LastSymbolSource="VL.Spotify.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <Choice Kind="OperationCallFlag" Name="Name" />
+                          <CategoryReference Kind="ClassType" Name="FullTrack" NeedsToBeDirectParent="true" />
+                        </p:NodeReference>
+                        <Pin Id="QkGf1zZ9bX7MSm8emJ9kVy" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="Sw0sgule6sVLlYugAoEMOm" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="QJTOypchc9BM8OL1hnerrx" Name="Name" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="563,422,46,26" Id="CiOKDxCcAq1PB8me1VZ92T">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.FullTrack" LastSymbolSource="VL.Spotify.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <Choice Kind="OperationCallFlag" Name="Artists" />
+                          <CategoryReference Kind="ClassType" Name="FullTrack" NeedsToBeDirectParent="true" />
+                        </p:NodeReference>
+                        <Pin Id="DI0FX1ENUvjNtlSi3JnG3A" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="EFIkW82SoYFMVVuCDr1tJJ" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="QzOnTnm0nnTM15FNCTOhmt" Name="Artists" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="595,465,86,76" Id="AYkaud38phuO4iRv7AZYYJ">
+                        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+                          <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                          <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
+                          <CategoryReference Kind="Category" Name="Primitive" />
+                        </p:NodeReference>
+                        <Pin Id="Kkabf75Zht8L8l34bEEV0g" Name="Break" Kind="OutputPin" />
+                        <Patch Id="Dgmu8QY2PFCNAeeIoN9K87" ManuallySortedPins="true">
+                          <Patch Id="VjkMSOWcDpGNSRXfbvGRNq" Name="Create" ManuallySortedPins="true" />
+                          <Patch Id="ORFaVyxfRo3LlbbHE6WG8I" Name="Update" ManuallySortedPins="true" />
+                          <Patch Id="VOo4SbpSLhAMttEw4tISVY" Name="Dispose" ManuallySortedPins="true" />
+                          <Node Bounds="607,490,60,26" Id="SJS7HeMBumjQWYGb4J8MYI">
+                            <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleArtist" LastSymbolSource="VL.Spotify.vl">
+                              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                              <CategoryReference Kind="ClassType" Name="SimpleArtist" />
+                              <Choice Kind="OperationCallFlag" Name="Name" />
+                            </p:NodeReference>
+                            <Pin Id="B1XWwEG7cT3PjiyV983MYN" Name="Input" Kind="StateInputPin" />
+                            <Pin Id="LNf4IifeFKJQXxwXP1YB82" Name="Output" Kind="StateOutputPin" />
+                            <Pin Id="MnyuqocNLiNO6WJifKfLzZ" Name="Name" Kind="OutputPin" />
+                          </Node>
+                        </Patch>
+                        <ControlPoint Id="BbrduB9ImmTNOl2nKgUJUW" Bounds="609,471" Alignment="Top" />
+                        <ControlPoint Id="P8GjHwsJct9Nw6ZQeCi7DX" Bounds="664,534" Alignment="Bottom" />
+                      </Node>
+                      <Node Bounds="633,559,34,19" Id="PtR7s5xO8aKPQFJNhelNqP">
+                        <p:NodeReference LastCategoryFullName="Primitive.String" LastSymbolSource="CoreLibBasics.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <Choice Kind="OperationCallFlag" Name="Join" />
+                          <CategoryReference Kind="StringType" Name="String" NeedsToBeDirectParent="true" />
+                        </p:NodeReference>
+                        <Pin Id="T9qBaoGloOSOHEGYrnBTDJ" Name="Separator" Kind="InputPin" DefaultValue=", " />
+                        <Pin Id="SrS9Uamm3xZOkWZWgJjG5J" Name="Values" Kind="InputPin" />
+                        <Pin Id="OIHHnXyQRtbPU2JEUvQDs9" Name="Output" Kind="StateOutputPin" />
+                      </Node>
+                      <Node Bounds="686,424,49,26" Id="Rt95sfsrjfzPVMC34LFuKE">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.FullTrack" LastSymbolSource="VL.Spotify.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="ClassType" Name="FullTrack" />
+                          <Choice Kind="OperationCallFlag" Name="Album" />
+                        </p:NodeReference>
+                        <Pin Id="RLfOhyvkRNUOQCIKbCxwcJ" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="QQLcSt9BACmP9fESNlHk8D" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="SuKMUnGZXE4PeCQpyJllYn" Name="Album" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="730,471,63,26" Id="B0KS0dGBXuIPqZuNmjI91w">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleAlbum" LastSymbolSource="VL.Spotify.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="ClassType" Name="SimpleAlbum" />
+                          <Choice Kind="OperationCallFlag" Name="Name" />
+                        </p:NodeReference>
+                        <Pin Id="QFXxulzGkFhP5zsiYty7jY" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="RMon19e0r2qOS3KCEJJ1hv" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="LpaolWzMMPsLJK0pq0Gw4Y" Name="Name" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="981,470,63,26" Id="FKQXCEWXWkJN0nvew1oHgc">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleAlbum" LastSymbolSource="VL.Spotify.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="ClassType" Name="SimpleAlbum" />
+                          <Choice Kind="OperationCallFlag" Name="Images" />
+                        </p:NodeReference>
+                        <Pin Id="KnoJAm9PnrqNjfO0TPB0KI" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="U0TZhA54QnEM9LiZm4fBoU" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="NfJ7RvBV2EzLJEdBsmUtap" Name="Images" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="817,471,71,26" Id="SN34CAvqfwNNlqP0kGD1zk">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleAlbum" LastSymbolSource="VL.Spotify.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="ClassType" Name="SimpleAlbum" />
+                          <Choice Kind="OperationCallFlag" Name="ReleaseDate" />
+                        </p:NodeReference>
+                        <Pin Id="RrsJZ0ZZPxrL2pDCcrJGi1" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="BAqac5XdxIpMOHJtumrUW5" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="UDmzAf1g7OBOiDwFG9WQfC" Name="Release Date" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="1027,525,64,86" Id="PDDj4hjb8jnMYVLaybcSBM">
+                        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+                          <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                          <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
+                          <CategoryReference Kind="Category" Name="Primitive" />
+                        </p:NodeReference>
+                        <Pin Id="FLha5vmWW5ROTovcYiDhjM" Name="Break" Kind="OutputPin" />
+                        <Patch Id="FFaPehzjVUdM4PsBPaF3OZ" ManuallySortedPins="true">
+                          <Patch Id="AESY4kFMhaKLzfv2eo0VNi" Name="Create" ManuallySortedPins="true" />
+                          <Patch Id="QL6O3LcmQ6FL1XlYd1kok5" Name="Update" ManuallySortedPins="true" />
+                          <Patch Id="TErTtJdWUyYLtSRN2ziCb4" Name="Dispose" ManuallySortedPins="true" />
+                          <Node Bounds="1039,557,38,26" Id="Lpq5afBnco0MgfEPTkrd79">
+                            <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.Image" LastSymbolSource="SpotifyAPI.Web.dll">
+                              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                              <CategoryReference Kind="AssemblyCategory" Name="Image" />
+                              <Choice Kind="OperationCallFlag" Name="Url" />
+                            </p:NodeReference>
+                            <Pin Id="QQ22uM0sXEYOMlQcBaNdrj" Name="Input" Kind="StateInputPin" />
+                            <Pin Id="CgSPliLXMfXLSVo7KSG1C0" Name="Output" Kind="StateOutputPin" />
+                            <Pin Id="TX2U1zZp9E6QSsJpMGTUB0" Name="Url" Kind="OutputPin" />
+                          </Node>
+                        </Patch>
+                        <ControlPoint Id="B83sg8v7qc8OMoCwDSEx1y" Bounds="1041,531" Alignment="Top" />
+                        <ControlPoint Id="GjcFxnPObi7QBsOH0UTCyU" Bounds="1074,605" Alignment="Bottom" />
+                      </Node>
+                    </Patch>
+                    <ControlPoint Id="DUko5cyUA1wO05oGXMdYtl" Bounds="299,221" Alignment="Top" />
+                    <ControlPoint Id="Vuj3SSVCsjeLtVArZmIHw1" Bounds="369,626" Alignment="Bottom" />
+                    <ControlPoint Id="MgSp3fYqK8FPEUo8cr4EIh" Bounds="512,626" Alignment="Bottom" />
+                    <ControlPoint Id="HKvKdfuJPx8NYUpZKcXUPP" Bounds="635,626" Alignment="Bottom" />
+                    <ControlPoint Id="PPe5FeDIjskMmTduyI3Tiu" Bounds="789,626" Alignment="Bottom" />
+                    <ControlPoint Id="C3RselNesHhPbXppSoFSVA" Bounds="886,626" Alignment="Bottom" />
+                    <ControlPoint Id="G38Gcaxh2fpMNNLAujhj47" Bounds="1074,626" Alignment="Bottom" />
+                  </Node>
+                </Patch>
+                <ControlPoint Id="OztxFpcjBpHNCtkH0DwuuA" Bounds="369,646" Alignment="Bottom" />
+                <ControlPoint Id="FP11B7IxK0pPvZg8s8HqhD" Bounds="369,200" Alignment="Top" />
+                <ControlPoint Id="HV177nfSic3OaoN5qvZ48f" Bounds="512,646" Alignment="Bottom" />
+                <ControlPoint Id="Eefva8Mgg34MtQnmRkvyjQ" Bounds="512,200" Alignment="Top" />
+                <ControlPoint Id="SAjvwHpoybJPqMwmatcnBp" Bounds="635,646" Alignment="Bottom" />
+                <ControlPoint Id="Cb9QsOXlCwfN7dDWKJ4nPE" Bounds="635,200" Alignment="Top" />
+                <ControlPoint Id="A5mp5tGubTuNYCCQLGvBa4" Bounds="789,646" Alignment="Bottom" />
+                <ControlPoint Id="UHKiLU2HTW7Nx1KXpj09Ok" Bounds="789,200" Alignment="Top" />
+                <ControlPoint Id="DwDD6JqJ8tzQFSeO4X3Q6h" Bounds="886,646" Alignment="Bottom" />
+                <ControlPoint Id="G0ihZF8RGP3LBUEn2MSyv2" Bounds="886,200" Alignment="Top" />
+                <ControlPoint Id="PfRIWEJPyOFLaz75xT5UQg" Bounds="1074,646" Alignment="Bottom" />
+                <ControlPoint Id="LMdXP2SRbHKLF6Ve7CEzbJ" Bounds="1074,200" Alignment="Top" />
+              </Node>
+              <Node Bounds="241,152,65,19" Id="IeqI6v64BPoMx9ju4kkgwP">
+                <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="IsAssigned" />
+                </p:NodeReference>
+                <Pin Id="PfkdGbSq99kN7BrVMoW2n8" Name="X" Kind="InputPin" />
+                <Pin Id="SGetivVgthfLpXS21qvT0P" Name="Result" Kind="OutputPin" />
+                <Pin Id="GSEUZ5DN8SPLoEUXQTMJbQ" Name="Not Assigned" Kind="OutputPin" />
+              </Node>
+            </Canvas>
+            <Patch Id="RXTlp9XSs8JL4juheg1GrK" Name="Create" />
+            <Patch Id="UvZtxILdzMIMKFQ5mG6a5B" Name="Update">
+              <Pin Id="SngICNs1Jl4OtBfEoiPkWL" Name="Input" Kind="InputPin">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="CurrentlyPlaying" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="ULQMr9JWLMsO8ETk3fEGBK" Name="Is Playing" Kind="OutputPin" Bounds="688,500" />
+              <Pin Id="V4kp19MoAwIP04BoXKV1e3" Name="Name" Kind="OutputPin" Bounds="825,553" />
+              <Pin Id="RTbN5SAjOCtPqXmeY7ArUY" Name="Artists" Kind="OutputPin" Bounds="954,695" />
+              <Pin Id="EjcXp8fWgeBMC1EsUvRfsr" Name="Album" Kind="OutputPin" Bounds="1146,631" />
+              <Pin Id="JVtw2X0E0XmMhCR1rrwXId" Name="Release Date" Kind="OutputPin" Bounds="1267,685" />
+              <Pin Id="B12opDDO4sZN9ZBTr0jTJb" Name="Images URL" Kind="OutputPin" Bounds="1347,741" />
+            </Patch>
+            <!--
+
+    ************************  ************************
+
+-->
+            <ProcessDefinition Id="MNoccI8EZuiPXXH27mBcsX">
+              <Fragment Id="BOMhyAVYjZjMWPcIaNASJ0" Patch="RXTlp9XSs8JL4juheg1GrK" Enabled="true" />
+              <Fragment Id="NFBmFmWl9O8NYT9BO7LXyq" Patch="UvZtxILdzMIMKFQ5mG6a5B" Enabled="true" />
+            </ProcessDefinition>
+            <Link Id="JH8kZmmPGoYOeSbAn7jfU5" Ids="SngICNs1Jl4OtBfEoiPkWL,BoRvb5N53RfM0nQiYPCNhh" IsHidden="true" />
+            <Link Id="RYK11fxWebDOUxen4X3vRC" Ids="InuDfvWORjyNZnyEM0uJfw,ULQMr9JWLMsO8ETk3fEGBK" IsHidden="true" />
+            <Link Id="N6BFqjihxkROrZjnMCVSTV" Ids="EozAeZZRj3IMrMRktMkcK0,V4kp19MoAwIP04BoXKV1e3" IsHidden="true" />
+            <Link Id="TCH3bXkqMPsNIIWwLyEE3V" Ids="J22CPwKJTs1LXEu1ocBrxQ,RTbN5SAjOCtPqXmeY7ArUY" IsHidden="true" />
+            <Link Id="IXoiTgzsAoEPi5bM1gOLA4" Ids="PXAFIciyaRqP736NVb9AIN,EjcXp8fWgeBMC1EsUvRfsr" IsHidden="true" />
+            <Link Id="FcPik9lR9RNMJFxjefuw71" Ids="Ly4kJhuUbB7NXx2daV8LP8,JVtw2X0E0XmMhCR1rrwXId" IsHidden="true" />
+            <Link Id="VUlDacOmDdBNlRzmKWz1bf" Ids="PqevzRNWVLIOuPdcIjd8zF,B12opDDO4sZN9ZBTr0jTJb" IsHidden="true" />
+            <Link Id="HFYVbHdip34NkDIdeyQeiw" Ids="BoRvb5N53RfM0nQiYPCNhh,DUko5cyUA1wO05oGXMdYtl" />
+            <Link Id="J6GAYDkHd6cOfejWpQfypD" Ids="E7u82r3QY1FNO4AFBhZQCT,Cu2zNGZX0GzNao9jFtvYVW" />
+            <Link Id="GfISPLK9dDBOlDALvczMEk" Ids="KG4QGU0CinbLVldvwBVVrx,QkGf1zZ9bX7MSm8emJ9kVy" />
+            <Link Id="MFQpltIdACTMFB5aGeLihb" Ids="KG4QGU0CinbLVldvwBVVrx,DI0FX1ENUvjNtlSi3JnG3A" />
+            <Link Id="KwLErKMkVcNPOwjW3Qdwni" Ids="QzOnTnm0nnTM15FNCTOhmt,BbrduB9ImmTNOl2nKgUJUW" />
+            <Link Id="J6mMgqj5GQnLv6laRqc8dV" Ids="BbrduB9ImmTNOl2nKgUJUW,B1XWwEG7cT3PjiyV983MYN" />
+            <Link Id="SV9u74WUSa4NWNy5xJgsa6" Ids="MnyuqocNLiNO6WJifKfLzZ,P8GjHwsJct9Nw6ZQeCi7DX" />
+            <Link Id="CH2AjHEXJ0cLjDYLYBCX37" Ids="P8GjHwsJct9Nw6ZQeCi7DX,SrS9Uamm3xZOkWZWgJjG5J" />
+            <Link Id="Gazr36IfeupOxZ90Sw6qQJ" Ids="KG4QGU0CinbLVldvwBVVrx,RLfOhyvkRNUOQCIKbCxwcJ" />
+            <Link Id="R5RhLZRE4WDLYbYNvM2MSp" Ids="SuKMUnGZXE4PeCQpyJllYn,QFXxulzGkFhP5zsiYty7jY" />
+            <Link Id="IE5U3WYPGyELrU6TV0P3Av" Ids="SuKMUnGZXE4PeCQpyJllYn,KnoJAm9PnrqNjfO0TPB0KI" />
+            <Link Id="Ren4Uxg32BDN2LFGqFH0hJ" Ids="SuKMUnGZXE4PeCQpyJllYn,RrsJZ0ZZPxrL2pDCcrJGi1" />
+            <Link Id="KFYhsWMDtuCNzZYNvNa0Dy" Ids="NfJ7RvBV2EzLJEdBsmUtap,B83sg8v7qc8OMoCwDSEx1y" />
+            <Link Id="Dufw6vrPcpKL3Bu8uIybKs" Ids="B83sg8v7qc8OMoCwDSEx1y,QQ22uM0sXEYOMlQcBaNdrj" />
+            <Link Id="CORRK8ubzgwNTaOWvL03H8" Ids="TX2U1zZp9E6QSsJpMGTUB0,GjcFxnPObi7QBsOH0UTCyU" />
+            <Link Id="Kyyp4Q8YceTOgmCUWAtiie" Ids="DUko5cyUA1wO05oGXMdYtl,VEeTwkURxTuMnUZyhMMNC9" />
+            <Link Id="UWytf3GBW2hNWCISDIDr1H" Ids="DUko5cyUA1wO05oGXMdYtl,PThAv7w9DDPPj3dUJwxQif" />
+            <Link Id="BEJBTMdbZ2fP5Td5Qse2dD" Ids="TwPGC9WoK2LPlUiy40h7os,Vuj3SSVCsjeLtVArZmIHw1" />
+            <Link Id="GYMvuMlkoczNFCp2NxWifH" Ids="QJTOypchc9BM8OL1hnerrx,MgSp3fYqK8FPEUo8cr4EIh" />
+            <Link Id="PG3cxcjurM7LK0h9F2IHCD" Ids="OIHHnXyQRtbPU2JEUvQDs9,HKvKdfuJPx8NYUpZKcXUPP" />
+            <Link Id="K3HczSTMZzzMhCyxHZmUhb" Ids="LpaolWzMMPsLJK0pq0Gw4Y,PPe5FeDIjskMmTduyI3Tiu" />
+            <Link Id="HWMOSn1FjQWMrx5ldoVwBr" Ids="UDmzAf1g7OBOiDwFG9WQfC,C3RselNesHhPbXppSoFSVA" />
+            <Link Id="DHnEfNnpqeWNjjN3979fc0" Ids="GjcFxnPObi7QBsOH0UTCyU,G38Gcaxh2fpMNNLAujhj47" />
+            <Link Id="I0Zigt2gkQVNA2TMqkFx64" Ids="BoRvb5N53RfM0nQiYPCNhh,PfkdGbSq99kN7BrVMoW2n8" />
+            <Link Id="VOIH7Jb1uq5LWC3VThZqIg" Ids="SGetivVgthfLpXS21qvT0P,EnYodNQvSYAMrYYqB7tbf0" />
+            <Link Id="RkWOdlOYn5iLVCcpKA4OIG" Ids="FP11B7IxK0pPvZg8s8HqhD,OztxFpcjBpHNCtkH0DwuuA" IsFeedback="true" />
+            <Link Id="HtIRbj0LTydOWJ58jc5aIq" Ids="Vuj3SSVCsjeLtVArZmIHw1,OztxFpcjBpHNCtkH0DwuuA" />
+            <Link Id="P1Il8hYbD2jQFkCo9yl86U" Ids="OztxFpcjBpHNCtkH0DwuuA,InuDfvWORjyNZnyEM0uJfw" />
+            <Link Id="BOLxr2f9iNTLjgvxwstS8d" Ids="Eefva8Mgg34MtQnmRkvyjQ,HV177nfSic3OaoN5qvZ48f" IsFeedback="true" />
+            <Link Id="LTdqSKT1lk6NwhcGwHso6Q" Ids="MgSp3fYqK8FPEUo8cr4EIh,HV177nfSic3OaoN5qvZ48f" />
+            <Link Id="Ti6bdaejt7DNwzUOeQAfJp" Ids="HV177nfSic3OaoN5qvZ48f,EozAeZZRj3IMrMRktMkcK0" />
+            <Link Id="QGSIxBLpk6qPukPlJEFOl9" Ids="Cb9QsOXlCwfN7dDWKJ4nPE,SAjvwHpoybJPqMwmatcnBp" IsFeedback="true" />
+            <Link Id="SAh8A2U31fjMwzpcFPSUHu" Ids="HKvKdfuJPx8NYUpZKcXUPP,SAjvwHpoybJPqMwmatcnBp" />
+            <Link Id="K60C9ExfDipPyyLDNiygTY" Ids="SAjvwHpoybJPqMwmatcnBp,J22CPwKJTs1LXEu1ocBrxQ" />
+            <Link Id="GRkfQgWK0UXMpTX3rVRZYw" Ids="UHKiLU2HTW7Nx1KXpj09Ok,A5mp5tGubTuNYCCQLGvBa4" IsFeedback="true" />
+            <Link Id="KeQ8yPHUzMmLhT2ShrSBfP" Ids="PPe5FeDIjskMmTduyI3Tiu,A5mp5tGubTuNYCCQLGvBa4" />
+            <Link Id="FDkBARtw8nxMYLhNhf1xbo" Ids="A5mp5tGubTuNYCCQLGvBa4,PXAFIciyaRqP736NVb9AIN" />
+            <Link Id="GmCL8TGQEA0PT1MvK1JPx0" Ids="G0ihZF8RGP3LBUEn2MSyv2,DwDD6JqJ8tzQFSeO4X3Q6h" IsFeedback="true" />
+            <Link Id="NSwLAiZlBv0OEhRWov3pzz" Ids="C3RselNesHhPbXppSoFSVA,DwDD6JqJ8tzQFSeO4X3Q6h" />
+            <Link Id="OjciKjztxv0PtHVEyITTze" Ids="DwDD6JqJ8tzQFSeO4X3Q6h,Ly4kJhuUbB7NXx2daV8LP8" />
+            <Link Id="DyniTTUJg3jQG1EY56XgIn" Ids="LMdXP2SRbHKLF6Ve7CEzbJ,PfRIWEJPyOFLaz75xT5UQg" IsFeedback="true" />
+            <Link Id="BgSw4ZwNgibNJSqZxCCugT" Ids="G38Gcaxh2fpMNNLAujhj47,PfRIWEJPyOFLaz75xT5UQg" />
+            <Link Id="Dr3p4kzAQ9KN7VwC00rsp8" Ids="PfRIWEJPyOFLaz75xT5UQg,PqevzRNWVLIOuPdcIjd8zF" />
           </Patch>
         </Node>
       </Canvas>
