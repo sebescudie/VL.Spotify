@@ -912,10 +912,10 @@
             <Link Id="BLipY7O2U0TMAt7iEorv4R" Ids="JBXWWrskKebMj79UjNWJxm,KXS6J8u4bc6PTANBxVvBR0" IsHidden="true" />
             <Link Id="PJDFdoRNWWvM1YTf9aTrZi" Ids="CCnGOVOcUpnNvAsmfVT1tk,SxBicy7wNyKMdDZtZL7z4F" />
             <Patch Id="Vx8kduvKqGILLMDWwIFYSA" Name="Create" />
-            <Patch Id="RNptxpQlryLOo2lkxVhKb6" Name="Update" ParticipatingElements="FBLYXzO0nhJNcdD5iE7776,RWTrU7nmEUGM6AP8Orn8Zl,GJHBglAZ2iYNwKqKAvPvKx">
+            <Patch Id="RNptxpQlryLOo2lkxVhKb6" Name="Update" ParticipatingElements="FBLYXzO0nhJNcdD5iE7776,RWTrU7nmEUGM6AP8Orn8Zl,GJHBglAZ2iYNwKqKAvPvKx" ManuallySortedPins="true">
               <Pin Id="LNpxteK4BWTOLCqpOR7pm7" Name="Input" Kind="InputPin" Bounds="376,318" />
-              <Pin Id="K16IKgW26AxLo1SGT5c9le" Name="Pause Playback" Kind="InputPin" Bounds="461,257" />
               <Pin Id="SXil28vsaPtPk386qhucV4" Name="Skip Previous" Kind="InputPin" Bounds="586,279" />
+              <Pin Id="K16IKgW26AxLo1SGT5c9le" Name="Pause Playback" Kind="InputPin" Bounds="461,257" />
               <Pin Id="E1r27I2ksCaL4xPevJebYc" Name="Resume Playback" Kind="InputPin" Bounds="699,270" />
               <Pin Id="FVvzvOC7kQRPkWXcraMFIh" Name="Skip Next" Kind="InputPin" Bounds="850,278" />
               <Pin Id="JBXWWrskKebMj79UjNWJxm" Name="Volume" Kind="InputPin" DefaultValue="0.5">
@@ -1777,11 +1777,6 @@
               <Pin Id="JVtw2X0E0XmMhCR1rrwXId" Name="Release Date" Kind="OutputPin" Bounds="1267,685" />
               <Pin Id="B12opDDO4sZN9ZBTr0jTJb" Name="Images URL" Kind="OutputPin" Bounds="1347,741" />
             </Patch>
-            <!--
-
-    ************************  ************************
-
--->
             <ProcessDefinition Id="MNoccI8EZuiPXXH27mBcsX">
               <Fragment Id="BOMhyAVYjZjMWPcIaNASJ0" Patch="RXTlp9XSs8JL4juheg1GrK" Enabled="true" />
               <Fragment Id="NFBmFmWl9O8NYT9BO7LXyq" Patch="UvZtxILdzMIMKFQ5mG6a5B" Enabled="true" />
