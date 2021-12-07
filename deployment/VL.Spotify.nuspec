@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>VL.Spotify</id>
+    <version>1.0.0-preview01</version>
+    <title>VL.Spotify</title>
+    <authors>sebescudie, JohnnyCrazy</authors>
+    <owners>sebescudie</owners>
+    <projectUrl>https://github.com/sebescudie/VL.Spotify</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>A VL wrapper for JohnnyCrazy's SpotifyAPI.Web</summary>
+    <description>A VL wrapper for JohnnyCrazy's SpotifyAPI.Web</description>
+    <copyright>Copyright © 2021 by sebescudie</copyright>
+    <tags>VL, spotify</tags>
+	<license type="expression">LGPL-3.0-only</license>
+    <dependencies>
+      <dependency id="RestSharp" version="106.13.0" />
+      <dependency id="SpotifyAPI.Web" version="6.2.2" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\*.vl" target="" exclude="" />
+    <file src="..\help\**" target="help\" exclude="" />
+    <file src="..\vl\**" target="vl\" exclude="" />
+  </files>
+</package>
