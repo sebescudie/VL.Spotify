@@ -2,7 +2,7 @@
 
 [![Nuget](https://img.shields.io/nuget/v/VL.Spotify?style=flat-square)](https://www.nuget.org/packages/VL.Spotify)
 
-_A set of VL nodes to interact with Spotify's web API using [JohnnyCrazy's SpotifyAPI-NET lib](https://johnnycrazy.github.io/SpotifyAPI-NET/)_ 
+A VL nuget to interact with Spotify's web API using [JohnnyCrazy's SpotifyAPI-NET lib](https://johnnycrazy.github.io/SpotifyAPI-NET/)_ 
 
 ## Installation
 
