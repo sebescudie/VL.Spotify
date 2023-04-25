@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="E6pIQ97q9fQNhL28SHceA2" LanguageVersion="2021.4.1.672" Version="0.128">
-  <NugetDependency Id="SE4VyorL7pZPUV5i1Qbg96" Location="VL.CoreLib" Version="2021.4.1-0672-g625cfd62bc" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="E6pIQ97q9fQNhL28SHceA2" LanguageVersion="2023.5.0" Version="0.128">
+  <NugetDependency Id="SE4VyorL7pZPUV5i1Qbg96" Location="VL.CoreLib" Version="2023.5.0" />
   <Patch Id="L5INziWQINjNtXjhNBJT5H">
-    <Canvas Id="IYwwjoN6ZEuLgWRHwcU3yK" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <Canvas Id="IYwwjoN6ZEuLgWRHwcU3yK" DefaultCategory="Main" CanvasType="FullCategory" />
     <!--
 
     ************************ Application ************************
@@ -15,22 +15,25 @@
       </p:NodeReference>
       <Patch Id="OghfsDPYAtOQXjD5cImV5R">
         <Canvas Id="O1e3LuY1tdvOcX2YNuZKiE" CanvasType="Group">
-          <Node Bounds="215,317,74,19" Id="IpzFvtH3UfkON6eJwnWTS3">
-            <p:NodeReference LastCategoryFullName="IO.Spotify.Authentication" LastSymbolSource="VL.Spotify.vl">
+          <Node Bounds="215,317,105,19" Id="IpzFvtH3UfkON6eJwnWTS3">
+            <p:NodeReference LastCategoryFullName="IO.Spotify.Authentication" LastDependency="VL.Spotify.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="SpotifyClient" />
             </p:NodeReference>
             <Pin Id="OlmXLmc3Zy5NDO9phcM7jF" Name="Token" Kind="InputPin" />
-            <Pin Id="I4hJR1LYgoBPrG6htEOUNW" Name="Output" Kind="OutputPin" />
-            <Pin Id="BiLi09h8fZoOGuXM933aH4" Name="Username" Kind="OutputPin" />
+            <Pin Id="KoATHaCIi1JLIiYGr9HkJe" Name="Client" Kind="OutputPin" />
+            <Pin Id="D29KcuGDNW9Lpvbci41OfD" Name="Display Name" Kind="OutputPin" />
+            <Pin Id="MUvYvAchyMjNRAIfy74l5C" Name="Success" Kind="OutputPin" />
+            <Pin Id="Kx5Xum2SXswMhnbOVlpizh" Name="Failure" Kind="OutputPin" />
+            <Pin Id="B4rJpNckQVsLxqXYr0Ah2n" Name="Error Message" Kind="OutputPin" />
           </Node>
           <Pad Id="Gxa1kCZaz7sLEk5RtmGOhx" Comment="Token" Bounds="217,293,35,15" ShowValueBox="true" isIOBox="true" Value="">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
           </Pad>
           <Node Bounds="215,388,91,19" Id="RIrKZhWrwqzQLHJC0ztZT8">
-            <p:NodeReference LastCategoryFullName="IO.Spotify.Playback" LastSymbolSource="VL.Spotify.vl">
+            <p:NodeReference LastCategoryFullName="IO.Spotify.Playback" LastDependency="VL.Spotify.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="CurrentlyPlaying" />
             </p:NodeReference>
@@ -40,7 +43,7 @@
             <Pin Id="GG6b2E9wEN7NDcpOPM5y7F" Name="Output" Kind="OutputPin" />
           </Node>
           <Pad Id="FICE434bUNJMlXa37zHlr4" Comment="Update" Bounds="303,367,35,15" ShowValueBox="true" isIOBox="true" Value="False">
-            <p:TypeAnnotation>
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Boolean" />
               <FullNameCategoryReference ID="Primitive" />
             </p:TypeAnnotation>
@@ -49,7 +52,7 @@
             </p:ValueBoxSettings>
           </Pad>
           <Node Bounds="215,443,65,19" Id="A9942Bz79jgPlhPtUZLiSV">
-            <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+            <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
             </p:NodeReference>
@@ -58,10 +61,10 @@
             <Pin Id="E4MZ2EZHNh9On2INhGMBl6" Name="Value" Kind="OutputPin" />
             <Pin Id="SRyREnwtcXGQJlG9gotbLv" Name="On Data" Kind="OutputPin" />
           </Node>
-          <Node Bounds="215,487,108,19" Id="Uicte3qzyePMTZsagdIwgM">
-            <p:NodeReference LastCategoryFullName="IO.Spotify.Playback" LastSymbolSource="VL.Spotify.vl">
+          <Node Bounds="215,487,133,19" Id="Uicte3qzyePMTZsagdIwgM">
+            <p:NodeReference LastCategoryFullName="IO.Spotify.Playback" LastDependency="VL.Spotify.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="CurrentlyPlayingInfo" />
+              <Choice Kind="ProcessAppFlag" Name="CurrentlyPlayingTrackInfo" />
             </p:NodeReference>
             <Pin Id="UVSIGSdUlZzP7txMTZVEX2" Name="Input" Kind="InputPin" />
             <Pin Id="Oa0Jj5f7HYnNWCikCP7mB3" Name="Is Playing" Kind="OutputPin" />
@@ -72,17 +75,17 @@
             <Pin Id="TQw5ZvK6VVpNhGuZvHBAiS" Name="Images URL" Kind="OutputPin" />
           </Node>
           <Pad Id="OBbUjf4h7pTMJs4UqCcfox" Comment="Is Playing" Bounds="217,532,37,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="Pk8CYHys336MwCdQYMRiLd" Comment="Name" Bounds="237,555,105,-2" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="FiXsy6cA3emLvCPE7Hnn9N" Comment="Artists" Bounds="258,575,122,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="JBo4hD73twjLvhWyE11iI8" Comment="Album" Bounds="276,597,121,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="PyRau3ZgZbxLLHspWjeHe9" Comment="Release Date" Bounds="298,623,107,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="JX4HsnXHQJHPOYPtG6v94D" Comment="Images URL" Bounds="319,653,35,65" ShowValueBox="true" isIOBox="true">
+          <Pad Id="Pk8CYHys336MwCdQYMRiLd" Comment="Name" Bounds="242,555,105,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="FiXsy6cA3emLvCPE7Hnn9N" Comment="Artists" Bounds="268,575,122,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="JBo4hD73twjLvhWyE11iI8" Comment="Album" Bounds="294,598,121,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="PyRau3ZgZbxLLHspWjeHe9" Comment="Release Date" Bounds="319,622,107,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="JX4HsnXHQJHPOYPtG6v94D" Comment="Images URL" Bounds="345,649,264,65" ShowValueBox="true" isIOBox="true">
             <p:Value>
               <Item></Item>
             </p:Value>
           </Pad>
           <Pad Id="OeELvo5LjmWQYYfX4hfU3j" Bounds="407,277,307,43" ShowValueBox="true" isIOBox="true" Value="Not sure how to get your Access Token? Search &quot;Getting an Access Token&quot; in the help browser!">
-            <p:TypeAnnotation>
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
             <p:ValueBoxSettings>
@@ -98,7 +101,6 @@
           <Fragment Id="EsIo4VPO7OXND5u4r36YVI" Patch="KwMMqHqfEH9NCWv5hVMvzW" Enabled="true" />
         </ProcessDefinition>
         <Link Id="JhRw8MrkakeQEmSIMonbBu" Ids="Gxa1kCZaz7sLEk5RtmGOhx,OlmXLmc3Zy5NDO9phcM7jF" />
-        <Link Id="ImgBZwSEd6KK9px9nmRnSm" Ids="I4hJR1LYgoBPrG6htEOUNW,E781WIrrT4PLIvfwKpBogS" />
         <Link Id="LGzpsoANARZLYz3zOVVAEt" Ids="FICE434bUNJMlXa37zHlr4,IPbhdSWN8YLPodoARA4v5z" />
         <Link Id="CtixWw5LYG6LuFN3BYRtBU" Ids="GG6b2E9wEN7NDcpOPM5y7F,Eyj6GVxZTgNMq56QwznrWI" />
         <Link Id="OIDgm2xSlKPNXbdVavBw3J" Ids="Oa0Jj5f7HYnNWCikCP7mB3,OBbUjf4h7pTMJs4UqCcfox" />
@@ -108,9 +110,10 @@
         <Link Id="JIzFUvm4FxVOoLtoVkXVei" Ids="KMP3HROUerMMgmv66JUc6r,PyRau3ZgZbxLLHspWjeHe9" />
         <Link Id="RINLjc8qNDrOEqne0ZQuru" Ids="TQw5ZvK6VVpNhGuZvHBAiS,JX4HsnXHQJHPOYPtG6v94D" />
         <Link Id="QnuxX0Lue5ELxbhVoCYnyh" Ids="E4MZ2EZHNh9On2INhGMBl6,UVSIGSdUlZzP7txMTZVEX2" />
+        <Link Id="NTVedEDM4LtLcSHfMMGeWZ" Ids="KoATHaCIi1JLIiYGr9HkJe,E781WIrrT4PLIvfwKpBogS" />
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="HGNtxuNW6RcOaCXZ9qphVg" Location="VL.CoreLib" Version="2021.4.1-0672-g625cfd62bc" />
+  <NugetDependency Id="HGNtxuNW6RcOaCXZ9qphVg" Location="VL.CoreLib" Version="2023.5.0" />
   <NugetDependency Id="EilsANhNZL1OwLZNXmQm3J" Location="VL.Spotify" Version="0.0.0.0" />
 </Document>
