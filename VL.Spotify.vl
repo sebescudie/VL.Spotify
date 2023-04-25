@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="Ch4QzIL7KSxOmGHXUb5bGp" LanguageVersion="2021.4.1.672" Version="0.128">
-  <NugetDependency Id="CWRoazkoWgVLu72P6HxrAI" Location="VL.CoreLib" Version="2021.4.1-0672-g625cfd62bc" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="Ch4QzIL7KSxOmGHXUb5bGp" LanguageVersion="2023.5.0" Version="0.128">
+  <NugetDependency Id="CWRoazkoWgVLu72P6HxrAI" Location="VL.CoreLib" Version="2023.5.0" />
   <Patch Id="CYHgHArMGlwLMQPO3DMK1K">
     <Canvas Id="JKhk7RTgk5hQVThQkjxijd" DefaultCategory="IO.Spotify" CanvasType="FullCategory">
       <Canvas Id="T5yzGRlRglqNJRebKBnC2w" Name="Authentication" Position="324,315">
@@ -9,159 +9,190 @@
     ************************ SpotifyClient ************************
 
 -->
-        <Node Name="SpotifyClient" Bounds="110,200" Id="IPjaTKNssjyLNv9ZYY6bLm">
-          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+        <Node Name="SpotifyClient" Bounds="110,200" Id="IPjaTKNssjyLNv9ZYY6bLm" Summary="Connects to Spotify's web API using an authentication token">
+          <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
           <Patch Id="Paw6b4eco9fN7ApNbEeiZQ">
             <Canvas Id="QiZGjqUyXPeMj5YmWtsXsG" CanvasType="Group">
-              <Node Bounds="406,292,86,83" Id="DhW1Dm7CtetPmRZUA8mhC2">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <Node Bounds="213,294,397,317" Id="GfltSNw3T7QPVpCloEdm2d">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                  <CategoryReference Kind="Category" Name="Primitive" />
                   <Choice Kind="ProcessStatefulRegion" Name="Cache" />
-                  <FullNameCategoryReference ID="Primitive" />
                 </p:NodeReference>
-                <Pin Id="NKkfQSVPeXiOtOmp4Y6U74" Name="Force" Kind="InputPin" />
-                <Pin Id="NAhSgPBglGQPvUSYPIZaPy" Name="Dispose Cached Outputs" Kind="InputPin" />
-                <Pin Id="GFeLjcTtzlEONmUhuF97Tc" Name="Has Changed" Kind="OutputPin" />
-                <Patch Id="Trez0I0ACatOcdrNJ3Te5F" ManuallySortedPins="true">
-                  <Patch Id="BiPeYwVYcFZLbeGFuNPaCU" Name="Create" ManuallySortedPins="true" />
-                  <Patch Id="IcpLbOT8bMnP8VcrqTt40S" Name="Then" ManuallySortedPins="true" />
-                  <Node Bounds="418,319,62,19" Id="J1fQHa1xkenNgCJH7Jnqe6">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.SpotifyClient" LastSymbolSource="SpotifyAPI.Web.dll">
-                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="AssemblyCategory" Name="SpotifyClient" />
-                      <Choice Kind="OperationCallFlag" Name="Create" />
-                      <PinReference Kind="InputPin" Name="Token">
-                        <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="System" LastSymbolSource="mscorlib.dll">
-                          <Choice Kind="TypeFlag" Name="String" />
-                        </p:DataTypeReference>
-                      </PinReference>
+                <Pin Id="HKfSWmuJJHdOTFIDWIVcx9" Name="Force" Kind="InputPin" />
+                <Pin Id="SMtSNNRcZpoNFewdFD1zmE" Name="Dispose Cached Outputs" Kind="InputPin" />
+                <Pin Id="VS11eAhe6yiPTTB7hO9fZr" Name="Has Changed" Kind="OutputPin" />
+                <Patch Id="GG5fVhEyT0VMGNRF4TC61a" ManuallySortedPins="true">
+                  <Patch Id="DJijYo3IcVTQUInZkq2Qnx" Name="Create" ManuallySortedPins="true" />
+                  <Patch Id="UOa5LEJ3D0NOZYn1CjAI95" Name="Then" ManuallySortedPins="true" />
+                  <Node Bounds="244,314,354,275" Id="QmCch9IqDenOYTEF1qy4oU">
+                    <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
+                      <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                      <Choice Kind="ProcessAppFlag" Name="Try" />
                     </p:NodeReference>
-                    <Pin Id="KjRjBzSiK0ZQTPNvI0VdE1" Name="Token" Kind="InputPin" />
-                    <Pin Id="D4USdskTTnjN9sKKIJyuP5" Name="Token Type" Kind="InputPin" />
-                    <Pin Id="IThjqm5XvKNNzEpZolJpmI" Name="Output" Kind="StateOutputPin" />
+                    <Patch Id="MJrEHm8iFKRLGULKTiNW1C" ManuallySortedPins="true">
+                      <Patch Id="PTZnXoQe26XMk144TJcKGA" Name="Create" ManuallySortedPins="true" />
+                      <Patch Id="AvJHMZ2skqmOTK5r7XviTi" Name="Update" ManuallySortedPins="true" />
+                      <Node Bounds="329,337,62,26" Id="CtE67KfXyPpPaMNKHyUUQH">
+                        <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.SpotifyClient" LastDependency="SpotifyAPI.Web.dll">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="AssemblyCategory" Name="SpotifyClient" />
+                          <Choice Kind="OperationCallFlag" Name="Create" />
+                          <PinReference Kind="InputPin" Name="Token">
+                            <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="System" LastDependency="mscorlib.dll">
+                              <Choice Kind="TypeFlag" Name="String" />
+                            </p:DataTypeReference>
+                          </PinReference>
+                        </p:NodeReference>
+                        <Pin Id="IKTYrKAy5vXLB1DIVQ8s2e" Name="Token" Kind="InputPin" />
+                        <Pin Id="HMyC0hG87IOPgLCBc97JCM" Name="Token Type" Kind="InputPin" DefaultValue="Bearer" />
+                        <Pin Id="VRw1rJQAqe5LeIHjjJMlbz" Name="Output" Kind="StateOutputPin" />
+                      </Node>
+                      <Node Bounds="329,427,68,26" Id="EY8hHLV0rAHLPFHV72BD7W">
+                        <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.SpotifyClient" LastDependency="SpotifyAPI.Web.dll">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="AssemblyCategory" Name="SpotifyClient" />
+                          <Choice Kind="OperationCallFlag" Name="UserProfile" />
+                        </p:NodeReference>
+                        <Pin Id="JbVW5nyLinqMiklN7xp4Bm" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="MXDzQYoxWF6PYM083HFCwm" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="RzNNZXXiPX3MS3amXbgJuE" Name="User Profile" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="392,464,81,26" Id="JvmQCkhrFvXMfC7zTGarsI">
+                        <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IUserProfileClient" LastDependency="SpotifyAPI.Web.dll">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="AssemblyCategory" Name="IUserProfileClient" />
+                          <Choice Kind="OperationCallFlag" Name="Current" />
+                        </p:NodeReference>
+                        <Pin Id="E6dEmMqJCcjPZcUrLdcETI" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="CvpcHZGRNnnPyXODpRFasS" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="SWq5kXjicItM9OBFN8Vu3J" Name="Result" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="468,503,44,26" Id="D6Pp6Yy8lKIOOkEm9hm6Nd">
+                        <p:NodeReference LastCategoryFullName="Reactive.Task" LastDependency="VL.CoreLib.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="ClassType" Name="Task" />
+                          <Choice Kind="OperationCallFlag" Name="Result" />
+                        </p:NodeReference>
+                        <Pin Id="LtALNRrP0O2O0hmfrDpuXL" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="MrJFcrA39kwO5yrHBvQZY3" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="Q5SL1Oi0fqYMSbxzCHZ7IC" Name="Result" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="507,543,79,26" Id="CCdx8iXDaiLP5gR4Q5dCLN">
+                        <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.PrivateUser" LastDependency="SpotifyAPI.Web.dll">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="AssemblyCategory" Name="PrivateUser" />
+                          <Choice Kind="OperationCallFlag" Name="DisplayName" />
+                        </p:NodeReference>
+                        <Pin Id="TOMTxkssgAqNQgDI28sAmR" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="AZ5YfbmC2DDNr34J9mama7" Name="Output" Kind="StateOutputPin" />
+                        <Pin Id="TD5tZ1S5dy5LZbXtB3JlVd" Name="Display Name" Kind="OutputPin" />
+                      </Node>
+                      <Node Bounds="256,395,51,26" Id="AvQd5lQ7M9OLoHLAfNQUwY">
+                        <p:NodeReference LastCategoryFullName="Primitive.Reference" LastDependency="VL.CoreLib.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="ClassType" Name="Reference" />
+                          <Choice Kind="OperationCallFlag" Name="SetData" />
+                        </p:NodeReference>
+                        <Pin Id="UhICXI0ShBZQCMVGqT4zOT" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="K1tFpS7IdgkPCulIgzQ1Hu" Name="Data" Kind="InputPin" />
+                        <Pin Id="HnVM1KYRtXGN80ecdh1l1m" Name="Output" Kind="StateOutputPin" />
+                      </Node>
+                    </Patch>
+                    <Pin Id="SkQ8TcoTaHENf2WaO5jSKK" Name="Stick To Last Valid Outputs" Kind="InputPin" />
+                    <Pin Id="GJ6xl9sO5IIMbP1w1X8JQT" Name="Reset Region On Failure" Kind="InputPin" />
+                    <Pin Id="KmZCFlWmqDUNYiGTG4emrm" Name="Success" Kind="OutputPin" />
+                    <Pin Id="PeMG9qyuCCUMdRWRDDymGQ" Name="Failure" Kind="OutputPin" />
+                    <Pin Id="JnYwcOTjejCLvj72LYpSDe" Name="Error Message" Kind="OutputPin" />
+                    <Pin Id="CqCCtssvGp6PSjY3gbCHXY" Name="Exceptions" Kind="OutputPin" />
+                    <ControlPoint Id="Q8cOB4gHBmEQNjY53qvWgy" Bounds="583,583" Alignment="Bottom" />
                   </Node>
                 </Patch>
-                <ControlPoint Id="VRMnhoxFErsLm8ao4pdSbY" Bounds="420,299" Alignment="Top" />
-                <ControlPoint Id="IrmicxCD97hPnkfNrgj9yF" Bounds="420,369" Alignment="Bottom" />
+                <ControlPoint Id="EbUNj1EfKydMVdDgONR8BZ" Bounds="331,300" Alignment="Top" />
+                <ControlPoint Id="CPbBVIr82HrQFHKTodOu4o" Bounds="583,605" Alignment="Bottom" />
+                <ControlPoint Id="LC1gVTetGcJOKv1xFJx1BM" Bounds="479,605" Alignment="Bottom" />
+                <ControlPoint Id="L09qxOtCT85QIz3xWn3qOD" Bounds="246,605" Alignment="Bottom" />
+                <ControlPoint Id="UqcwgFAkGcqOVqfAe46QD8" Bounds="362,605" Alignment="Bottom" />
               </Node>
-              <ControlPoint Id="O5cWpOBPgn7MS837oVVnrq" Bounds="420,259" />
-              <ControlPoint Id="ExRVAF7etUeNoIMSxFAwDn" Bounds="420,417" />
-              <Node Bounds="533,470,245,152" Id="UVNBdvtwV40MxBKTGScaBC">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
-                  <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
-                  <Choice Kind="ProcessStatefulRegion" Name="Cache" />
-                  <FullNameCategoryReference ID="Primitive" />
-                </p:NodeReference>
-                <Pin Id="MrzH3cx2y7VMdP5LiaM8Ka" Name="Force" Kind="InputPin" />
-                <Pin Id="Kd1VeHk9kRmOi2B3IXTtSB" Name="Dispose Cached Outputs" Kind="InputPin" />
-                <Pin Id="Kv4O8vaBOy0PGuvwb4VnS4" Name="Has Changed" Kind="OutputPin" />
-                <Patch Id="RwfgKG7JfXWONhGCLJFUKY" ManuallySortedPins="true">
-                  <Patch Id="BL9fkVlMXEeNA4TMb6HIRg" Name="Create" ManuallySortedPins="true" />
-                  <Patch Id="S1TRYpwlH5gLDMIxIOPIYZ" Name="Then" ManuallySortedPins="true" />
-                  <Node Bounds="545,493,68,26" Id="GXALYK1HwArMRIJKQvVtvN">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.SpotifyClient" LastSymbolSource="SpotifyAPI.Web.dll">
-                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="AssemblyCategory" Name="SpotifyClient" />
-                      <Choice Kind="OperationCallFlag" Name="UserProfile" />
-                    </p:NodeReference>
-                    <Pin Id="E7GkvEx9ylbLEEmS1snRhA" Name="Input" Kind="StateInputPin" />
-                    <Pin Id="TWn0ir5j7f6NBl4jAG9kxT" Name="Output" Kind="StateOutputPin" />
-                    <Pin Id="Hf97iKYHtbBOUvnNL7Mc44" Name="User Profile" Kind="OutputPin" />
-                  </Node>
-                  <Node Bounds="608,530,81,26" Id="NOHi07X2UTEOraw5lAoRsC">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IUserProfileClient" LastSymbolSource="SpotifyAPI.Web.dll">
-                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="AssemblyCategory" Name="IUserProfileClient" />
-                      <Choice Kind="OperationCallFlag" Name="Current" />
-                    </p:NodeReference>
-                    <Pin Id="CmjvQGprgDVPZTZe1Utsbd" Name="Input" Kind="StateInputPin" />
-                    <Pin Id="Gg42RBBQwLmNdWvjnpkMep" Name="Output" Kind="StateOutputPin" />
-                    <Pin Id="Ed3P2smB34AM2vUmShDm9x" Name="Result" Kind="OutputPin" />
-                  </Node>
-                  <Node Bounds="684,570,82,26" Id="Bb7oRJ5GI4ZLH9YkWJGa8g">
-                    <p:NodeReference LastCategoryFullName="Reactive.Task" LastSymbolSource="VL.Reactive.vl">
-                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="ToObservable" />
-                      <CategoryReference Kind="ClassType" Name="Task" NeedsToBeDirectParent="true" />
-                    </p:NodeReference>
-                    <Pin Id="RV6VsDL2DM2Opq9spAVGY9" Name="Input" Kind="StateInputPin" />
-                    <Pin Id="OfMMkO4iGvaNW1Hqbaf3VF" Name="Result" Kind="OutputPin" />
-                  </Node>
-                </Patch>
-                <ControlPoint Id="Pi1C7gBX2BaL3LBBMkjos3" Bounds="686,617,3,0" Alignment="Bottom" />
-              </Node>
-              <Node Bounds="684,649,133,86" Id="GcrkWO7hG43Mn2XmYTsEac">
-                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
-                  <Choice Kind="ProcessAppFlag" Name="ForEach" />
-                  <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
-                  <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="KrItruSux7CPCF8Z2auskZ" Name="Messages" Kind="InputPin" />
-                <Pin Id="UOSeaFvhnL1MiL0jMeFlFZ" Name="Reset" Kind="InputPin" />
-                <Pin Id="RjlFxKfMDRLLSvxJMrLNm8" Name="Result" Kind="OutputPin" />
-                <Patch Id="AZloUzEqzxGLad6TMl6Bsh" ManuallySortedPins="true">
-                  <Patch Id="RhmQ0PJiZqeP5ECX8GEHMW" Name="Create" ManuallySortedPins="true" />
-                  <Patch Id="JAmbi4VIhoCNWZTnydH06O" Name="Update" ManuallySortedPins="true">
-                    <Pin Id="CGaGlyJAD4XOnKMKkhYoa7" Name="Input 1" Kind="InputPin" />
-                    <Pin Id="OEx04oFwt0xN2BK1JPJus0" Name="Output" Kind="OutputPin" />
-                  </Patch>
-                  <ControlPoint Id="Vlzyvt8NdN2OixfA2SfoH6" Bounds="698,657,3,0" />
-                  <ControlPoint Id="BFg7mj1LqhHM47l6tl3z4R" Bounds="772,728,3,0" />
-                  <Node Bounds="696,686,79,26" Id="RMMoXQB1ijfPhqhHJTApiD">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.PrivateUser" LastSymbolSource="SpotifyAPI.Web.dll">
-                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="AssemblyCategory" Name="PrivateUser" />
-                      <Choice Kind="OperationCallFlag" Name="DisplayName" />
-                    </p:NodeReference>
-                    <Pin Id="CiPKyfRmRfFNDsrHazCzT1" Name="Input" Kind="StateInputPin" />
-                    <Pin Id="LsYEm6XmxAJLmzACB3Ff0A" Name="Output" Kind="StateOutputPin" />
-                    <Pin Id="QOHAOCK2y28MTlXCF8lrqy" Name="Display Name" Kind="OutputPin" />
-                  </Node>
-                </Patch>
-              </Node>
-              <ControlPoint Id="SEMvqEjsK9HP6WVxhpACRY" Bounds="686,803,3,0" />
-              <Node Bounds="684,758,65,19" Id="FcPPW5e4lTbLrKlQvSJ3Bu">
-                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+              <ControlPoint Id="EYCwMRS7zBYPqzysdeEifp" Bounds="331,266" />
+              <Node Bounds="610,174,46,19" Id="FhUFnvRCYCQLDcYgTAvSiG">
+                <p:NodeReference LastCategoryFullName="Primitive.Reference" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
+                  <CategoryReference Kind="ClassType" Name="Reference" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
                 </p:NodeReference>
-                <Pin Id="Uend6rMKqfQP867AuaVDm0" Name="Async Notifications" Kind="InputPin" />
-                <Pin Id="Ie7oIZPvuJLOKBmFJfFrk2" Name="Reset" Kind="InputPin" />
-                <Pin Id="EntOoPoUvW0LKj4kuOSusk" Name="Value" Kind="OutputPin" />
-                <Pin Id="F4XnOAnBWSnPFJzMwvMvpn" Name="On Data" Kind="OutputPin" />
+                <Pin Id="MXuBGQdb9eTPGnsxlNzuVx" Name="Data" Kind="InputPin" />
+                <Pin Id="L02LIdTRQrcPNU2SXvleN7" Name="Output" Kind="StateOutputPin" />
               </Node>
+              <Pad Id="GWE8RIaui3DOyeOkB9gseF" SlotId="Gq2gaI0gRBBLsKK6OBNTze" Bounds="612,216" />
+              <ControlPoint Id="EoMx0wsXztLL4FU5GwEBC2" Bounds="583,648" />
+              <ControlPoint Id="BPEjyTxx0V7N8aYf1Hc3Mh" Bounds="479,648" />
+              <ControlPoint Id="D1yoQB80xnVOgtZuQUrJ2U" Bounds="246,648" />
+              <ControlPoint Id="Oap9pPYJJ1wP1wIvDl3WF0" Bounds="362,648" />
+              <Pad Id="Sp45mK4crmDN8UfDxdloTU" SlotId="Gq2gaI0gRBBLsKK6OBNTze" Bounds="258,248" />
+              <Node Bounds="610,239,51,26" Id="Tv0wsY9qA87PjhA8P8CRTV">
+                <p:NodeReference LastCategoryFullName="Primitive.Reference" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="Reference" />
+                  <Choice Kind="OperationCallFlag" Name="Data" />
+                </p:NodeReference>
+                <Pin Id="MGUA9M6YndNNKmPRICkexm" Name="Input" Kind="StateInputPin" />
+                <Pin Id="Skp0TDr3JgKNBX3v1XDE92" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="SxRHrGtCOw3MMMkfIc4zLK" Name="Data" Kind="OutputPin" />
+              </Node>
+              <ControlPoint Id="L8FypuEwG9vQSCuBPSPCKI" Bounds="658,283" />
             </Canvas>
-            <Patch Id="CavVgItqiDCOk1Mos4A3Qg" Name="Create" />
-            <Patch Id="F8TT3fACylzNlLkTREsHxh" Name="Update">
-              <Pin Id="RWtWqiiOxKrLzJGCVw1nf7" Name="Token" Kind="InputPin" Bounds="425,253" />
-              <Pin Id="FCqwZsz7mrmLtBe2Mx8NCr" Name="Output" Kind="OutputPin" Bounds="420,417" />
-              <Pin Id="HXriGJe7QTHO8D87fW9ZUe" Name="Username" Kind="OutputPin" Bounds="534,923" />
-            </Patch>
             <ProcessDefinition Id="UAIxdp6zUNsP7DKydplSh3">
               <Fragment Id="AOT0E8kr3AJNCfl8XT3IR9" Patch="CavVgItqiDCOk1Mos4A3Qg" Enabled="true" />
               <Fragment Id="Jk3ckXUw4a6NjsGxaUiX6D" Patch="F8TT3fACylzNlLkTREsHxh" Enabled="true" />
             </ProcessDefinition>
-            <Link Id="TX9oEPlKYgILfK7hj8Jb8i" Ids="VRMnhoxFErsLm8ao4pdSbY,KjRjBzSiK0ZQTPNvI0VdE1" />
-            <Link Id="NAf1Fadv6a0L6OUIafEFa3" Ids="IThjqm5XvKNNzEpZolJpmI,IrmicxCD97hPnkfNrgj9yF" />
-            <Link Id="O7aXD1O8NGDPQo2gjFIECV" Ids="O5cWpOBPgn7MS837oVVnrq,VRMnhoxFErsLm8ao4pdSbY" />
-            <Link Id="IkP2my7UBpNLPHtezLfvhA" Ids="RWtWqiiOxKrLzJGCVw1nf7,O5cWpOBPgn7MS837oVVnrq" IsHidden="true" />
-            <Link Id="PWI2mSDNxzfO5wKkoCGG2X" Ids="IrmicxCD97hPnkfNrgj9yF,ExRVAF7etUeNoIMSxFAwDn" />
-            <Link Id="KImik0mIALDNM8iF0xJuVf" Ids="ExRVAF7etUeNoIMSxFAwDn,FCqwZsz7mrmLtBe2Mx8NCr" IsHidden="true" />
-            <Link Id="K9Uy1sBkYFDOkjWpOwGXdw" Ids="Hf97iKYHtbBOUvnNL7Mc44,CmjvQGprgDVPZTZe1Utsbd" />
-            <Link Id="FJObsCdpVuFLeSZnpXUnXl" Ids="Ed3P2smB34AM2vUmShDm9x,RV6VsDL2DM2Opq9spAVGY9" />
-            <Link Id="MQzeTvp7Cr3LnHQTsH9Zhu" Ids="OfMMkO4iGvaNW1Hqbaf3VF,Pi1C7gBX2BaL3LBBMkjos3" />
-            <Link Id="T1PgvQCrnM5QDgXUirJSOK" Ids="CGaGlyJAD4XOnKMKkhYoa7,Vlzyvt8NdN2OixfA2SfoH6" IsHidden="true" />
-            <Link Id="PFoPnTm9IHbOzdETBLuG7n" Ids="BFg7mj1LqhHM47l6tl3z4R,OEx04oFwt0xN2BK1JPJus0" IsHidden="true" />
-            <Link Id="MsKgslQbhiANz8lXFJqEFh" Ids="Pi1C7gBX2BaL3LBBMkjos3,KrItruSux7CPCF8Z2auskZ" />
-            <Link Id="IQuNX94NRiOM0uL3xzZrvm" Ids="Vlzyvt8NdN2OixfA2SfoH6,CiPKyfRmRfFNDsrHazCzT1" />
-            <Link Id="PdOJmt3vpNtMkYC5sIWZ5o" Ids="SEMvqEjsK9HP6WVxhpACRY,HXriGJe7QTHO8D87fW9ZUe" IsHidden="true" />
-            <Link Id="N5eG2Rgrqz3Mbp2iTSU20P" Ids="QOHAOCK2y28MTlXCF8lrqy,BFg7mj1LqhHM47l6tl3z4R" />
-            <Link Id="NZ5eRdy8qoINOOHAdjvtAA" Ids="GFeLjcTtzlEONmUhuF97Tc,MrzH3cx2y7VMdP5LiaM8Ka" />
-            <Link Id="Bj2mVzgHDKpPhoWzyIZSRp" Ids="IrmicxCD97hPnkfNrgj9yF,E7GkvEx9ylbLEEmS1snRhA" />
-            <Link Id="KeIzM41B14aMPuCy5UpRGP" Ids="RjlFxKfMDRLLSvxJMrLNm8,Uend6rMKqfQP867AuaVDm0" />
-            <Link Id="B3go9LRIm1pQBesscio0HZ" Ids="EntOoPoUvW0LKj4kuOSusk,SEMvqEjsK9HP6WVxhpACRY" />
+            <Link Id="Imw5COBc4c1MxjE0VrXiYM" Ids="RzNNZXXiPX3MS3amXbgJuE,E6dEmMqJCcjPZcUrLdcETI" />
+            <Link Id="Gx7RgBP4uxlLlNkGI0D8oG" Ids="VRw1rJQAqe5LeIHjjJMlbz,JbVW5nyLinqMiklN7xp4Bm" />
+            <Link Id="G0vf7102jfJQCVASxUtmrs" Ids="SWq5kXjicItM9OBFN8Vu3J,LtALNRrP0O2O0hmfrDpuXL" />
+            <Link Id="MrBKnteK145MDaYuLkdKZX" Ids="Q5SL1Oi0fqYMSbxzCHZ7IC,TOMTxkssgAqNQgDI28sAmR" />
+            <Link Id="ScfphAzmd15QNcFJ4XrNxi" Ids="TD5tZ1S5dy5LZbXtB3JlVd,Q8cOB4gHBmEQNjY53qvWgy" />
+            <Link Id="VdnJ0A4F7voNCbMcpD8YwW" Ids="EbUNj1EfKydMVdDgONR8BZ,IKTYrKAy5vXLB1DIVQ8s2e" />
+            <Link Id="HHNkIYzjF2MM68eygz6CIO" Ids="EYCwMRS7zBYPqzysdeEifp,EbUNj1EfKydMVdDgONR8BZ" />
+            <Link Id="Fi4DS0CzgkKPSEpzlzng7a" Ids="L1EmQSFNDfOMLjWrGgyMU5,EYCwMRS7zBYPqzysdeEifp" IsHidden="true" />
+            <Link Id="JeOXWv6N5MeOs0D9fZMiQb" Ids="L02LIdTRQrcPNU2SXvleN7,GWE8RIaui3DOyeOkB9gseF" />
+            <Slot Id="Gq2gaI0gRBBLsKK6OBNTze" Name="Spotify Client">
+              <p:TypeAnnotation p:Type="TypeReference">
+                <Choice Kind="TypeFlag" Name="Reference" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="SpotifyClient" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Slot>
+            <Link Id="QjGWlzUm1a7OlS1w5Zzept" Ids="VRw1rJQAqe5LeIHjjJMlbz,K1tFpS7IdgkPCulIgzQ1Hu" />
+            <Link Id="HZk0mAY4ajoPC6rXAEK0hN" Ids="Q8cOB4gHBmEQNjY53qvWgy,CPbBVIr82HrQFHKTodOu4o" />
+            <Link Id="GJEkVNjDA4EO6nz0dXB2BP" Ids="CPbBVIr82HrQFHKTodOu4o,EoMx0wsXztLL4FU5GwEBC2" />
+            <Link Id="KMX1kE4MU1AQQ5ZPr725Fh" Ids="EoMx0wsXztLL4FU5GwEBC2,VjZbQ1tUQ5mNWdngAIzOE8" IsHidden="true" />
+            <Link Id="PcAgEgIovmaOSyW7MELBsI" Ids="JnYwcOTjejCLvj72LYpSDe,LC1gVTetGcJOKv1xFJx1BM" />
+            <Link Id="AeCsm2WvNnAMwfAH8NiRLQ" Ids="LC1gVTetGcJOKv1xFJx1BM,BPEjyTxx0V7N8aYf1Hc3Mh" />
+            <Link Id="Jj2l2Esy0PgMcm9YaRT6wm" Ids="BPEjyTxx0V7N8aYf1Hc3Mh,KMPEO3DmeNOPPn8Eh2iXYM" IsHidden="true" />
+            <Link Id="LdNsjXfeDmjQXS5avr8Qxw" Ids="KmZCFlWmqDUNYiGTG4emrm,L09qxOtCT85QIz3xWn3qOD" />
+            <Link Id="LhZ8akRY2Q6O9Wmwwj1KbH" Ids="L09qxOtCT85QIz3xWn3qOD,D1yoQB80xnVOgtZuQUrJ2U" />
+            <Link Id="DMkfutb6MPxL0YdqDu6Ay8" Ids="D1yoQB80xnVOgtZuQUrJ2U,GltskoJgDwFQTeKakH8dT5" IsHidden="true" />
+            <Link Id="EQgjcIrTwMKO3mxgeCYrht" Ids="PeMG9qyuCCUMdRWRDDymGQ,UqcwgFAkGcqOVqfAe46QD8" />
+            <Link Id="MSjuxlRI0hKPoGZkGLE5Pa" Ids="UqcwgFAkGcqOVqfAe46QD8,Oap9pPYJJ1wP1wIvDl3WF0" />
+            <Link Id="E8Q4hEPMY8MNaDGQnCVZtX" Ids="Oap9pPYJJ1wP1wIvDl3WF0,EOwv3E9LKUTLSJIOOxHbrw" IsHidden="true" />
+            <Patch Id="CavVgItqiDCOk1Mos4A3Qg" Name="Create" ParticipatingElements="FhUFnvRCYCQLDcYgTAvSiG,JeOXWv6N5MeOs0D9fZMiQb" />
+            <Patch Id="F8TT3fACylzNlLkTREsHxh" Name="Update" ParticipatingElements="GJEkVNjDA4EO6nz0dXB2BP,AeCsm2WvNnAMwfAH8NiRLQ,LhZ8akRY2Q6O9Wmwwj1KbH,MSjuxlRI0hKPoGZkGLE5Pa" ManuallySortedPins="true">
+              <Pin Id="EV6gZ3w4eNPNjJGOFE7Ikt" Name="Client" Kind="OutputPin" Bounds="658,283" />
+              <Pin Id="VjZbQ1tUQ5mNWdngAIzOE8" Name="Display Name" Kind="OutputPin" />
+              <Pin Id="GltskoJgDwFQTeKakH8dT5" Name="Success" Kind="OutputPin" />
+              <Pin Id="EOwv3E9LKUTLSJIOOxHbrw" Name="Failure" Kind="OutputPin" />
+              <Pin Id="KMPEO3DmeNOPPn8Eh2iXYM" Name="Error Message" Kind="OutputPin" />
+              <Pin Id="L1EmQSFNDfOMLjWrGgyMU5" Name="Token" Kind="InputPin" Bounds="587,336" />
+            </Patch>
+            <Link Id="LV7VtMkXgY1QZQBtVXZRdx" Ids="Sp45mK4crmDN8UfDxdloTU,UhICXI0ShBZQCMVGqT4zOT" />
+            <Link Id="Rjq6xhOVIPsLjbJGzN1NqS" Ids="GWE8RIaui3DOyeOkB9gseF,MGUA9M6YndNNKmPRICkexm" />
+            <Link Id="FhVVCipEuWFL3teJsKKAH1" Ids="SxRHrGtCOw3MMMkfIc4zLK,L8FypuEwG9vQSCuBPSPCKI" />
+            <Link Id="OivHevUoS5NQW1jjA4fOye" Ids="L8FypuEwG9vQSCuBPSPCKI,EV6gZ3w4eNPNjJGOFE7Ikt" IsHidden="true" />
           </Patch>
         </Node>
         <!--
@@ -174,7 +205,7 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="SpotifyClient" />
           </p:TypeAnnotation>
           <Patch Id="P7AQDOfoQ7PQbvKmbZUVCQ">
@@ -188,12 +219,12 @@
 
 -->
         <Node Name="GetCodeURL" Bounds="318,185,158,194" Id="GD1rouhQeSpNnUzlwuS2L5">
-          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
             <Choice Kind="OperationDefinition" Name="Operation" />
           </p:NodeReference>
           <Patch Id="KbHy8eBrhslQB5BIYgQTPA">
             <Node Bounds="330,325,85,19" Id="Jv1ynhgrP0tQAq48ZoG6H3">
-              <p:NodeReference LastCategoryFullName="Primitive.String" LastSymbolSource="CoreLibBasics.vl">
+              <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="Format" />
                 <CategoryReference Kind="StringType" Name="String" NeedsToBeDirectParent="true" />
@@ -207,34 +238,14 @@
             </Node>
             <ControlPoint Id="OlGFmI4NsjKN5cSTwgRjSG" Bounds="352,203" />
             <Link Id="AqUyhSVjZ0TO64I1bTJ9qO" Ids="OlGFmI4NsjKN5cSTwgRjSG,MTRa2KZMlVwQLthkf5qKhC" />
-            <Pin Id="Jk21DKJBJ8NPeRMhUXwQaA" Name="Client ID" Kind="InputPin" Bounds="443,661">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="String" />
-              </p:TypeAnnotation>
-            </Pin>
             <Link Id="PMDnepUfsewOVhnuAuw8xh" Ids="Jk21DKJBJ8NPeRMhUXwQaA,OlGFmI4NsjKN5cSTwgRjSG" IsHidden="true" />
             <ControlPoint Id="T0rEPmrjVeTLlM6CpAGszb" Bounds="372,226" />
             <Link Id="BOcoHCmPv6YORN99gDj93Z" Ids="T0rEPmrjVeTLlM6CpAGszb,KkpDAyBU74eQNTHtOhc1DL" />
-            <Pin Id="L1L7d8CgGLmM5tXUIzDZ4g" Name="Redirect URI" Kind="InputPin" Bounds="451,674">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="String" />
-              </p:TypeAnnotation>
-            </Pin>
             <Link Id="A08XlVP8U9FPjxTlBpuN02" Ids="L1L7d8CgGLmM5tXUIzDZ4g,T0rEPmrjVeTLlM6CpAGszb" IsHidden="true" />
-            <Pin Id="Gq9SYbRr61zN67xEp4ERuD" Name="Scopes" Kind="InputPin">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="Spread" />
-                <p:TypeArguments>
-                  <TypeReference>
-                    <Choice Kind="TypeFlag" Name="String" />
-                  </TypeReference>
-                </p:TypeArguments>
-              </p:TypeAnnotation>
-            </Pin>
             <ControlPoint Id="Ij280iFQMnQM8CzonvZzMj" Bounds="421,260" />
             <Link Id="GAU1AVK2g5rOX2rfsbhaCt" Ids="Gq9SYbRr61zN67xEp4ERuD,Ij280iFQMnQM8CzonvZzMj" IsHidden="true" />
             <Node Bounds="390,280,34,19" Id="JeY5EHDI7X6QKPiiY7Jswt">
-              <p:NodeReference LastCategoryFullName="Primitive.String" LastSymbolSource="CoreLibBasics.vl">
+              <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="Join" />
                 <CategoryReference Kind="StringType" Name="String" NeedsToBeDirectParent="true" />
@@ -247,8 +258,28 @@
             <Link Id="JnhEFbtJoNVM2YzIsvA7aF" Ids="SdKtjQR2WFgQclm1LAYOor,AfmSTPmpk89NOw9MVNaVB9" />
             <ControlPoint Id="Cl0avtF0AavN3SDN2Ivy0n" Bounds="332,362" />
             <Link Id="V0TX5qGoh6YMDGx3n6ChWP" Ids="MlXNGbEL4gnNyaSU3SIrPt,Cl0avtF0AavN3SDN2Ivy0n" />
-            <Pin Id="SXKqyhNftNxMJIpSFPapgQ" Name="Output" Kind="OutputPin" Bounds="402,811" />
             <Link Id="Boli6n0pOnGPRZXi8aNQrA" Ids="Cl0avtF0AavN3SDN2Ivy0n,SXKqyhNftNxMJIpSFPapgQ" IsHidden="true" />
+            <Pin Id="Jk21DKJBJ8NPeRMhUXwQaA" Name="Client ID" Kind="InputPin" Bounds="443,661">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="L1L7d8CgGLmM5tXUIzDZ4g" Name="Redirect URI" Kind="InputPin" Bounds="451,674">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="Gq9SYbRr61zN67xEp4ERuD" Name="Scopes" Kind="InputPin">
+              <p:TypeAnnotation LastCategoryFullName="Collections" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Spread" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="String" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="SXKqyhNftNxMJIpSFPapgQ" Name="Output" Kind="OutputPin" Bounds="402,811" />
           </Patch>
         </Node>
         <!--
@@ -261,31 +292,31 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="Scopes" />
           </p:TypeAnnotation>
           <Patch Id="HnR4amoUD8WNwuiTNlqjqD">
-            <Canvas Id="KKJf8sLpCooMIPYBsWON4B" BordersChecked="false" CanvasType="Group" />
+            <Canvas Id="KKJf8sLpCooMIPYBsWON4B" CanvasType="Group" />
             <ProcessDefinition Id="MMHOu7fraZZNUDAzs4uInF" IsHidden="true" />
           </Patch>
         </Node>
         <!--
 
-    ************************ GetTokenQuery (Internal) ************************
+    ************************ GetTokenQuery (Advanced) ************************
 
 -->
-        <Node Name="GetTokenQuery (Internal)" Bounds="535,182,238,473" Id="Hh4oXXKVKeDMD62B1IRZtl">
-          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+        <Node Name="GetTokenQuery (Advanced)" Bounds="535,182,238,473" Id="Hh4oXXKVKeDMD62B1IRZtl">
+          <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
             <Choice Kind="OperationDefinition" Name="Operation" />
           </p:NodeReference>
           <Patch Id="V5yZPKlcNO7NrE5VnQNXOh" ManuallySortedPins="true">
             <Node Bounds="547,205,52,26" Id="PL4fJ4jTKodMl011TNHUDD">
-              <p:NodeReference LastCategoryFullName="RestSharp.RestClient" LastSymbolSource="RestSharp.dll">
+              <p:NodeReference LastCategoryFullName="RestSharp.RestClient" LastDependency="RestSharp.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="AssemblyCategory" Name="RestClient" />
                 <Choice Kind="OperationCallFlag" Name="Create" />
                 <PinReference Kind="InputPin" Name="Base Url">
-                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="System" LastSymbolSource="mscorlib.dll">
+                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="System" LastDependency="mscorlib.dll">
                     <Choice Kind="TypeFlag" Name="String" />
                   </p:DataTypeReference>
                 </PinReference>
@@ -294,7 +325,7 @@
               <Pin Id="L5pkENcw6oWNWI40wRJamA" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Node Bounds="616,207,60,26" Id="M5d2GU1qgscPuvio98wyf0">
-              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastSymbolSource="RestSharp.dll">
+              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastDependency="RestSharp.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="AssemblyCategory" Name="RestRequest" />
                 <Choice Kind="OperationCallFlag" Name="Create" />
@@ -304,7 +335,7 @@
               <Pin Id="QX6cmb8A3z1Plf3zV9zSK1" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Node Bounds="616,257,80,26" Id="UIHLnTD45lbOKH4ojx29IW">
-              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastSymbolSource="RestSharp.dll">
+              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastDependency="RestSharp.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="AddParameter" />
                 <CategoryReference Kind="AssemblyCategory" Name="RestRequest" NeedsToBeDirectParent="true" />
@@ -318,14 +349,14 @@
             </Node>
             <Link Id="DcfGCHPwuGRNQT5AfeMzUG" Ids="QX6cmb8A3z1Plf3zV9zSK1,RNvWrANEO8dNynpqCDXyo8" />
             <Pad Id="RIIzum1Bzk6NP85n9t9BkP" Bounds="693,241,45,15" ShowValueBox="true" isIOBox="true" Value="authorization_code">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="String" />
                 <FullNameCategoryReference ID="Primitive" />
               </p:TypeAnnotation>
             </Pad>
             <Link Id="SUjXQ85EZOTOrMds1KM3Wf" Ids="RIIzum1Bzk6NP85n9t9BkP,PL6Rpwwau4IM5gBLzRKkTC" />
             <Node Bounds="616,334,80,26" Id="Ac677J7ljZLPaHlHY3yMt7">
-              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastSymbolSource="RestSharp.dll">
+              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastDependency="RestSharp.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="AddParameter" />
                 <CategoryReference Kind="AssemblyCategory" Name="RestRequest" NeedsToBeDirectParent="true" />
@@ -342,7 +373,7 @@
             <Link Id="KttAwFdDtnLNj6YpAB7E9a" Ids="TGiUIrbGdbvPMX6kFrOzid,JuloP4uZ3fSLwyhsY3EOrY" />
             <Link Id="Db5E6fsqN96QTN8smVW0uZ" Ids="Sg6S77Ym34pORRbGJMhAEq,TGiUIrbGdbvPMX6kFrOzid" IsHidden="true" />
             <Node Bounds="616,399,80,26" Id="LcKk3CZyvAKLdzlVRIqX0p">
-              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastSymbolSource="RestSharp.dll">
+              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastDependency="RestSharp.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="AddParameter" />
                 <CategoryReference Kind="AssemblyCategory" Name="RestRequest" NeedsToBeDirectParent="true" />
@@ -359,7 +390,7 @@
             <Link Id="GFdQaiyX25BL1ftw25riPO" Ids="TawDXdd07zsQBk5FIA6SYK,MfO7ZhMKFlzLaq5XPmSqmz" IsHidden="true" />
             <Link Id="EsdvHhykF17LLPkqXyY3zH" Ids="MfO7ZhMKFlzLaq5XPmSqmz,Q3moC5ybWyoOeacdoOcjLW" />
             <Node Bounds="616,468,80,26" Id="V77cX3EdneqPgniv5fWPWs">
-              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastSymbolSource="RestSharp.dll">
+              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastDependency="RestSharp.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="AddParameter" />
                 <CategoryReference Kind="AssemblyCategory" Name="RestRequest" NeedsToBeDirectParent="true" />
@@ -376,7 +407,7 @@
             <Link Id="PZ7025iHydxOXvU0P43lmC" Ids="DoMD1CJjFdyNBqGD0mUuoN,UD1C4J9NC1oNdM1fmOTmFn" />
             <Link Id="IVTAEZ3z7v6P94urFSfcW4" Ids="IM1Xu2kURRFLx6mfDxi12R,DoMD1CJjFdyNBqGD0mUuoN" IsHidden="true" />
             <Node Bounds="616,526,80,26" Id="DXWsT70bJR7M8VszmyGA0A">
-              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastSymbolSource="RestSharp.dll">
+              <p:NodeReference LastCategoryFullName="RestSharp.RestRequest" LastDependency="RestSharp.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="AddParameter" />
                 <CategoryReference Kind="AssemblyCategory" Name="RestRequest" NeedsToBeDirectParent="true" />
@@ -393,12 +424,12 @@
             <Link Id="P0qjCsQWpcSPV0Xp8gRsz8" Ids="R6EwF8DT71wPtctTcMJKx3,UiH0c5hbQD5LJQV3m59RfM" />
             <Link Id="VDEIEZVyHCUNQImy0795TP" Ids="JZtqv0orqygOtheOwm6lxU,HDo65nAGEpcLAY9TF3vqME" IsHidden="true" />
             <Node Bounds="548,592,52,26" Id="GQnKbyGtHoKQEPrFAKL2cs">
-              <p:NodeReference LastCategoryFullName="RestSharp.RestClient" LastSymbolSource="RestSharp.dll">
+              <p:NodeReference LastCategoryFullName="RestSharp.RestClient" LastDependency="RestSharp.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="Execute" />
                 <CategoryReference Kind="AssemblyCategory" Name="RestClient" NeedsToBeDirectParent="true" />
                 <PinReference Kind="OutputPin" Name="return">
-                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="RestSharp" LastSymbolSource="RestSharp.dll">
+                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="RestSharp" LastDependency="RestSharp.dll">
                     <Choice Kind="TypeFlag" Name="IRestResponse" />
                   </p:DataTypeReference>
                 </PinReference>
@@ -414,22 +445,22 @@
             <Link Id="Mk5ThDWJcmuPAdbvLCEbO2" Ids="HSYWev50ZR1LcoNzUw2ann,ToJK8AgAfTuPDZJidTWzqv" />
             <Link Id="VKFVLag5CdIPwsTfSoe6PY" Ids="ToJK8AgAfTuPDZJidTWzqv,F3wXdFk9GsTLJohsKO9mWd" IsHidden="true" />
             <Pin Id="Sg6S77Ym34pORRbGJMhAEq" Name="Code" Kind="InputPin" Bounds="517,566">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
             </Pin>
             <Pin Id="TawDXdd07zsQBk5FIA6SYK" Name="Redirect URI" Kind="InputPin">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
             </Pin>
             <Pin Id="IM1Xu2kURRFLx6mfDxi12R" Name="Client ID" Kind="InputPin" Bounds="511,726">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
             </Pin>
             <Pin Id="JZtqv0orqygOtheOwm6lxU" Name="Client Secret" Kind="InputPin">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
             </Pin>
@@ -442,13 +473,13 @@
 
 -->
         <Node Name="GetToken" Bounds="110,376" Id="NuXefDBS63sOeLsHyJVGF1">
-          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
           <Patch Id="ScQzQVWJujjQQpwKg7e2CE">
             <Canvas Id="GCVCnzQJPD0NxKrtP4NUWQ" CanvasType="Group">
               <Node Bounds="419,492,111,74" Id="D0xuklR7mpkPylGoCaeRiq">
-                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+                <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="ProcessAppFlag" Name="AsyncTask" />
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 </p:NodeReference>
@@ -465,7 +496,7 @@
                   <ControlPoint Id="ULRF5GLHdqrOPwQ3KSj7w1" Bounds="454,500" />
                   <ControlPoint Id="EPzSanEZTQGNB2hs3L4w3J" Bounds="433,559" />
                   <Node Bounds="431,519,87,19" Id="H7usxXGUrzoNQhVkAMaShe">
-                    <p:NodeReference LastCategoryFullName="IO.Spotify.Authentication" LastSymbolSource="VL.Spotify.vl">
+                    <p:NodeReference LastCategoryFullName="IO.Spotify.Authentication" LastDependency="VL.Spotify.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="GetTokenQuery" />
                     </p:NodeReference>
@@ -482,8 +513,8 @@
               <ControlPoint Id="H4LAJc38EUSPPJzz2lGc70" Bounds="488,439" />
               <ControlPoint Id="TIpIHPdazXJNtGxROl7zCv" Bounds="460,416" />
               <ControlPoint Id="KV6mjG6FP39P8Lx5yspGTt" Bounds="434,395" />
-              <Node Bounds="419,639,121,95" Id="BYH970VXCQFPcZK4dM3VCc">
-                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+              <Node Bounds="419,639,131,95" Id="BYH970VXCQFPcZK4dM3VCc">
+                <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="ProcessAppFlag" Name="Where" />
                   <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
                   <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -497,7 +528,7 @@
                   <ControlPoint Id="TQBadupEjDKOi8zSeRJFnB" Bounds="433,647" />
                   <ControlPoint Id="VfYf2WFJl7fOTrnJNQ32uo" Bounds="499,727" />
                   <Node Bounds="431,676,71,26" Id="JPKbiP3caZoQXb4dgz83qE">
-                    <p:NodeReference LastCategoryFullName="RestSharp.IRestResponse" LastSymbolSource="RestSharp.dll">
+                    <p:NodeReference LastCategoryFullName="RestSharp.IRestResponse" LastDependency="RestSharp.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="IsSuccessful" />
                       <CategoryReference Kind="AssemblyCategory" Name="IRestResponse" NeedsToBeDirectParent="true" />
@@ -508,8 +539,8 @@
                   </Node>
                 </Patch>
               </Node>
-              <Node Bounds="664,618,127,125" Id="VYgaYCnHQQ3PKnSGV3D5QT">
-                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+              <Node Bounds="664,618,131,125" Id="VYgaYCnHQQ3PKnSGV3D5QT">
+                <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="ProcessAppFlag" Name="Where" />
                   <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
                   <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -523,7 +554,7 @@
                   <ControlPoint Id="QJNDyZTWxt6Oo0XiVVOrB4" Bounds="678,626" />
                   <ControlPoint Id="QjywHvM3QM0M0upit9YxpA" Bounds="744,736" />
                   <Node Bounds="676,655,71,26" Id="NYCua3WQMS5MiV2Rvy1oxC">
-                    <p:NodeReference LastCategoryFullName="RestSharp.IRestResponse" LastSymbolSource="RestSharp.dll">
+                    <p:NodeReference LastCategoryFullName="RestSharp.IRestResponse" LastDependency="RestSharp.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="IsSuccessful" />
                       <CategoryReference Kind="AssemblyCategory" Name="IRestResponse" NeedsToBeDirectParent="true" />
@@ -533,7 +564,7 @@
                     <Pin Id="QuncYFog0GjOUmDGTfHWgG" Name="Is Successful" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="742,694,37,19" Id="JVn61MaOgkiL3TK0FoHRlC">
-                    <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="CoreLibBasics.vl">
+                    <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="NOT" />
                     </p:NodeReference>
@@ -543,7 +574,7 @@
                 </Patch>
               </Node>
               <Node Bounds="664,770,169,163" Id="FZgY184QPmeMw2f4iJlc9Q">
-                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+                <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="ProcessAppFlag" Name="ForEach" />
                   <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
@@ -560,7 +591,7 @@
                   <ControlPoint Id="E0sGxuFIK8KNxXauZvfhnr" Bounds="678,778" />
                   <ControlPoint Id="CCVqY2lpCk4MaNbLEdXPcM" Bounds="741,926" />
                   <Node Bounds="676,797,68,26" Id="PdZc6pkkK0BK9qHjrLkPEw">
-                    <p:NodeReference LastCategoryFullName="RestSharp.IRestResponse" LastSymbolSource="RestSharp.dll">
+                    <p:NodeReference LastCategoryFullName="RestSharp.IRestResponse" LastDependency="RestSharp.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="Content" />
                       <CategoryReference Kind="AssemblyCategory" Name="IRestResponse" NeedsToBeDirectParent="true" />
@@ -570,7 +601,7 @@
                     <Pin Id="SG3HIO9r76ZQHV50mabCsU" Name="Content" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="739,841,63,26" Id="Qt4tEEJVUMgNACLQmlsbG8">
-                    <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+                    <p:NodeReference LastCategoryFullName="System.XML" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="ParseJSON" />
                     </p:NodeReference>
@@ -580,7 +611,7 @@
                     <Pin Id="EmvEQeRaq6UNuKTaMnMne3" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="739,883,82,19" Id="F64CGqUPHdiOsGn07ObITA">
-                    <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+                    <p:NodeReference LastCategoryFullName="System.XML" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
                     </p:NodeReference>
@@ -592,7 +623,7 @@
                 </Patch>
               </Node>
               <Node Bounds="664,996,65,19" Id="GF6hcBWFslHOZa4R0q4x0T">
-                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+                <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
                 </p:NodeReference>
@@ -604,7 +635,7 @@
               <ControlPoint Id="Jeuu8IHyMhyLsExRtXqpxz" Bounds="666,1064" />
               <ControlPoint Id="SKpGC0V0JauNhZkq1DRXC9" Bounds="726,1032" />
               <Node Bounds="419,781,169,163" Id="BFsYPop9QfcMJRetYQpiJ0">
-                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+                <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="ProcessAppFlag" Name="ForEach" />
                   <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
@@ -621,7 +652,7 @@
                   <ControlPoint Id="PRTt6K9p8ATM6rt5Isun3d" Bounds="433,789" />
                   <ControlPoint Id="C0eewJVvSudQNYHE00aTlY" Bounds="496,937" />
                   <Node Bounds="431,808,68,26" Id="N2eq60hErCoLGOpn58xC5o">
-                    <p:NodeReference LastCategoryFullName="RestSharp.IRestResponse" LastSymbolSource="RestSharp.dll">
+                    <p:NodeReference LastCategoryFullName="RestSharp.IRestResponse" LastDependency="RestSharp.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="Content" />
                       <CategoryReference Kind="AssemblyCategory" Name="IRestResponse" NeedsToBeDirectParent="true" />
@@ -631,7 +662,7 @@
                     <Pin Id="PdIgNA5ox9oQOezbokppZ7" Name="Content" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="494,852,63,26" Id="G3aWHxH9wq0MPfSUqwiFvQ">
-                    <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+                    <p:NodeReference LastCategoryFullName="System.XML" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="ParseJSON" />
                     </p:NodeReference>
@@ -641,7 +672,7 @@
                     <Pin Id="NOgzQBrAKxtO8dpvHtQkWy" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="494,894,82,19" Id="U3FeoGD4CrhPXQ143yQZtn">
-                    <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+                    <p:NodeReference LastCategoryFullName="System.XML" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
                     </p:NodeReference>
@@ -653,7 +684,7 @@
                 </Patch>
               </Node>
               <Node Bounds="419,1005,65,19" Id="NfolMl0Yq62NrUwrT2oeZg">
-                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+                <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
                 </p:NodeReference>
@@ -718,6 +749,11 @@
             <Link Id="O6NwnmXOZDmLnYoNWWRerv" Ids="N2tghepQ4spN88Gd5xwPxL,D1oK1OHavi3OwH6rsTVf8b" />
             <Link Id="JaHo1dprJ28Ppku8KAv171" Ids="Gwe8mEyqHmpMvvjBg3Tk41,RnZJ1M6potuOOx71bUV9eM" IsHidden="true" />
             <Link Id="BTHiwLsHonGLUM3y2HHhyQ" Ids="D1oK1OHavi3OwH6rsTVf8b,AWcXRNOcYHUO8WVNXKYjE2" IsHidden="true" />
+            <Link Id="LleAMk4jEaAOgGFPeqjTJw" Ids="BFxO3jUHZ3lLogLvj2n0eF,TxBmwmrW6heQH6MqASUiOm" />
+            <Link Id="MeJNCG29qxINv4ZgPBt1Vt" Ids="VBGe4UQMT5KNiayKrTdR8L,AjhTmwJeslAPIOeNwcdQVF" IsHidden="true" />
+            <Link Id="Hw8aRYdDIRVQXn7x1bzCdR" Ids="AjhTmwJeslAPIOeNwcdQVF,QofHrE7zWptMmHJbzVETxz" />
+            <Link Id="A4rDR2twVXZPw2G8uOUNiR" Ids="VBGe4UQMT5KNiayKrTdR8L,VzH5j324GI5OLAg2ct76rY" IsHidden="true" />
+            <Link Id="D18usSNMAMuMgM1QGDE8nd" Ids="VzH5j324GI5OLAg2ct76rY,UqKMBknaanKM93NfIKVMDL" />
             <Patch Id="KGXVeUA43K4NtvrE8yi59j" Name="Create" />
             <Patch Id="BrOFKo97i9EONeqU3FisF0" Name="Update" ManuallySortedPins="true">
               <Pin Id="GAj45FlRDcIP5oRzeGT6fx" Name="Code" Kind="InputPin" Bounds="455,384" />
@@ -726,23 +762,18 @@
               <Pin Id="ANlGRTeaLdtOtkKXJM8bf4" Name="Client Secret" Kind="InputPin" Bounds="482,441" />
               <Pin Id="VBGe4UQMT5KNiayKrTdR8L" Name="Update" Kind="InputPin" Bounds="463,431" />
               <Pin Id="RnZJ1M6potuOOx71bUV9eM" Name="Access Token" Kind="OutputPin">
-                <p:TypeAnnotation>
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="String" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="AWcXRNOcYHUO8WVNXKYjE2" Name="On Success" Kind="OutputPin" />
               <Pin Id="KbVWQ3kY8oNPbD2vCGagi2" Name="Error Message" Kind="OutputPin" Bounds="621,1019">
-                <p:TypeAnnotation>
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="String" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="QzRt4y3Su7jNaWgbH1uyUk" Name="On Error" Kind="OutputPin" Bounds="681,1002" />
             </Patch>
-            <Link Id="LleAMk4jEaAOgGFPeqjTJw" Ids="BFxO3jUHZ3lLogLvj2n0eF,TxBmwmrW6heQH6MqASUiOm" />
-            <Link Id="MeJNCG29qxINv4ZgPBt1Vt" Ids="VBGe4UQMT5KNiayKrTdR8L,AjhTmwJeslAPIOeNwcdQVF" IsHidden="true" />
-            <Link Id="Hw8aRYdDIRVQXn7x1bzCdR" Ids="AjhTmwJeslAPIOeNwcdQVF,QofHrE7zWptMmHJbzVETxz" />
-            <Link Id="A4rDR2twVXZPw2G8uOUNiR" Ids="VBGe4UQMT5KNiayKrTdR8L,VzH5j324GI5OLAg2ct76rY" IsHidden="true" />
-            <Link Id="D18usSNMAMuMgM1QGDE8nd" Ids="VzH5j324GI5OLAg2ct76rY,UqKMBknaanKM93NfIKVMDL" />
           </Patch>
         </Node>
       </Canvas>
@@ -752,33 +783,23 @@
     ************************ PlaybackControl ************************
 
 -->
-        <Node Name="PlaybackControl" Bounds="316,253" Id="QmIJerBDRi0OCMU6PjleNX">
-          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+        <Node Name="PlaybackControl" Bounds="316,253" Id="QmIJerBDRi0OCMU6PjleNX" Summary="Control the playback of the user's Spotify account">
+          <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
           <Patch Id="NBwqpq5nN4zOiniLQuO9Rq">
             <Canvas Id="FGhwvT0KL0yOpEYzBzQDiT" CanvasType="Group">
-              <ControlPoint Id="DCMTuT0jZMwOcAqhUxixHx" Bounds="52,297" />
-              <Node Bounds="50,330,62,26" Id="FBLYXzO0nhJNcdD5iE7776">
-                <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.SpotifyClient" LastSymbolSource="SpotifyAPI.Web.dll">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="OperationCallFlag" Name="Player" />
-                  <CategoryReference Kind="AssemblyCategory" Name="SpotifyClient" NeedsToBeDirectParent="true" />
-                </p:NodeReference>
-                <Pin Id="EWPQGeXeO1APN4PyFWBfD0" Name="Input" Kind="StateInputPin" />
-                <Pin Id="Fd8cNsHrBvKM0E6YnZGs3B" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="CCnGOVOcUpnNvAsmfVT1tk" Name="Player" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="177,365,106,80" Id="QYPma0sZmj2ONT7JNSCotQ">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <ControlPoint Id="DCMTuT0jZMwOcAqhUxixHx" Bounds="51,224" />
+              <Node Bounds="177,426,106,80" Id="QYPma0sZmj2ONT7JNSCotQ">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ApplicationStatefulRegion" Name="If" />
                   <FullNameCategoryReference ID="Primitive" />
                 </p:NodeReference>
                 <Pin Id="JRz2A5GscD7LPUHELXYa6W" Name="Condition" Kind="InputPin" />
                 <Patch Id="MTxb3CP7gC2NXnrPV6Axae" ManuallySortedPins="true">
-                  <Node Bounds="189,394,82,26" Id="TtpqK6bRH85Lw50sNhNVST">
-                    <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.IPlayerClient" LastSymbolSource="VL.Spotify.vl">
+                  <Node Bounds="189,454,82,26" Id="TtpqK6bRH85Lw50sNhNVST">
+                    <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.IPlayerClient" LastDependency="VL.Spotify.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="PausePlayback" />
                       <CategoryReference Kind="MutableInterfaceType" Name="IPlayerClient" NeedsToBeDirectParent="true" />
@@ -792,8 +813,8 @@
                 </Patch>
               </Node>
               <ControlPoint Id="AyBIWBLPUqwPRRS8B5ylau" Bounds="179,309" />
-              <Node Bounds="319,365,98,80" Id="FmfoUvF5WVqOrqh2lE2w5P">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <Node Bounds="319,426,98,80" Id="FmfoUvF5WVqOrqh2lE2w5P">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ApplicationStatefulRegion" Name="If" />
                   <FullNameCategoryReference ID="Primitive" />
@@ -802,8 +823,8 @@
                 <Patch Id="LH0cs5OeFN8QERmK9QEKpA" ManuallySortedPins="true">
                   <Patch Id="DKybRQxNy6ENfmby4AwTdZ" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="AbxsgYH4G72Lv9Eizeo027" Name="Then" ManuallySortedPins="true" />
-                  <Node Bounds="331,394,74,26" Id="VnvRk8w2RXkLx5PG03ZRba">
-                    <p:NodeReference LastCategoryFullName="IO.Spotify.IPlayerClient" LastSymbolSource="VL.Spotify.vl">
+                  <Node Bounds="331,454,74,26" Id="VnvRk8w2RXkLx5PG03ZRba">
+                    <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.IPlayerClient" LastDependency="VL.Spotify.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="MutableInterfaceType" Name="IPlayerClient" />
                       <Choice Kind="OperationCallFlag" Name="SkipPrevious" />
@@ -815,16 +836,16 @@
                 </Patch>
               </Node>
               <ControlPoint Id="KQyNHJITrS4NF2iZVjNXTF" Bounds="321,309" />
-              <Node Bounds="444,365,115,80" Id="BWGATRf8mhILRYHtscRH2c">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <Node Bounds="444,426,115,80" Id="BWGATRf8mhILRYHtscRH2c">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ApplicationStatefulRegion" Name="If" />
                   <FullNameCategoryReference ID="Primitive" />
                 </p:NodeReference>
                 <Pin Id="K9VmcvSCibKOjxIwyIDTkX" Name="Condition" Kind="InputPin" />
                 <Patch Id="C4r724Qnvb2OubgP69x27n" ManuallySortedPins="true">
-                  <Node Bounds="456,394,91,26" Id="ORI6NLEgXsoPzICD4ud8QA">
-                    <p:NodeReference LastCategoryFullName="IO.Spotify.IPlayerClient" LastSymbolSource="VL.Spotify.vl">
+                  <Node Bounds="456,454,91,26" Id="ORI6NLEgXsoPzICD4ud8QA">
+                    <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.IPlayerClient" LastDependency="VL.Spotify.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="MutableInterfaceType" Name="IPlayerClient" />
                       <Choice Kind="OperationCallFlag" Name="ResumePlayback" />
@@ -838,16 +859,16 @@
                 </Patch>
               </Node>
               <ControlPoint Id="KciKVLqnHDiNpr5VPLreB0" Bounds="446,309" />
-              <Node Bounds="591,365,84,80" Id="K7w2ctCGNX2OdxZxIhib2S">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <Node Bounds="591,426,84,80" Id="K7w2ctCGNX2OdxZxIhib2S">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ApplicationStatefulRegion" Name="If" />
                   <FullNameCategoryReference ID="Primitive" />
                 </p:NodeReference>
                 <Pin Id="AALJgph50HiLHyHdLzL8kv" Name="Condition" Kind="InputPin" />
                 <Patch Id="B0t1Xou2WSiNum58XOfFxp" ManuallySortedPins="true">
-                  <Node Bounds="603,394,60,26" Id="N8EwPkPHDVwPH7rqyZchka">
-                    <p:NodeReference LastCategoryFullName="IO.Spotify.IPlayerClient" LastSymbolSource="VL.Spotify.vl">
+                  <Node Bounds="603,454,60,26" Id="N8EwPkPHDVwPH7rqyZchka">
+                    <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.IPlayerClient" LastDependency="VL.Spotify.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="MutableInterfaceType" Name="IPlayerClient" />
                       <Choice Kind="OperationCallFlag" Name="SkipNext" />
@@ -861,8 +882,8 @@
                 </Patch>
               </Node>
               <ControlPoint Id="HmDZ0heeJHgLLJ55qWgQtj" Bounds="593,309" />
-              <Node Bounds="714,363,88,86" Id="QQb2fvxNTvSLDHWO6qXlCJ">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <Node Bounds="691,363,123,158" Id="QQb2fvxNTvSLDHWO6qXlCJ">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ProcessStatefulRegion" Name="Cache" />
                   <FullNameCategoryReference ID="Primitive" />
@@ -870,24 +891,69 @@
                 <Pin Id="STUntYk1pJgO6Zf4rzpktE" Name="Force" Kind="InputPin" />
                 <Pin Id="JDCC4qmfIhBLdRqOAyiott" Name="Dispose Cached Outputs" Kind="InputPin" />
                 <Pin Id="UoJT0eMBdu4QZVnBD8AcDo" Name="Has Changed" Kind="OutputPin" />
+                <ControlPoint Id="CGpSzHa3pDiOsjFDtlCaSP" Bounds="787,369" Alignment="Top" />
                 <Patch Id="IL6VXdrZTzUOiJ3DI0R1pp" ManuallySortedPins="true">
-                  <Node Bounds="726,389,64,26" Id="RqQf1YySsyrNWu1mX8iUbz">
-                    <p:NodeReference LastCategoryFullName="IO.Spotify.IPlayerClient" LastSymbolSource="VL.Spotify.vl">
-                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="MutableInterfaceType" Name="IPlayerClient" />
-                      <Choice Kind="OperationCallFlag" Name="SetVolume" />
-                    </p:NodeReference>
-                    <Pin Id="SxBicy7wNyKMdDZtZL7z4F" Name="Input" Kind="InputPin" />
-                    <Pin Id="LQuvdQqrCVhMNm6KYnllCp" Name="Volume" Kind="InputPin" />
-                    <Pin Id="KsHcpDGjW87MVvc3FFWC8B" Name="Output" Kind="OutputPin" />
-                    <Pin Id="VzU8TtNZR5MPTW5nIXu6nB" Name="Result" Kind="OutputPin" />
-                  </Node>
                   <Patch Id="OqdshdEZDyAQdgiUYX7S4t" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="McOK1RJgUywQXDOWsHn3q3" Name="Then" ManuallySortedPins="true" />
+                  <Node Bounds="714,422,88,80" Id="VBmRO17g0F2QLE9Ss1Adxn">
+                    <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+                      <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                      <CategoryReference Kind="Category" Name="Primitive" />
+                      <Choice Kind="ApplicationStatefulRegion" Name="If" />
+                    </p:NodeReference>
+                    <Pin Id="LFpYbUwRYh1PVXxsRiOnWi" Name="Condition" Kind="InputPin" />
+                    <Patch Id="GuaEPxDkYVjL82JEW9djTP" ManuallySortedPins="true">
+                      <Patch Id="IrxvjYCX6HAOfgWOz8x2cT" Name="Create" ManuallySortedPins="true" />
+                      <Patch Id="TSI3ZUrn3j2PEtVhirpFHg" Name="Then" ManuallySortedPins="true" />
+                      <Node Bounds="726,450,64,26" Id="RqQf1YySsyrNWu1mX8iUbz">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.IPlayerClient" LastDependency="VL.Spotify.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="MutableInterfaceType" Name="IPlayerClient" />
+                          <Choice Kind="OperationCallFlag" Name="SetVolume" />
+                        </p:NodeReference>
+                        <Pin Id="SxBicy7wNyKMdDZtZL7z4F" Name="Input" Kind="InputPin" />
+                        <Pin Id="LQuvdQqrCVhMNm6KYnllCp" Name="Volume" Kind="InputPin" />
+                        <Pin Id="KsHcpDGjW87MVvc3FFWC8B" Name="Output" Kind="OutputPin" />
+                        <Pin Id="VzU8TtNZR5MPTW5nIXu6nB" Name="Result" Kind="OutputPin" />
+                      </Node>
+                    </Patch>
+                  </Node>
                 </Patch>
-                <ControlPoint Id="CGpSzHa3pDiOsjFDtlCaSP" Bounds="787,369" Alignment="Top" />
               </Node>
               <ControlPoint Id="KXS6J8u4bc6PTANBxVvBR0" Bounds="787,309" />
+              <Node Bounds="38,302,88,80" Id="FAjfF6UvvBILukasafg0AY">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+                  <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                  <CategoryReference Kind="Category" Name="Primitive" />
+                  <Choice Kind="ApplicationStatefulRegion" Name="If" />
+                </p:NodeReference>
+                <Pin Id="U3jpF2q6jk3MPZjmEMmgYl" Name="Condition" Kind="InputPin" />
+                <Patch Id="EI2cd225XooP09mUOnqN7k" ManuallySortedPins="true">
+                  <Node Bounds="50,330,62,26" Id="FBLYXzO0nhJNcdD5iE7776">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.SpotifyClient" LastDependency="SpotifyAPI.Web.dll">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="OperationCallFlag" Name="Player" />
+                      <CategoryReference Kind="AssemblyCategory" Name="SpotifyClient" NeedsToBeDirectParent="true" />
+                    </p:NodeReference>
+                    <Pin Id="EWPQGeXeO1APN4PyFWBfD0" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="Fd8cNsHrBvKM0E6YnZGs3B" Name="Output" Kind="StateOutputPin" />
+                    <Pin Id="CCnGOVOcUpnNvAsmfVT1tk" Name="Player" Kind="OutputPin" />
+                  </Node>
+                  <Patch Id="PP6LXRSL7SbLns2knA2EkD" Name="Create" ManuallySortedPins="true" />
+                  <Patch Id="RUtC3Rtx0z2Puq1BuGG4h4" Name="Then" ManuallySortedPins="true" />
+                </Patch>
+                <ControlPoint Id="D4jC9PcZ02TP1dm72DGSi0" Bounds="109,376" Alignment="Bottom" />
+                <ControlPoint Id="PFNhJ9PTTjINaHEjL2cuQP" Bounds="109,308" Alignment="Top" />
+              </Node>
+              <Node Bounds="38,265,65,19" Id="CGXYLmSUrdYM7EVXVSrjJJ">
+                <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="IsAssigned" />
+                </p:NodeReference>
+                <Pin Id="TgdB2ZdvoamQdTL1karwNW" Name="X" Kind="InputPin" />
+                <Pin Id="TMBd0knAJwOPel72GSCW2m" Name="Result" Kind="OutputPin" />
+                <Pin Id="VY0pBbUdbEnNKeLhel2J4f" Name="Not Assigned" Kind="OutputPin" />
+              </Node>
             </Canvas>
             <ProcessDefinition Id="RWQsXnXtXtdOjKAKUEmo9N">
               <Fragment Id="AvPfQ6ARAnjMo6wBAEKGd6" Patch="Vx8kduvKqGILLMDWwIFYSA" Enabled="true" />
@@ -895,35 +961,40 @@
             </ProcessDefinition>
             <Link Id="Cmq3JlWP0m0NBfFzQ2Vhce" Ids="LNpxteK4BWTOLCqpOR7pm7,DCMTuT0jZMwOcAqhUxixHx" IsHidden="true" />
             <Link Id="FZwrAjdamfLP8pCVHxcV5j" Ids="DCMTuT0jZMwOcAqhUxixHx,EWPQGeXeO1APN4PyFWBfD0" />
-            <Link Id="BEqevIupHLnLQfv31mkqBr" Ids="CCnGOVOcUpnNvAsmfVT1tk,IVrKdFuBYamNy5fDgEyNC3" />
             <Link Id="Arj5XcR6lPWNJGlLprLQcD" Ids="AyBIWBLPUqwPRRS8B5ylau,JRz2A5GscD7LPUHELXYa6W" />
             <Link Id="E2dyPDaxgmhQZtvpdL9uu7" Ids="K16IKgW26AxLo1SGT5c9le,AyBIWBLPUqwPRRS8B5ylau" IsHidden="true" />
-            <Link Id="C5egLqT9ZhjPBewqSQRLQH" Ids="CCnGOVOcUpnNvAsmfVT1tk,F1Kk68h7qmzPe8Vmcsb9sc" />
             <Link Id="ARhwbsMDDmlM4DwSRWeU4N" Ids="KQyNHJITrS4NF2iZVjNXTF,GY69k2uDlqCNat84wmg74B" />
             <Link Id="Rebd7l6jnvlMlCHbzHvIHY" Ids="SXil28vsaPtPk386qhucV4,KQyNHJITrS4NF2iZVjNXTF" IsHidden="true" />
-            <Link Id="RNA0cYcmRaoOJxyiNRRT7R" Ids="CCnGOVOcUpnNvAsmfVT1tk,VZuHSAQ1vE8L6fqiLgeYLg" />
             <Link Id="ImfSZSnP9mtPn1UVVAJJGu" Ids="KciKVLqnHDiNpr5VPLreB0,K9VmcvSCibKOjxIwyIDTkX" />
             <Link Id="Tw96EawWrOvPEW2YGgUkTG" Ids="E1r27I2ksCaL4xPevJebYc,KciKVLqnHDiNpr5VPLreB0" IsHidden="true" />
-            <Link Id="LUrbXAsBZciLhu62q0L875" Ids="CCnGOVOcUpnNvAsmfVT1tk,BvWoS3AXEuuL56kMnahaUv" />
             <Link Id="UQqY6mjNb3HP05ENbAgMqD" Ids="HmDZ0heeJHgLLJ55qWgQtj,AALJgph50HiLHyHdLzL8kv" />
             <Link Id="LLk1DitYtzlP6b8pzhTXwf" Ids="FVvzvOC7kQRPkWXcraMFIh,HmDZ0heeJHgLLJ55qWgQtj" IsHidden="true" />
             <Link Id="RWTrU7nmEUGM6AP8Orn8Zl" Ids="CGpSzHa3pDiOsjFDtlCaSP,LQuvdQqrCVhMNm6KYnllCp" />
             <Link Id="GJHBglAZ2iYNwKqKAvPvKx" Ids="KXS6J8u4bc6PTANBxVvBR0,CGpSzHa3pDiOsjFDtlCaSP" />
             <Link Id="BLipY7O2U0TMAt7iEorv4R" Ids="JBXWWrskKebMj79UjNWJxm,KXS6J8u4bc6PTANBxVvBR0" IsHidden="true" />
-            <Link Id="PJDFdoRNWWvM1YTf9aTrZi" Ids="CCnGOVOcUpnNvAsmfVT1tk,SxBicy7wNyKMdDZtZL7z4F" />
             <Patch Id="Vx8kduvKqGILLMDWwIFYSA" Name="Create" />
-            <Patch Id="RNptxpQlryLOo2lkxVhKb6" Name="Update" ParticipatingElements="FBLYXzO0nhJNcdD5iE7776,RWTrU7nmEUGM6AP8Orn8Zl,GJHBglAZ2iYNwKqKAvPvKx" ManuallySortedPins="true">
+            <Patch Id="RNptxpQlryLOo2lkxVhKb6" Name="Update" ParticipatingElements="RWTrU7nmEUGM6AP8Orn8Zl,GJHBglAZ2iYNwKqKAvPvKx" ManuallySortedPins="true">
               <Pin Id="LNpxteK4BWTOLCqpOR7pm7" Name="Input" Kind="InputPin" Bounds="376,318" />
               <Pin Id="SXil28vsaPtPk386qhucV4" Name="Skip Previous" Kind="InputPin" Bounds="586,279" />
               <Pin Id="K16IKgW26AxLo1SGT5c9le" Name="Pause Playback" Kind="InputPin" Bounds="461,257" />
               <Pin Id="E1r27I2ksCaL4xPevJebYc" Name="Resume Playback" Kind="InputPin" Bounds="699,270" />
               <Pin Id="FVvzvOC7kQRPkWXcraMFIh" Name="Skip Next" Kind="InputPin" Bounds="850,278" />
               <Pin Id="JBXWWrskKebMj79UjNWJxm" Name="Volume" Kind="InputPin" DefaultValue="0.5">
-                <p:TypeAnnotation>
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Float32" />
                 </p:TypeAnnotation>
               </Pin>
             </Patch>
+            <Link Id="TfbjzkAO1RIL7bdhygVVoX" Ids="DCMTuT0jZMwOcAqhUxixHx,TgdB2ZdvoamQdTL1karwNW" />
+            <Link Id="GabnXHNbZGZOFQDvigjBcH" Ids="TMBd0knAJwOPel72GSCW2m,U3jpF2q6jk3MPZjmEMmgYl" />
+            <Link Id="Lr9oVqaXnweMT6oqcG8DtT" Ids="PFNhJ9PTTjINaHEjL2cuQP,D4jC9PcZ02TP1dm72DGSi0" IsFeedback="true" />
+            <Link Id="A3Y3MM108XcP9vZkaSSxpT" Ids="CCnGOVOcUpnNvAsmfVT1tk,D4jC9PcZ02TP1dm72DGSi0" />
+            <Link Id="DMfydyOTAQdOJ4DGbCti3J" Ids="D4jC9PcZ02TP1dm72DGSi0,IVrKdFuBYamNy5fDgEyNC3" />
+            <Link Id="NhwgPnhrSBmNFLEMapqqTd" Ids="D4jC9PcZ02TP1dm72DGSi0,F1Kk68h7qmzPe8Vmcsb9sc" />
+            <Link Id="A1GyYRlKI2wPPdIzz0GPRq" Ids="D4jC9PcZ02TP1dm72DGSi0,VZuHSAQ1vE8L6fqiLgeYLg" />
+            <Link Id="Na8ddMZf673OEQSB1sZnGc" Ids="D4jC9PcZ02TP1dm72DGSi0,BvWoS3AXEuuL56kMnahaUv" />
+            <Link Id="GmmBTKlpd9LOxFAQQenaAr" Ids="D4jC9PcZ02TP1dm72DGSi0,SxBicy7wNyKMdDZtZL7z4F" />
+            <Link Id="UGkGuQ6HU6BM9SJOH05fFH" Ids="TMBd0knAJwOPel72GSCW2m,LFpYbUwRYh1PVXxsRiOnWi" />
           </Patch>
         </Node>
         <!--
@@ -936,7 +1007,7 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="IPlayerClient" />
           </p:TypeAnnotation>
           <p:ForwardAllNodesOfTypeDefinition p:Type="Boolean">false</p:ForwardAllNodesOfTypeDefinition>
@@ -955,7 +1026,7 @@
                 <p:HideCategory p:Type="Boolean">false</p:HideCategory>
                 <Patch Id="VL9peOZrMfdMxqThOOdlWL">
                   <Node Bounds="275,205,106,26" AutoConnect="true" Id="R5S3mc8yjIbPBpJmkk81xl">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="OperationNode" Name="GetCurrentlyPlaying" />
                       <FullNameCategoryReference ID="SpotifyAPI.Web.IPlayerClient" />
                     </p:NodeReference>
@@ -965,7 +1036,7 @@
                     <Pin Id="S5t93jTn9SjPsoTmzDaiMj" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="376,244,79,26" AutoConnect="true" Id="Sm3zqGdL3CxNjU3aZWNumd">
-                    <p:NodeReference LastCategoryFullName="Reactive.Task" LastSymbolSource="VL.Reactive.vl">
+                    <p:NodeReference LastCategoryFullName="Reactive.Task" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="ToObservable" />
                       <CategoryReference Kind="ClassType" Name="Task" NeedsToBeDirectParent="true" />
@@ -975,7 +1046,7 @@
                   </Node>
                   <Link Id="LpfYvzTOKY1OF7OI9yNOSR" Ids="S5t93jTn9SjPsoTmzDaiMj,TRcnrW5m4jHOp558o74mgd" />
                   <Node Bounds="376,164,124,26" AutoConnect="true" Id="LTzLbaIpbjqMzaGVV5774R">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.PlayerCurrentlyPlayingRequest" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.PlayerCurrentlyPlayingRequest" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="PlayerCurrentlyPlayingRequest" />
                       <Choice Kind="OperationCallFlag" Name="Create" />
@@ -985,6 +1056,7 @@
                   </Node>
                   <Link Id="KIb7oovgbq8LwCZSTLkj0Y" Ids="RS4vah1MhtLPVVq8dvlU85,FdPCj7kuQHoOAZqxA4ZdJk" />
                   <Pin Id="GERfMCrNgeDNSiSeBVxH0B" Name="Input" Kind="InputPin" />
+                  <Pin Id="Tnmm4OMPvQjLpGxvJxTuCK" Name="Cancel" Kind="InputPin" />
                   <Pin Id="QTFOaX0zF1SMNLWMRunHAI" Name="Types" Kind="InputPin" />
                   <Pin Id="FkqZZh4btBGNBjdyIvOn8k" Name="Output" Kind="OutputPin" />
                   <Pin Id="EVk0ShH4BhwM4dcbEWCtAY" Name="Result" Kind="OutputPin" />
@@ -1003,7 +1075,7 @@
                 <p:HideCategory p:Type="Boolean">false</p:HideCategory>
                 <Patch Id="G9iH91z4QnDMtDyveKUM5K">
                   <Node Bounds="630,220,82,26" AutoConnect="true" Id="AYGtvlGMdqMMSMw0hgvOcR">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="OperationNode" Name="PausePlayback" />
                       <FullNameCategoryReference ID="SpotifyAPI.Web.IPlayerClient" />
                     </p:NodeReference>
@@ -1011,11 +1083,8 @@
                     <Pin Id="TupF0iAol8lNbPNpK3UO1n" Name="Output" Kind="StateOutputPin" />
                     <Pin Id="ElmXJiuZaNiNW8DYILLk16" Name="Result" Kind="OutputPin" />
                   </Node>
-                  <Pin Id="OYcBs75itk3LuNbY7xv5z4" Name="Input" Kind="InputPin" />
-                  <Pin Id="CNihZCknkhxNirxSHYJad7" Name="Output" Kind="OutputPin" />
-                  <Pin Id="DVTlHYFH4MkNAjlrJ3VotQ" Name="Result" Kind="OutputPin" />
                   <Node Bounds="707,263,79,26" AutoConnect="true" Id="Jrgb4vRRmjHPD9ianFniVu">
-                    <p:NodeReference LastCategoryFullName="Reactive.Task" LastSymbolSource="VL.Reactive.vl">
+                    <p:NodeReference LastCategoryFullName="Reactive.Task" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="ToObservable" />
                       <CategoryReference Kind="ClassType" Name="Task" NeedsToBeDirectParent="true" />
@@ -1024,6 +1093,10 @@
                     <Pin Id="S0lgJq9sSKiP8Lj0pyYZeE" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Link Id="R6TrhGqp46HNIMcdBHXO9e" Ids="ElmXJiuZaNiNW8DYILLk16,TEYSRKSR1P5OyyCiCscuMc" />
+                  <Pin Id="OYcBs75itk3LuNbY7xv5z4" Name="Input" Kind="InputPin" />
+                  <Pin Id="CNihZCknkhxNirxSHYJad7" Name="Output" Kind="OutputPin" />
+                  <Pin Id="DVTlHYFH4MkNAjlrJ3VotQ" Name="Result" Kind="OutputPin" />
+                  <Pin Id="CpY2v7KnokhPE1Zec4OD7Y" Name="Cancel" Kind="InputPin" />
                 </Patch>
               </Node>
               <!--
@@ -1039,7 +1112,7 @@
                 <p:HideCategory p:Type="Boolean">false</p:HideCategory>
                 <Patch Id="D8G9XVvphe8M4J1JhCcM8D">
                   <Node Bounds="275,430,91,26" AutoConnect="true" Id="CpOWlK2V18zN5lDxaprBQ9">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="OperationNode" Name="ResumePlayback" />
                       <FullNameCategoryReference ID="SpotifyAPI.Web.IPlayerClient" />
                     </p:NodeReference>
@@ -1047,11 +1120,8 @@
                     <Pin Id="PspDRbGS062PPHion1bSic" Name="Output" Kind="StateOutputPin" />
                     <Pin Id="RfC5Lh6mKCaQKCHX89xPKN" Name="Result" Kind="OutputPin" />
                   </Node>
-                  <Pin Id="UlzlQ3ViSI1M3ui3oYeBHG" Name="Input" Kind="InputPin" />
-                  <Pin Id="PVFs22fL3tsPVnXwHXeELB" Name="Output" Kind="OutputPin" />
-                  <Pin Id="PECL1aV4wGLLTr2WzXrkxk" Name="Result" Kind="OutputPin" />
                   <Node Bounds="361,467,79,26" AutoConnect="true" Id="AG2HiIud6FzLJyb6IzwkFu">
-                    <p:NodeReference LastCategoryFullName="Reactive.Task" LastSymbolSource="VL.Reactive.vl">
+                    <p:NodeReference LastCategoryFullName="Reactive.Task" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="ToObservable" />
                       <CategoryReference Kind="ClassType" Name="Task" NeedsToBeDirectParent="true" />
@@ -1060,6 +1130,10 @@
                     <Pin Id="EpDLrbwvZnRLivaVMyDdOh" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Link Id="O8KLFG9xB1mLwAUsZXEXJi" Ids="RfC5Lh6mKCaQKCHX89xPKN,P6tOKGRe6nQPRCPoaaz2p4" />
+                  <Pin Id="UlzlQ3ViSI1M3ui3oYeBHG" Name="Input" Kind="InputPin" />
+                  <Pin Id="PVFs22fL3tsPVnXwHXeELB" Name="Output" Kind="OutputPin" />
+                  <Pin Id="PECL1aV4wGLLTr2WzXrkxk" Name="Result" Kind="OutputPin" />
+                  <Pin Id="Mj7wvSnrNarNcEDdwAKJt6" Name="Cancel" Kind="InputPin" />
                 </Patch>
               </Node>
               <!--
@@ -1075,7 +1149,7 @@
                 <p:HideCategory p:Type="Boolean">false</p:HideCategory>
                 <Patch Id="Tsz2HEA8yIpOl4RMTOcVQo">
                   <Node Bounds="630,490,60,26" AutoConnect="true" Id="SllOOcU5DLXMpRtcUaLtLq">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="OperationNode" Name="SeekTo" />
                       <FullNameCategoryReference ID="SpotifyAPI.Web.IPlayerClient" />
                     </p:NodeReference>
@@ -1085,7 +1159,7 @@
                     <Pin Id="H1hJIFZW3CqLS8hO47qcfI" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="685,435,92,26" Id="SCVbITutaFPMmMpBjHmq4r">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.PlayerSeekToRequest" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.PlayerSeekToRequest" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="PlayerSeekToRequest" />
                       <Choice Kind="OperationCallFlag" Name="Create" />
@@ -1095,7 +1169,7 @@
                   </Node>
                   <Link Id="CfysTvEEAmQMq0Smu0miZ8" Ids="De8IVqKJ1hbL2OcaIp7b92,AXJWV8U4YwNLv2UzeMImol" />
                   <Node Bounds="685,403,52,19" Id="JFOmFmbQnQjLlpazGlXkL9">
-                    <p:NodeReference LastCategoryFullName="System.Conversion" LastSymbolSource="CoreLibBasics.vl">
+                    <p:NodeReference LastCategoryFullName="System.Conversion" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="ToInt64" />
                     </p:NodeReference>
@@ -1107,13 +1181,14 @@
                   <Link Id="UTfJaGE8R7hLZFB2F5umuX" Ids="KZERUs9aGA2PPvBM9xJPZV,RXLeX9Vy38COU2XuILBG0O" />
                   <Link Id="PzNcxuHHKBvMicsd3jAWP7" Ids="JOzTRPKPZDjNUU10Z6fDns,KZERUs9aGA2PPvBM9xJPZV" IsHidden="true" />
                   <Pin Id="TBz9SagK81KL2cYTSq4uUn" Name="Input" Kind="InputPin" />
-                  <Pin Id="H92ets99LONQaDHxb060oi" Name="Output" Kind="OutputPin" />
-                  <Pin Id="AcGL1xVtO8AO88jlwzmzMq" Name="Result" Kind="OutputPin" />
+                  <Pin Id="PIn3LkRoFwLLyDi8ZKf9oX" Name="Cancel" Kind="InputPin" />
                   <Pin Id="JOzTRPKPZDjNUU10Z6fDns" Name="Position" Kind="InputPin" Bounds="624,394">
-                    <p:TypeAnnotation>
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="TypeFlag" Name="Float32" />
                     </p:TypeAnnotation>
                   </Pin>
+                  <Pin Id="H92ets99LONQaDHxb060oi" Name="Output" Kind="OutputPin" />
+                  <Pin Id="AcGL1xVtO8AO88jlwzmzMq" Name="Result" Kind="OutputPin" />
                 </Patch>
               </Node>
               <!--
@@ -1129,7 +1204,7 @@
                 <p:HideCategory p:Type="Boolean">false</p:HideCategory>
                 <Patch Id="JSc4ML9U1XQQFyheITHTga">
                   <Node Bounds="275,671,62,26" AutoConnect="true" Id="BICIoVROTcxPx7mfp8kMPE">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="OperationNode" Name="SetShuffle" />
                       <FullNameCategoryReference ID="SpotifyAPI.Web.IPlayerClient" />
                     </p:NodeReference>
@@ -1139,7 +1214,7 @@
                     <Pin Id="VhZYDkWOZbmOrywbKRSTw9" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="332,635,91,26" AutoConnect="true" Id="GMWRZzts7vtLLtiI303SEt">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.PlayerShuffleRequest" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.PlayerShuffleRequest" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="PlayerShuffleRequest" />
                       <Choice Kind="OperationCallFlag" Name="Create" />
@@ -1149,9 +1224,10 @@
                   </Node>
                   <Link Id="LuFdE1eLm64OZKv69cZBwD" Ids="BUYayjnP0moLWfPCCiTcX6,GJpGuonfnoFOt09FiiIdlM" />
                   <Pin Id="GMjuSE9tEgPQX8gyYc3Fvz" Name="Input" Kind="InputPin" />
+                  <Pin Id="GbHLXe55hvZLllqr1CCtWR" Name="Cancel" Kind="InputPin" />
+                  <Pin Id="JiAPh1eifUINODzbB1Vblr" Name="State" Kind="InputPin" />
                   <Pin Id="UVxf3FWb56yLURdqciHuJc" Name="Output" Kind="OutputPin" />
                   <Pin Id="VBWDji9dM2hObyW1qiPpIa" Name="Result" Kind="OutputPin" />
-                  <Pin Id="JiAPh1eifUINODzbB1Vblr" Name="State" Kind="InputPin" />
                 </Patch>
               </Node>
               <!--
@@ -1167,7 +1243,7 @@
                 <p:HideCategory p:Type="Boolean">false</p:HideCategory>
                 <Patch Id="TEJQZpT6KGmNHbA6xFc7ii">
                   <Node Bounds="614,761,64,26" AutoConnect="true" Id="AzoTR90RhxPNAQ9JiUSd1q">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="OperationNode" Name="SetVolume" />
                       <FullNameCategoryReference ID="SpotifyAPI.Web.IPlayerClient" />
                     </p:NodeReference>
@@ -1177,7 +1253,7 @@
                     <Pin Id="Hk5M6apEFGUNbK9pWb2qot" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="673,722,93,26" Id="JndT3qNEu1RL9ZwDHzWTsx">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.PlayerVolumeRequest" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.PlayerVolumeRequest" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="PlayerVolumeRequest" />
                       <Choice Kind="OperationCallFlag" Name="Create" />
@@ -1188,16 +1264,8 @@
                   <Link Id="MbXnRKEXwKbOOtdZ89qd2P" Ids="OheGNzmUbh4OyGTOHTZPLt,IoXNggJGjotQHW93tbrv4g" />
                   <ControlPoint Id="PyROcx0JPVfOs7gckttxH2" Bounds="675,634" />
                   <Link Id="CxdbQ3yyE96QPE66rBB02x" Ids="Qvi7yb5XK4XO5W7a5g7PWY,PyROcx0JPVfOs7gckttxH2" IsHidden="true" />
-                  <Pin Id="Vp9w0H3HxNHMT3IQBDb2hA" Name="Input" Kind="InputPin" />
-                  <Pin Id="Qvi7yb5XK4XO5W7a5g7PWY" Name="Volume" Kind="InputPin">
-                    <p:TypeAnnotation>
-                      <Choice Kind="TypeFlag" Name="Float32" />
-                    </p:TypeAnnotation>
-                  </Pin>
-                  <Pin Id="DMUxbHZjUdbO0ICYwDdFtv" Name="Output" Kind="OutputPin" />
-                  <Pin Id="Hh7YtcZZaBeM4OjZMmsFFq" Name="Result" Kind="OutputPin" />
                   <Node Bounds="673,655,25,19" Id="UOKXoDmhbm3LBJM6df9JVZ">
-                    <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="CoreLibBasics.vl">
+                    <p:NodeReference LastCategoryFullName="Math" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="*" />
                     </p:NodeReference>
@@ -1207,7 +1275,7 @@
                   </Node>
                   <Link Id="Q6DCCW5JC6sNlEIjadYV2c" Ids="PyROcx0JPVfOs7gckttxH2,TWUUJUazlo1ONckeldaKAA" />
                   <Node Bounds="673,684,52,19" Id="UbzD8uKGz2yMb0Pfsu12N1">
-                    <p:NodeReference LastCategoryFullName="System.Conversion" LastSymbolSource="CoreLibBasics.vl">
+                    <p:NodeReference LastCategoryFullName="System.Conversion" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="ToInt32" />
                     </p:NodeReference>
@@ -1216,6 +1284,15 @@
                   </Node>
                   <Link Id="RhulmzBosyPNF8rxzfFqD7" Ids="BaDoWyGogBjNFuqE8REnFg,FQ8XIjK7wTINm1JLQeWUCa" />
                   <Link Id="QpOxp5U9dghNMSxh3VJ3xR" Ids="SWdVUcQc9ZkMYPs2z5on5Q,NbJXVRcQMhzMA9LLakSdRa" />
+                  <Pin Id="Vp9w0H3HxNHMT3IQBDb2hA" Name="Input" Kind="InputPin" />
+                  <Pin Id="SOEOpvOxRFYLM9SVn88r7S" Name="Cancel" Kind="InputPin" />
+                  <Pin Id="Qvi7yb5XK4XO5W7a5g7PWY" Name="Volume" Kind="InputPin">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                      <Choice Kind="TypeFlag" Name="Float32" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="DMUxbHZjUdbO0ICYwDdFtv" Name="Output" Kind="OutputPin" />
+                  <Pin Id="Hh7YtcZZaBeM4OjZMmsFFq" Name="Result" Kind="OutputPin" />
                 </Patch>
               </Node>
               <!--
@@ -1231,7 +1308,7 @@
                 <p:HideCategory p:Type="Boolean">false</p:HideCategory>
                 <Patch Id="S9LmCgCBuD2QaMu6gxqzX4">
                   <Node Bounds="275,941,60,26" AutoConnect="true" Id="SxfnmcQqrabNHi8uahwtsC">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="OperationNode" Name="SkipNext" />
                       <FullNameCategoryReference ID="SpotifyAPI.Web.IPlayerClient" />
                     </p:NodeReference>
@@ -1239,11 +1316,8 @@
                     <Pin Id="EOgZA8cC6j2POhzs1yObuf" Name="Output" Kind="StateOutputPin" />
                     <Pin Id="OjXQ0qKzk5gPNmAt5VWDRU" Name="Result" Kind="OutputPin" />
                   </Node>
-                  <Pin Id="VNclR309Y8sOH7LOAke54q" Name="Input" Kind="InputPin" />
-                  <Pin Id="VCJiagpor0sNbhSSH0Zvsv" Name="Output" Kind="OutputPin" />
-                  <Pin Id="J2XG5rwABq2N3yOVE861xG" Name="Result" Kind="OutputPin" />
                   <Node Bounds="330,979,79,26" AutoConnect="true" Id="V6QKQrULj6mNa9C44iPY5Z">
-                    <p:NodeReference LastCategoryFullName="Reactive.Task" LastSymbolSource="VL.Reactive.vl">
+                    <p:NodeReference LastCategoryFullName="Reactive.Task" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="ToObservable" />
                       <CategoryReference Kind="ClassType" Name="Task" NeedsToBeDirectParent="true" />
@@ -1252,6 +1326,10 @@
                     <Pin Id="LoRSIn2SLVdMhHhPL1yGMI" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Link Id="GjSgmtEiEZaLKMtLGaOGCo" Ids="OjXQ0qKzk5gPNmAt5VWDRU,EBhBgjxjItwMqo5SS1VUXU" />
+                  <Pin Id="VNclR309Y8sOH7LOAke54q" Name="Input" Kind="InputPin" />
+                  <Pin Id="VCJiagpor0sNbhSSH0Zvsv" Name="Output" Kind="OutputPin" />
+                  <Pin Id="J2XG5rwABq2N3yOVE861xG" Name="Result" Kind="OutputPin" />
+                  <Pin Id="UCD5USwhIUQMIFYH0Cote2" Name="Cancel" Kind="InputPin" />
                 </Patch>
               </Node>
               <!--
@@ -1267,7 +1345,7 @@
                 <p:HideCategory p:Type="Boolean">false</p:HideCategory>
                 <Patch Id="AFCoG0YPMlbOhdhwqGj0og">
                   <Node Bounds="630,941,74,26" AutoConnect="true" Id="HbQ1TTgMQSrP5hnsdQVsrI">
-                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastSymbolSource="SpotifyAPI.Web.dll">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.IPlayerClient" LastDependency="SpotifyAPI.Web.dll">
                       <Choice Kind="OperationNode" Name="SkipPrevious" />
                       <FullNameCategoryReference ID="SpotifyAPI.Web.IPlayerClient" />
                     </p:NodeReference>
@@ -1275,11 +1353,8 @@
                     <Pin Id="IzL7UZHRBlANkN37vCznHm" Name="Output" Kind="StateOutputPin" />
                     <Pin Id="Ei2sGx0SrjPNUWEsG7I0m2" Name="Result" Kind="OutputPin" />
                   </Node>
-                  <Pin Id="Nf2TV5aObATPUrQt30aB3c" Name="Input" Kind="InputPin" />
-                  <Pin Id="N08XXZ7U1d2PrlePJWKIns" Name="Output" Kind="OutputPin" />
-                  <Pin Id="KcaoKZFLCL9MhLp1x4R8ZP" Name="Result" Kind="OutputPin" />
                   <Node Bounds="699,980,79,26" AutoConnect="true" Id="FiBV7WWeUxpM1Aysh0JF18">
-                    <p:NodeReference LastCategoryFullName="Reactive.Task" LastSymbolSource="VL.Reactive.vl">
+                    <p:NodeReference LastCategoryFullName="Reactive.Task" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="ToObservable" />
                       <CategoryReference Kind="ClassType" Name="Task" NeedsToBeDirectParent="true" />
@@ -1288,6 +1363,10 @@
                     <Pin Id="CXkrJgFvz9iLTxnmy7OY2v" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Link Id="QJIlgCFG0IsNyUipRipYF7" Ids="Ei2sGx0SrjPNUWEsG7I0m2,C1V71y2f5KVQB89IMdxnXI" />
+                  <Pin Id="Nf2TV5aObATPUrQt30aB3c" Name="Input" Kind="InputPin" />
+                  <Pin Id="N08XXZ7U1d2PrlePJWKIns" Name="Output" Kind="OutputPin" />
+                  <Pin Id="KcaoKZFLCL9MhLp1x4R8ZP" Name="Result" Kind="OutputPin" />
+                  <Pin Id="I3gSBhzo6FWM8LN8KgW7xP" Name="Cancel" Kind="InputPin" />
                 </Patch>
               </Node>
             </Canvas>
@@ -1308,25 +1387,15 @@
     ************************ CurrentlyPlaying ************************
 
 -->
-        <Node Name="CurrentlyPlaying" Bounds="316,330" Id="QXByhw896NpPyVEAuGS4Rk">
-          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+        <Node Name="CurrentlyPlaying" Bounds="316,330" Id="QXByhw896NpPyVEAuGS4Rk" Summary="Retrieves the account's currently playing item">
+          <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
           <Patch Id="JNjVSErp9rBPwDScRECAlA">
             <Canvas Id="MbyFu9yx73SQZURJMinXtt" CanvasType="Group">
-              <Node Bounds="332,258,62,26" Id="KdbkkZ2YiudPKSz9XJJE7n">
-                <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.SpotifyClient" LastSymbolSource="SpotifyAPI.Web.dll">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="OperationCallFlag" Name="Player" />
-                  <CategoryReference Kind="AssemblyCategory" Name="SpotifyClient" NeedsToBeDirectParent="true" />
-                </p:NodeReference>
-                <Pin Id="QkSR1MAwCWpPaDxEKt4S1k" Name="Input" Kind="StateInputPin" />
-                <Pin Id="IVeDCPeeFyBN8hAiXbmKh6" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="GhJj0mt0J2iPKm2hIQXu4o" Name="Player" Kind="OutputPin" />
-              </Node>
-              <ControlPoint Id="Pv6TLQ3VwOjPZD0JtCgWCd" Bounds="334,239" />
-              <Node Bounds="428,302,130,86" Id="NxpweqC9pdtQUlQgJYDolE">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <ControlPoint Id="Pv6TLQ3VwOjPZD0JtCgWCd" Bounds="385,258" />
+              <Node Bounds="371,283,187,120" Id="NxpweqC9pdtQUlQgJYDolE">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ProcessStatefulRegion" Name="Cache" />
                   <FullNameCategoryReference ID="Primitive" />
@@ -1334,11 +1403,10 @@
                 <Pin Id="FUQDql20qSdMUjhTEpJbqc" Name="Force" Kind="InputPin" />
                 <Pin Id="BgdWmLE36oKQcmgtMCMuZt" Name="Dispose Cached Outputs" Kind="InputPin" />
                 <Pin Id="GgvUyhMzmEpPA9n5Tz4wsl" Name="Has Changed" Kind="OutputPin" />
+                <ControlPoint Id="PM8kxkZ0qUbMkHbYZyRVF8" Bounds="543,397" Alignment="Bottom" />
                 <Patch Id="FWfM1gSAZvkLThWRG3ETIC" ManuallySortedPins="true">
-                  <Patch Id="TVbM264Z8ihQOf2O2NvqRT" Name="Create" ManuallySortedPins="true" />
-                  <Patch Id="Raw64Dhk606QMDnlCH09kx" Name="Then" ManuallySortedPins="true" />
-                  <Node Bounds="440,337,106,19" Id="Q5Ut9U7jg5nLFVZDlyTbei">
-                    <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.IPlayerClient" LastSymbolSource="VL.Spotify.vl">
+                  <Node Bounds="440,352,106,26" Id="Q5Ut9U7jg5nLFVZDlyTbei">
+                    <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.IPlayerClient" LastDependency="VL.Spotify.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="GetCurrentlyPlaying" />
                       <CategoryReference Kind="MutableInterfaceType" Name="IPlayerClient" NeedsToBeDirectParent="true" />
@@ -1348,12 +1416,23 @@
                     <Pin Id="Hk7AN3rdVXzLg3FUWr4CBF" Name="Output" Kind="StateOutputPin" />
                     <Pin Id="TPMWC8oelItOgIa1rsod9B" Name="Result" Kind="OutputPin" />
                   </Node>
+                  <Node Bounds="383,306,62,26" Id="KdbkkZ2YiudPKSz9XJJE7n">
+                    <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.SpotifyClient" LastDependency="SpotifyAPI.Web.dll">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="OperationCallFlag" Name="Player" />
+                      <CategoryReference Kind="AssemblyCategory" Name="SpotifyClient" NeedsToBeDirectParent="true" />
+                    </p:NodeReference>
+                    <Pin Id="QkSR1MAwCWpPaDxEKt4S1k" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="IVeDCPeeFyBN8hAiXbmKh6" Name="Output" Kind="StateOutputPin" />
+                    <Pin Id="GhJj0mt0J2iPKm2hIQXu4o" Name="Player" Kind="OutputPin" />
+                  </Node>
+                  <Patch Id="TVbM264Z8ihQOf2O2NvqRT" Name="Create" ManuallySortedPins="true" />
+                  <Patch Id="Raw64Dhk606QMDnlCH09kx" Name="Then" ManuallySortedPins="true" />
                 </Patch>
-                <ControlPoint Id="PM8kxkZ0qUbMkHbYZyRVF8" Bounds="543,382" Alignment="Bottom" />
               </Node>
-              <ControlPoint Id="UnVmnr1b3SwMIKMpDOi6QO" Bounds="543,280" />
-              <ControlPoint Id="CtU3afMWqKFNcWYU2hyFaJ" Bounds="430,280" />
-              <ControlPoint Id="A1I9guQKJ0eO5pBFUOXlMO" Bounds="543,411" />
+              <ControlPoint Id="UnVmnr1b3SwMIKMpDOi6QO" Bounds="544,259" />
+              <ControlPoint Id="CtU3afMWqKFNcWYU2hyFaJ" Bounds="373,231" />
+              <ControlPoint Id="A1I9guQKJ0eO5pBFUOXlMO" Bounds="543,426" />
             </Canvas>
             <ProcessDefinition Id="PZ8dsF9aeUXLonE4Qs8hvH">
               <Fragment Id="NUrnts8siM4NZiiy5TmKOQ" Patch="J5vRU6Iuny9NS7lUUYMXAD" Enabled="true" />
@@ -1367,7 +1446,7 @@
             <Link Id="U1SgYYbhkxyMOJlgFJiKI3" Ids="CtU3afMWqKFNcWYU2hyFaJ,FUQDql20qSdMUjhTEpJbqc" />
             <Link Id="AKoLiDfx7BTLKcD5P4OLpD" Ids="PTvPcSiSftUNcYyNmuk3aY,CtU3afMWqKFNcWYU2hyFaJ" IsHidden="true" />
             <Patch Id="J5vRU6Iuny9NS7lUUYMXAD" Name="Create" />
-            <Patch Id="As5V2pa5TJWLiJjZcUAf68" Name="Update" ParticipatingElements="KdbkkZ2YiudPKSz9XJJE7n" ManuallySortedPins="true">
+            <Patch Id="As5V2pa5TJWLiJjZcUAf68" Name="Update" ManuallySortedPins="true">
               <Pin Id="MWAEbs5dXQnOVC7V4N4bIi" Name="Input" Kind="InputPin" Bounds="354,225" />
               <Pin Id="FgJPgVV7M4oOYaela95CWN" Name="Types" Kind="InputPin" Bounds="544,273" />
               <Pin Id="PTvPcSiSftUNcYyNmuk3aY" Name="Update" Kind="InputPin" Bounds="457,257" />
@@ -1388,7 +1467,7 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="CurrentlyPlaying" />
           </p:TypeAnnotation>
           <Patch Id="DUpGhqK4NVbPGDef0ifniI">
@@ -1406,7 +1485,7 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="Context" />
           </p:TypeAnnotation>
           <Patch Id="CJLv1bYbTcuOF7NhF7Elzc">
@@ -1424,7 +1503,7 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="IPlayableItem" />
           </p:TypeAnnotation>
           <Patch Id="FQJmvaK8AMfLFfCWrRyUdD">
@@ -1442,7 +1521,7 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="FullAlbum" />
           </p:TypeAnnotation>
           <Patch Id="QCJoSjBG37gPFy27FFTRL3">
@@ -1460,7 +1539,7 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="FullArtist" />
           </p:TypeAnnotation>
           <Patch Id="IkiCcIFvftNMFltEroS6ZN">
@@ -1478,7 +1557,7 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="FullTrack" />
           </p:TypeAnnotation>
           <Patch Id="QBSACxq8hjuPuSB4KpAuNy">
@@ -1496,7 +1575,7 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="SimpleAlbum" />
           </p:TypeAnnotation>
           <Patch Id="EdxwFITG8pqMP2nEA4UswR">
@@ -1514,7 +1593,7 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="SimpleArtist" />
           </p:TypeAnnotation>
           <Patch Id="QGjpHbYzp9VOE8xj9sOado">
@@ -1532,7 +1611,7 @@
             <Choice Kind="ForwardDefinition" Name="Forward" />
             <FullNameCategoryReference ID="Primitive" />
           </p:NodeReference>
-          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastSymbolSource="SpotifyAPI.Web.dll">
+          <p:TypeAnnotation LastCategoryFullName="SpotifyAPI.Web" LastDependency="SpotifyAPI.Web.dll">
             <Choice Kind="TypeFlag" Name="SimpleTrack" />
           </p:TypeAnnotation>
           <Patch Id="BURw1rwbKEjMRcSJ0fsxkc">
@@ -1542,11 +1621,11 @@
         </Node>
         <!--
 
-    ************************ CurrentlyPlayingInfo ************************
+    ************************ CurrentlyPlayingTrackInfo ************************
 
 -->
-        <Node Name="CurrentlyPlayingInfo" Bounds="315,383" Id="G0nPc8t5RYmOAjNiVpDRoe">
-          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+        <Node Name="CurrentlyPlayingTrackInfo" Bounds="315,383" Id="G0nPc8t5RYmOAjNiVpDRoe" Summary="Convenience node retrieving basic track information from a CurrentlyPlaying response">
+          <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
           <Patch Id="NNMo4DQOG1qMWr8exuwEji">
@@ -1558,18 +1637,30 @@
               <ControlPoint Id="PXAFIciyaRqP736NVb9AIN" Bounds="789,752" />
               <ControlPoint Id="Ly4kJhuUbB7NXx2daV8LP8" Bounds="886,752" />
               <ControlPoint Id="PqevzRNWVLIOuPdcIjd8zF" Bounds="1074,752" />
-              <Node Bounds="253,213,850,420" Id="UuE0c3dsKbFPse94w1m8z7">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <Node Bounds="241,194,874,458" Id="UuE0c3dsKbFPse94w1m8z7">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ApplicationStatefulRegion" Name="If" />
                   <FullNameCategoryReference ID="Primitive" />
                 </p:NodeReference>
                 <Pin Id="EnYodNQvSYAMrYYqB7tbf0" Name="Condition" Kind="InputPin" />
+                <ControlPoint Id="OztxFpcjBpHNCtkH0DwuuA" Bounds="369,646" Alignment="Bottom" />
+                <ControlPoint Id="FP11B7IxK0pPvZg8s8HqhD" Bounds="369,200" Alignment="Top" />
+                <ControlPoint Id="HV177nfSic3OaoN5qvZ48f" Bounds="512,646" Alignment="Bottom" />
+                <ControlPoint Id="Eefva8Mgg34MtQnmRkvyjQ" Bounds="512,200" Alignment="Top" />
+                <ControlPoint Id="SAjvwHpoybJPqMwmatcnBp" Bounds="635,646" Alignment="Bottom" />
+                <ControlPoint Id="Cb9QsOXlCwfN7dDWKJ4nPE" Bounds="635,200" Alignment="Top" />
+                <ControlPoint Id="A5mp5tGubTuNYCCQLGvBa4" Bounds="789,646" Alignment="Bottom" />
+                <ControlPoint Id="UHKiLU2HTW7Nx1KXpj09Ok" Bounds="789,200" Alignment="Top" />
+                <ControlPoint Id="DwDD6JqJ8tzQFSeO4X3Q6h" Bounds="886,646" Alignment="Bottom" />
+                <ControlPoint Id="G0ihZF8RGP3LBUEn2MSyv2" Bounds="886,200" Alignment="Top" />
+                <ControlPoint Id="PfRIWEJPyOFLaz75xT5UQg" Bounds="1074,646" Alignment="Bottom" />
+                <ControlPoint Id="LMdXP2SRbHKLF6Ve7CEzbJ" Bounds="1074,200" Alignment="Top" />
                 <Patch Id="RDEtLDQMy5tPyHE50kdKLv" ManuallySortedPins="true">
                   <Patch Id="FGeEMArshF7OR7qld1ZnJv" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="UP4QDRpcqaIMU6tJPzTdPQ" Name="Then" ManuallySortedPins="true" />
                   <Node Bounds="285,214,818,418" Id="M2tPvHWSkCOPtV1zxGI28y">
-                    <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+                    <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                       <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                       <Choice Kind="ProcessStatefulRegion" Name="Cache" />
                       <FullNameCategoryReference ID="Primitive" />
@@ -1577,11 +1668,18 @@
                     <Pin Id="JbbCBephqfcOgn76yDxzAw" Name="Force" Kind="InputPin" DefaultValue="False" />
                     <Pin Id="APnUZnvtZ95MJbyK8T3BOU" Name="Dispose Cached Outputs" Kind="InputPin" />
                     <Pin Id="Ioz9VRU9ZtGLk9dKUlh1KQ" Name="Has Changed" Kind="OutputPin" />
+                    <ControlPoint Id="DUko5cyUA1wO05oGXMdYtl" Bounds="299,220" Alignment="Top" />
+                    <ControlPoint Id="Vuj3SSVCsjeLtVArZmIHw1" Bounds="369,626" Alignment="Bottom" />
+                    <ControlPoint Id="MgSp3fYqK8FPEUo8cr4EIh" Bounds="512,626" Alignment="Bottom" />
+                    <ControlPoint Id="HKvKdfuJPx8NYUpZKcXUPP" Bounds="635,626" Alignment="Bottom" />
+                    <ControlPoint Id="PPe5FeDIjskMmTduyI3Tiu" Bounds="789,626" Alignment="Bottom" />
+                    <ControlPoint Id="C3RselNesHhPbXppSoFSVA" Bounds="886,626" Alignment="Bottom" />
+                    <ControlPoint Id="G38Gcaxh2fpMNNLAujhj47" Bounds="1074,626" Alignment="Bottom" />
                     <Patch Id="S2dOtiyTX7WMlDIDbWNsdh" ManuallySortedPins="true">
                       <Patch Id="LX8txiQQ57XOoZTNyYxpuJ" Name="Create" ManuallySortedPins="true" />
                       <Patch Id="UkTY2BNdcXBLutw0AB0jZW" Name="Then" ManuallySortedPins="true" />
                       <Node Bounds="297,321,75,26" Id="LXPRKJzxWioLDGWp0BGpan">
-                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.CurrentlyPlaying" LastSymbolSource="VL.Spotify.vl">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.CurrentlyPlaying" LastDependency="VL.Spotify.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="ClassType" Name="CurrentlyPlaying" />
                           <Choice Kind="OperationCallFlag" Name="IsPlaying" />
@@ -1591,7 +1689,7 @@
                         <Pin Id="TwPGC9WoK2LPlUiy40h7os" Name="Is Playing" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="397,321,75,26" Id="UQqJHeJzkmJMV34brwelIp">
-                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.CurrentlyPlaying" LastSymbolSource="VL.Spotify.vl">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.CurrentlyPlaying" LastDependency="VL.Spotify.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="ClassType" Name="CurrentlyPlaying" />
                           <Choice Kind="OperationCallFlag" Name="Item" />
@@ -1601,7 +1699,7 @@
                         <Pin Id="E7u82r3QY1FNO4AFBhZQCT" Name="Item" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="467,369,48,19" Id="QtkOZVcbcFWM16p8IF6qM2">
-                        <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
+                        <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="CastAs" />
                         </p:NodeReference>
@@ -1610,8 +1708,8 @@
                         <Pin Id="KG4QGU0CinbLVldvwBVVrx" Name="Result" Kind="OutputPin" />
                         <Pin Id="LFX28YhHR2aOUAaLYfpVuW" Name="Success" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="467,422,42,26" Id="Sshh1JY3nFMLTISalVkIY1">
-                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.FullTrack" LastSymbolSource="VL.Spotify.vl">
+                      <Node Bounds="467,422,49,26" Id="Sshh1JY3nFMLTISalVkIY1">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.FullTrack" LastDependency="VL.Spotify.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Name" />
                           <CategoryReference Kind="ClassType" Name="FullTrack" NeedsToBeDirectParent="true" />
@@ -1620,8 +1718,8 @@
                         <Pin Id="Sw0sgule6sVLlYugAoEMOm" Name="Output" Kind="StateOutputPin" />
                         <Pin Id="QJTOypchc9BM8OL1hnerrx" Name="Name" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="563,422,46,26" Id="CiOKDxCcAq1PB8me1VZ92T">
-                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.FullTrack" LastSymbolSource="VL.Spotify.vl">
+                      <Node Bounds="563,422,49,26" Id="CiOKDxCcAq1PB8me1VZ92T">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.FullTrack" LastDependency="VL.Spotify.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Artists" />
                           <CategoryReference Kind="ClassType" Name="FullTrack" NeedsToBeDirectParent="true" />
@@ -1631,7 +1729,7 @@
                         <Pin Id="QzOnTnm0nnTM15FNCTOhmt" Name="Artists" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="595,465,86,76" Id="AYkaud38phuO4iRv7AZYYJ">
-                        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+                        <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                           <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                           <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
                           <CategoryReference Kind="Category" Name="Primitive" />
@@ -1642,7 +1740,7 @@
                           <Patch Id="ORFaVyxfRo3LlbbHE6WG8I" Name="Update" ManuallySortedPins="true" />
                           <Patch Id="VOo4SbpSLhAMttEw4tISVY" Name="Dispose" ManuallySortedPins="true" />
                           <Node Bounds="607,490,60,26" Id="SJS7HeMBumjQWYGb4J8MYI">
-                            <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleArtist" LastSymbolSource="VL.Spotify.vl">
+                            <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleArtist" LastDependency="VL.Spotify.vl">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <CategoryReference Kind="ClassType" Name="SimpleArtist" />
                               <Choice Kind="OperationCallFlag" Name="Name" />
@@ -1653,10 +1751,10 @@
                           </Node>
                         </Patch>
                         <ControlPoint Id="BbrduB9ImmTNOl2nKgUJUW" Bounds="609,471" Alignment="Top" />
-                        <ControlPoint Id="P8GjHwsJct9Nw6ZQeCi7DX" Bounds="664,534" Alignment="Bottom" />
+                        <ControlPoint Id="P8GjHwsJct9Nw6ZQeCi7DX" Bounds="664,535" Alignment="Bottom" />
                       </Node>
                       <Node Bounds="633,559,34,19" Id="PtR7s5xO8aKPQFJNhelNqP">
-                        <p:NodeReference LastCategoryFullName="Primitive.String" LastSymbolSource="CoreLibBasics.vl">
+                        <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Join" />
                           <CategoryReference Kind="StringType" Name="String" NeedsToBeDirectParent="true" />
@@ -1666,7 +1764,7 @@
                         <Pin Id="OIHHnXyQRtbPU2JEUvQDs9" Name="Output" Kind="StateOutputPin" />
                       </Node>
                       <Node Bounds="686,424,49,26" Id="Rt95sfsrjfzPVMC34LFuKE">
-                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.FullTrack" LastSymbolSource="VL.Spotify.vl">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.FullTrack" LastDependency="VL.Spotify.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="ClassType" Name="FullTrack" />
                           <Choice Kind="OperationCallFlag" Name="Album" />
@@ -1675,8 +1773,8 @@
                         <Pin Id="QQLcSt9BACmP9fESNlHk8D" Name="Output" Kind="StateOutputPin" />
                         <Pin Id="SuKMUnGZXE4PeCQpyJllYn" Name="Album" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="730,471,63,26" Id="B0KS0dGBXuIPqZuNmjI91w">
-                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleAlbum" LastSymbolSource="VL.Spotify.vl">
+                      <Node Bounds="730,485,63,26" Id="B0KS0dGBXuIPqZuNmjI91w">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleAlbum" LastDependency="VL.Spotify.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="ClassType" Name="SimpleAlbum" />
                           <Choice Kind="OperationCallFlag" Name="Name" />
@@ -1685,8 +1783,8 @@
                         <Pin Id="RMon19e0r2qOS3KCEJJ1hv" Name="Output" Kind="StateOutputPin" />
                         <Pin Id="LpaolWzMMPsLJK0pq0Gw4Y" Name="Name" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="981,470,63,26" Id="FKQXCEWXWkJN0nvew1oHgc">
-                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleAlbum" LastSymbolSource="VL.Spotify.vl">
+                      <Node Bounds="981,485,63,26" Id="FKQXCEWXWkJN0nvew1oHgc">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleAlbum" LastDependency="VL.Spotify.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="ClassType" Name="SimpleAlbum" />
                           <Choice Kind="OperationCallFlag" Name="Images" />
@@ -1695,8 +1793,8 @@
                         <Pin Id="U0TZhA54QnEM9LiZm4fBoU" Name="Output" Kind="StateOutputPin" />
                         <Pin Id="NfJ7RvBV2EzLJEdBsmUtap" Name="Images" Kind="OutputPin" />
                       </Node>
-                      <Node Bounds="817,471,71,26" Id="SN34CAvqfwNNlqP0kGD1zk">
-                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleAlbum" LastSymbolSource="VL.Spotify.vl">
+                      <Node Bounds="817,485,71,26" Id="SN34CAvqfwNNlqP0kGD1zk">
+                        <p:NodeReference LastCategoryFullName="IO.Spotify.Playback.SimpleAlbum" LastDependency="VL.Spotify.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <CategoryReference Kind="ClassType" Name="SimpleAlbum" />
                           <Choice Kind="OperationCallFlag" Name="ReleaseDate" />
@@ -1706,7 +1804,7 @@
                         <Pin Id="UDmzAf1g7OBOiDwFG9WQfC" Name="Release Date" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="1027,525,64,86" Id="PDDj4hjb8jnMYVLaybcSBM">
-                        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+                        <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                           <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                           <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
                           <CategoryReference Kind="Category" Name="Primitive" />
@@ -1717,7 +1815,7 @@
                           <Patch Id="QL6O3LcmQ6FL1XlYd1kok5" Name="Update" ManuallySortedPins="true" />
                           <Patch Id="TErTtJdWUyYLtSRN2ziCb4" Name="Dispose" ManuallySortedPins="true" />
                           <Node Bounds="1039,557,38,26" Id="Lpq5afBnco0MgfEPTkrd79">
-                            <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.Image" LastSymbolSource="SpotifyAPI.Web.dll">
+                            <p:NodeReference LastCategoryFullName="SpotifyAPI.Web.Image" LastDependency="SpotifyAPI.Web.dll">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <CategoryReference Kind="AssemblyCategory" Name="Image" />
                               <Choice Kind="OperationCallFlag" Name="Url" />
@@ -1731,30 +1829,11 @@
                         <ControlPoint Id="GjcFxnPObi7QBsOH0UTCyU" Bounds="1074,605" Alignment="Bottom" />
                       </Node>
                     </Patch>
-                    <ControlPoint Id="DUko5cyUA1wO05oGXMdYtl" Bounds="299,221" Alignment="Top" />
-                    <ControlPoint Id="Vuj3SSVCsjeLtVArZmIHw1" Bounds="369,626" Alignment="Bottom" />
-                    <ControlPoint Id="MgSp3fYqK8FPEUo8cr4EIh" Bounds="512,626" Alignment="Bottom" />
-                    <ControlPoint Id="HKvKdfuJPx8NYUpZKcXUPP" Bounds="635,626" Alignment="Bottom" />
-                    <ControlPoint Id="PPe5FeDIjskMmTduyI3Tiu" Bounds="789,626" Alignment="Bottom" />
-                    <ControlPoint Id="C3RselNesHhPbXppSoFSVA" Bounds="886,626" Alignment="Bottom" />
-                    <ControlPoint Id="G38Gcaxh2fpMNNLAujhj47" Bounds="1074,626" Alignment="Bottom" />
                   </Node>
                 </Patch>
-                <ControlPoint Id="OztxFpcjBpHNCtkH0DwuuA" Bounds="369,646" Alignment="Bottom" />
-                <ControlPoint Id="FP11B7IxK0pPvZg8s8HqhD" Bounds="369,200" Alignment="Top" />
-                <ControlPoint Id="HV177nfSic3OaoN5qvZ48f" Bounds="512,646" Alignment="Bottom" />
-                <ControlPoint Id="Eefva8Mgg34MtQnmRkvyjQ" Bounds="512,200" Alignment="Top" />
-                <ControlPoint Id="SAjvwHpoybJPqMwmatcnBp" Bounds="635,646" Alignment="Bottom" />
-                <ControlPoint Id="Cb9QsOXlCwfN7dDWKJ4nPE" Bounds="635,200" Alignment="Top" />
-                <ControlPoint Id="A5mp5tGubTuNYCCQLGvBa4" Bounds="789,646" Alignment="Bottom" />
-                <ControlPoint Id="UHKiLU2HTW7Nx1KXpj09Ok" Bounds="789,200" Alignment="Top" />
-                <ControlPoint Id="DwDD6JqJ8tzQFSeO4X3Q6h" Bounds="886,646" Alignment="Bottom" />
-                <ControlPoint Id="G0ihZF8RGP3LBUEn2MSyv2" Bounds="886,200" Alignment="Top" />
-                <ControlPoint Id="PfRIWEJPyOFLaz75xT5UQg" Bounds="1074,646" Alignment="Bottom" />
-                <ControlPoint Id="LMdXP2SRbHKLF6Ve7CEzbJ" Bounds="1074,200" Alignment="Top" />
               </Node>
               <Node Bounds="241,152,65,19" Id="IeqI6v64BPoMx9ju4kkgwP">
-                <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
+                <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="IsAssigned" />
                 </p:NodeReference>
@@ -1763,20 +1842,6 @@
                 <Pin Id="GSEUZ5DN8SPLoEUXQTMJbQ" Name="Not Assigned" Kind="OutputPin" />
               </Node>
             </Canvas>
-            <Patch Id="RXTlp9XSs8JL4juheg1GrK" Name="Create" />
-            <Patch Id="UvZtxILdzMIMKFQ5mG6a5B" Name="Update">
-              <Pin Id="SngICNs1Jl4OtBfEoiPkWL" Name="Input" Kind="InputPin">
-                <p:TypeAnnotation>
-                  <Choice Kind="TypeFlag" Name="CurrentlyPlaying" />
-                </p:TypeAnnotation>
-              </Pin>
-              <Pin Id="ULQMr9JWLMsO8ETk3fEGBK" Name="Is Playing" Kind="OutputPin" Bounds="688,500" />
-              <Pin Id="V4kp19MoAwIP04BoXKV1e3" Name="Name" Kind="OutputPin" Bounds="825,553" />
-              <Pin Id="RTbN5SAjOCtPqXmeY7ArUY" Name="Artists" Kind="OutputPin" Bounds="954,695" />
-              <Pin Id="EjcXp8fWgeBMC1EsUvRfsr" Name="Album" Kind="OutputPin" Bounds="1146,631" />
-              <Pin Id="JVtw2X0E0XmMhCR1rrwXId" Name="Release Date" Kind="OutputPin" Bounds="1267,685" />
-              <Pin Id="B12opDDO4sZN9ZBTr0jTJb" Name="Images URL" Kind="OutputPin" Bounds="1347,741" />
-            </Patch>
             <ProcessDefinition Id="MNoccI8EZuiPXXH27mBcsX">
               <Fragment Id="BOMhyAVYjZjMWPcIaNASJ0" Patch="RXTlp9XSs8JL4juheg1GrK" Enabled="true" />
               <Fragment Id="NFBmFmWl9O8NYT9BO7LXyq" Patch="UvZtxILdzMIMKFQ5mG6a5B" Enabled="true" />
@@ -1831,6 +1896,20 @@
             <Link Id="DyniTTUJg3jQG1EY56XgIn" Ids="LMdXP2SRbHKLF6Ve7CEzbJ,PfRIWEJPyOFLaz75xT5UQg" IsFeedback="true" />
             <Link Id="BgSw4ZwNgibNJSqZxCCugT" Ids="G38Gcaxh2fpMNNLAujhj47,PfRIWEJPyOFLaz75xT5UQg" />
             <Link Id="Dr3p4kzAQ9KN7VwC00rsp8" Ids="PfRIWEJPyOFLaz75xT5UQg,PqevzRNWVLIOuPdcIjd8zF" />
+            <Patch Id="RXTlp9XSs8JL4juheg1GrK" Name="Create" />
+            <Patch Id="UvZtxILdzMIMKFQ5mG6a5B" Name="Update">
+              <Pin Id="SngICNs1Jl4OtBfEoiPkWL" Name="Input" Kind="InputPin">
+                <p:TypeAnnotation LastCategoryFullName="IO.Spotify.Playback" LastDependency="VL.Spotify.vl">
+                  <Choice Kind="TypeFlag" Name="CurrentlyPlaying" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="ULQMr9JWLMsO8ETk3fEGBK" Name="Is Playing" Kind="OutputPin" Bounds="688,500" />
+              <Pin Id="V4kp19MoAwIP04BoXKV1e3" Name="Name" Kind="OutputPin" Bounds="825,553" />
+              <Pin Id="RTbN5SAjOCtPqXmeY7ArUY" Name="Artists" Kind="OutputPin" Bounds="954,695" />
+              <Pin Id="EjcXp8fWgeBMC1EsUvRfsr" Name="Album" Kind="OutputPin" Bounds="1146,631" />
+              <Pin Id="JVtw2X0E0XmMhCR1rrwXId" Name="Release Date" Kind="OutputPin" Bounds="1267,685" />
+              <Pin Id="B12opDDO4sZN9ZBTr0jTJb" Name="Images URL" Kind="OutputPin" Bounds="1347,741" />
+            </Patch>
           </Patch>
         </Node>
       </Canvas>
@@ -1856,7 +1935,7 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="MH4RCg23vL4PItspkH4kiN" Location="VL.CoreLib" Version="2021.4.1-0672-g625cfd62bc" />
+  <NugetDependency Id="MH4RCg23vL4PItspkH4kiN" Location="VL.CoreLib" Version="2023.5.0" />
   <NugetDependency Id="I8178xPLAmdNUuuJNd7rEr" Location="SpotifyAPI.Web" Version="6.2.2" />
-  <NugetDependency Id="GQeAjmcXtnZPhs6lB1ODNP" Location="RestSharp" Version="106.13.0" />
+  <NugetDependency Id="GQeAjmcXtnZPhs6lB1ODNP" Location="RestSharp" Version="106.15.0" />
 </Document>
